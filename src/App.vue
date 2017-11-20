@@ -24,8 +24,7 @@
     },
     data() {
       return {
-        mapVisible: false,
-        msg: 'Welcome to Your Vue.js App'
+        mapVisible: true
       }
     },
     methods: {
