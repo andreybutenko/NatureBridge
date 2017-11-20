@@ -9,7 +9,7 @@
         <img src="../assets/ui/map.png" />
         <span class="label">Map</span>
       </div>
-      <div class="btn-sidebar">
+      <div class="btn-sidebar" @click="clickNavigation('scrapbook')">
         <img src="../assets/ui/scrapbook.png" />
         <span class="label">Scrapbook</span>
       </div>

@@ -23,7 +23,4 @@
 </script>
 
 <style lang="scss" scoped>
-  .map {
-    position: relative;
-  }
 </style>

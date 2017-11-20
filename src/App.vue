@@ -5,6 +5,7 @@
         :onDisplayModal="displayModal" />
       <PlayerMap v-if="mapVisible" :onDismiss="() => mapVisible = false" />
       <PlayerInventory v-if="inventoryVisible" :onDismiss="() => inventoryVisible = false" />
+      <PlayerScrapbook v-if="scrapbookVisible" :onDismiss="() => scrapbookVisible = false" />
       <router-view></router-view>
       <Toast :text="toastText" :visible="toastVisible" />
     </div>
@@ -17,6 +18,7 @@
   import Sidebar from './common/Sidebar';
   import PlayerMap from './common/PlayerMap';
   import PlayerInventory from './common/PlayerInventory';
+  import PlayerScrapbook from './common/PlayerScrapbook';
   import Toast from './common/Toast';
   import { globalStore } from './main.js';
 
@@ -26,6 +28,7 @@
       Sidebar,
       PlayerMap,
       PlayerInventory,
+      PlayerScrapbook,
       Toast,
       ...LevelIndex.components
     },
@@ -34,7 +37,8 @@
         mapVisible: false,
         toastText: '',
         toastVisible: false,
-        inventoryVisible: false
+        inventoryVisible: false,
+        scrapbookVisible: false
       }
     },
     methods: {
