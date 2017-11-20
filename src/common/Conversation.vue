@@ -4,11 +4,14 @@
       <div v-for="(text, textIndex) in texts"
         class="text-bubble-container"
         :class="{ mine: text.from == 'me', theirs: text.from == 'them', label: text.from == 'label', decision: text.from == 'decision', cleared: textIndex == clearIndex }">
-        <div class="text-bubble" v-if="text.from != 'decision'">
+        <div class="text-bubble" v-if="text.from != 'decision' && text.from != 'image'">
           {{ text.text }}
         </div>
         <div class="choice" v-for="(choice, choiceIndex) in text.decisions" v-if="text.from == 'decision'" @click="addToInitials(choice.initials)">
           {{ alphabet[choiceIndex] }}) {{ choice.label }}
+        </div>
+        <div class="image" v-if="text.from == 'image'">
+          <img :src="text.text" />
         </div>
       </div>
     </div>
@@ -47,6 +50,7 @@
         this.currentTextBuffer = data.text;
         if(!!data.effect) data.effect();
         setTimeout(() => this.addCharacter(), this.textDelay);
+        if(data.from == 'image') this.skip()
       },
       addCharacter() {
         this.texts[this.texts.length - 1].text += this.currentTextBuffer.charAt(0);

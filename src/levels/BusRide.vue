@@ -20,6 +20,7 @@
       return {
         conversationTree: {
           initials: [
+            { from: 'image', text: require('../assets/bus-scene.png') },
             { from: 'label', text: 'You barely make it to the bus on time. As you climb up the stairs, you wonder if you remembered to bring everything on the NatureBridge packing list.' },
             { from: 'me', text: 'I think I forgot some stuff.' },
             { from: 'them', text: 'Don’t worry, they usually have extras.' }
