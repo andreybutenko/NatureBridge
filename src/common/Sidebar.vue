@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar">
     <div class="btns">
-      <div class="btn-sidebar">
+      <div class="btn-sidebar" @click="clickNavigation('inventory')">
         <img src="../assets/ui/backpack.png" />
         <span class="label">Backpack</span>
       </div>

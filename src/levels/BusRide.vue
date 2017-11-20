@@ -36,7 +36,7 @@
               label: 'That\'s a relief.',
               initials: [
                 { from: 'me', text: 'That\'s a relief. I even forgot a pen!' },
-                { from: 'them', text: 'Hey, I brought an extra pencil! You can have it.' },
+                { from: 'them', text: 'Hey, I brought an extra pencil! You can have it.', effect: () => globalStore.addItem('pencil') },
                 { from: 'me', text: 'Thanks!' }
               ]
             },

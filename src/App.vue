@@ -4,7 +4,9 @@
       <Sidebar
         :onDisplayModal="displayModal" />
       <PlayerMap v-if="mapVisible" :onDismiss="() => mapVisible = false" />
+      <PlayerInventory v-if="inventoryVisible" :onDismiss="() => inventoryVisible = false" />
       <router-view></router-view>
+      <Toast :text="toastText" :visible="toastVisible" />
     </div>
   </div>
 </template>
@@ -14,22 +16,45 @@
   import LevelIndex from './levels/index.js';
   import Sidebar from './common/Sidebar';
   import PlayerMap from './common/PlayerMap';
+  import PlayerInventory from './common/PlayerInventory';
+  import Toast from './common/Toast';
+  import { globalStore } from './main.js';
 
   export default {
     name: 'app',
     components: {
       Sidebar,
       PlayerMap,
+      PlayerInventory,
+      Toast,
       ...LevelIndex.components
     },
     data() {
       return {
-        mapVisible: true
+        mapVisible: false,
+        toastText: '',
+        toastVisible: false,
+        inventoryVisible: false
       }
     },
     methods: {
       displayModal(name, visibility) {
         this[name + 'Visible'] = visibility;
+      },
+      showToast(text) {
+        this.toastText = text;
+        this.toastVisible = true;
+        setTimeout(() => this.toastVisible = false, 3000);
+      }
+    },
+    computed: {
+      inventory() {
+        return globalStore.inventory;
+      }
+    },
+    watch: {
+      inventory() {
+        this.showToast('You got a ' + this.inventory[this.inventory.length - 1] + '!');
       }
     }
   }

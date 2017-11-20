@@ -45,6 +45,7 @@
           { from: data.from, text: '' }
         );
         this.currentTextBuffer = data.text;
+        if(!!data.effect) data.effect();
         setTimeout(() => this.addCharacter(), this.textDelay);
       },
       addCharacter() {

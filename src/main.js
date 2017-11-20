@@ -15,12 +15,16 @@ const router = new VueRouter({
 export const globalStore = new Vue({
   data() {
     return {
-      visited: []
+      visited: [],
+      inventory: []
     }
   },
   methods: {
     visitLocation(name) {
       this.visited.push(name);
+    },
+    addItem(name) {
+      this.inventory.push(name);
     }
   }
 })
