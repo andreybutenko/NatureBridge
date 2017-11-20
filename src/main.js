@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router';
 
+Vue.options.devtool = true;
+
 import App from './App.vue'
 import LevelIndex from './levels/index.js';
 

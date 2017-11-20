@@ -5,7 +5,8 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/NatureBridge/dist/',
+    //  publicPath: '/NatureBridge/dist/', // prod
+    publicPath: '/dist/',
     filename: 'build.js'
   },
   module: {
