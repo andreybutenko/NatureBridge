@@ -91,7 +91,7 @@
         return (-1 * (this.rotation + this.offsetDeg) * this.degPxRatio) + 'px';
       },
       compassTransform() {
-        return 'rotate(' + this.rotation + 'deg)';
+        return 'rotate(-' + this.rotation + 'deg)';
       },
       minimapUrl() {
         return require('../assets/trail/' + this.name + '-map.png');
