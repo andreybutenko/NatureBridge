@@ -8,7 +8,7 @@
           {{ text.text }}
         </div>
         <div class="choice" v-for="(choice, choiceIndex) in text.decisions" v-if="text.from == 'decision'" @click="addToInitials(choice.initials)">
-          {{ alphabet[choiceIndex] }}) {{ choice.label }}
+          {{ choice.label }}
         </div>
         <div class="image" v-if="text.from == 'image'">
           <img :src="text.text" />
@@ -60,8 +60,10 @@
           setTimeout(() => this.addCharacter(), this.textDelay);
         }
         else {
-          this.clearIndex = this.texts.length - 1;
-          setTimeout(() => this.nextStep(), 400);
+        this.clearIndex = this.texts.length - 1;
+          setTimeout(() => {
+            this.nextStep();
+          }, 1000);
         }
       },
       addToInitials(data) {
@@ -176,6 +178,7 @@
             background-color: white;
             width: 60%;
             padding: 16px;
+            font-size: 14px;
             transition: 250ms all;
             cursor: pointer;
 
@@ -209,6 +212,11 @@
          color: black;
          z-index: 999;
          padding: 16px;
+         transition: 250ms all;
+
+         &:hover {
+           background-color: #71eda6;
+         }
       }
 
       .conversation-bubble {
