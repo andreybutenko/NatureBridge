@@ -15,43 +15,68 @@
     components: { Conversation },
     mounted() {
       globalStore.visitLocation('Cabin');
+      this.addUnseenDecisions();
     },
     data() {
       return {
-        conversationTree: {
-          initials: [
-            { from: 'label', text: 'You return to your cabin and see your friend rummaging through his backpack.' }
-          ],
-          decisions: [
-            {
-              label: 'What are you looking for?',
-              initials: [
+        unseenDecisions: [
+          {
+            id: 0,
+            label: 'What are you looking for?',
+            effect: () => {
+              this.makeDecision(0, [
                 { from: 'me', text: 'What are you looking for?' },
-                { from: 'them', text: 'I\'m trying to find a pencil to draw in our journal.' },
+                { from: 'them', text: 'I\'m trying to find a pencil to draw in my journal.' },
                 { from: 'me', text: 'Journal? How do I get one of those?' },
                 { from: 'them', text: 'The Park Ranger will give you one if you ask. You\'re supposed to fill it with pictures and writings. A lot of it is along the Elwha River trail.' },
-                { from: 'me', text: 'Good to know! See you!' }
-              ]
-            },
-            {
-              label: 'Do you have an extra water bottle?',
-              initials: [
+                { from: 'me', text: 'Good to know!' }
+              ]);
+            }
+          },
+          {
+            id: 1,
+            label: 'Do you have an extra water bottle?',
+            effect: () => {
+              this.makeDecision(1, [
                 { from: 'me', text: 'Do you have an extra water bottle?' },
                 { from: 'them', text: 'No, sorry.' },
-                { from: 'me', text: 'Okay. See you!' }
-              ]
-            },
-            {
-              label: 'Go back outside.',
-              initials: [
-                { from: 'label', text: 'You decide to leave him alone.' }
-              ]
+                { from: 'me', text: 'Okay.' }
+              ]);
             }
-          ],
-          finals: []
-        },
+          },
+          {
+            id: 2,
+            label: 'Go back outside.',
+            effect: () => {
+              this.makeDecision(2, [
+                { from: 'me', text: 'See you!' }
+              ], true);
+            }
+          }
+        ],
+        conversationTree: [
+          { from: 'label', text: 'You return to your cabin and see your friend rummaging through his backpack.' },
+          {
+            from: 'decision'
+          }
+        ],
         continueText: 'Go back outside.',
         continueDest: 'CampHub'
+      }
+    },
+    methods: {
+      makeDecision(id, newConversation, skip) {
+        this.conversationTree.push(...newConversation);
+        this.unseenDecisions = this.unseenDecisions.filter(node => node.id != id);
+        if(!skip) {
+          this.conversationTree.push({
+            from: 'decision',
+            choices: this.unseenDecisions
+          });
+        }
+      },
+      addUnseenDecisions() {
+        this.conversationTree.filter(node => node.from == 'decision')[0].choices = this.unseenDecisions;
       }
     }
   }

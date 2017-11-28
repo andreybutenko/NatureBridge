@@ -7,7 +7,7 @@
         <div class="text-bubble" v-if="text.from != 'decision' && text.from != 'image'">
           {{ text.text }}
         </div>
-        <div class="choice" v-for="(choice, choiceIndex) in text.decisions" v-if="text.from == 'decision'" @click="addToInitials(choice.initials)">
+        <div class="choice" v-for="(choice, choiceIndex) in text.choices" v-if="text.from == 'decision'" @click="choice.effect(); nextStep();">
           {{ choice.label }}
         </div>
         <div class="image" v-if="text.from == 'image'">
@@ -34,56 +34,52 @@
         clearIndex: -1,
         currentTextBuffer: '',
         textDelay: 30,
-        alphabet: ['a', 'b', 'c'],
-        currentTree: {}
+        alphabet: ['a', 'b', 'c']
       }
     },
     mounted() {
-      this.currentTree = this.conversationTree;
       this.nextStep();
     },
     methods: {
       addMessage(data) {
-        this.texts.push(
-          { from: data.from, text: '' }
-        );
-        this.currentTextBuffer = data.text;
+        this.texts.push({
+          ...data,
+          text: ''
+        });
+        this.currentTextBuffer = data.text || '';
         if(!!data.effect) data.effect();
         setTimeout(() => this.addCharacter(), this.textDelay);
         if(data.from == 'image') this.skip()
       },
       addCharacter() {
-        this.texts[this.texts.length - 1].text += this.currentTextBuffer.charAt(0);
-        this.currentTextBuffer = this.currentTextBuffer.substr(1);
+        if(this.mostRecentMessage.from != 'decision') {
+          this.mostRecentMessage.text += this.currentTextBuffer.charAt(0);
+          this.currentTextBuffer = this.currentTextBuffer.substr(1);
 
-        if(!!this.currentTextBuffer.length) {
-          setTimeout(() => this.addCharacter(), this.textDelay);
-        }
-        else {
-        this.clearIndex = this.texts.length - 1;
-          setTimeout(() => {
-            this.nextStep();
-          }, 1000);
+          if(!!this.currentTextBuffer.length) {
+            setTimeout(() => this.addCharacter(), this.textDelay);
+          }
+          else {
+            this.clearIndex = this.texts.length - 1;
+              setTimeout(() => {
+                this.nextStep();
+              }, 1000);
+          }
         }
       },
       addToInitials(data) {
-        this.currentTree.initials.push(...data);
-        this.currentTree.decisions = [];
+        this.conversationTree.initials.push(...data);
+        this.conversationTree.decisions = [];
         this.texts.pop();
         this.nextStep();
       },
       nextStep() {
-        if(!!this.currentTree.initials.length) {
-          const newMessage = this.currentTree.initials.shift();
-          this.addMessage(newMessage, this.nextStep);
+        if(this.mostRecentMessage.from == 'decision') {
+          this.texts.pop(); // remove decision node
         }
-        else if(!!this.currentTree.decisions.length) {
-          this.texts.push(
-            { from: 'decision', decisions: this.currentTree.decisions }
-          )
-        }
-        else if(!!this.currentTree.finals.length) {
-          const newMessage = this.currentTree.finals.shift();
+
+        if(!!this.conversationTree.length) {
+          const newMessage = this.conversationTree.shift();
           this.addMessage(newMessage, this.nextStep);
         }
         else {
@@ -91,7 +87,7 @@
         }
       },
       skip() {
-        this.texts[this.texts.length - 1].text += this.currentTextBuffer;
+        this.mostRecentMessage.text += this.currentTextBuffer;
         this.currentTextBuffer = '';
       }
     },
@@ -101,6 +97,9 @@
       },
       playerImage() {
         return 'url(' + require('../assets/player-speech.png') + ')';
+      },
+      mostRecentMessage() {
+        return this.texts[this.texts.length - 1] || {};
       }
     }
   }
