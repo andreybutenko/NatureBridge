@@ -34,6 +34,9 @@ export const globalStore = new Vue({
         title: title,
         response: response
       })
+    },
+    has(name) {
+      return this.inventory.indexOf(name) > -1;
     }
   }
 })
