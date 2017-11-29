@@ -67,12 +67,6 @@
           }
         }
       },
-      addToInitials(data) {
-        this.conversationTree.initials.push(...data);
-        this.conversationTree.decisions = [];
-        this.texts.pop();
-        this.nextStep();
-      },
       nextStep() {
         if(this.mostRecentMessage.from == 'decision') {
           this.texts.pop(); // remove decision node

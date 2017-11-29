@@ -18,6 +18,7 @@
       this.addUnseenDecisions();
     },
     data() {
+      console.log('data', globalStore.inventory)
       return {
         unseenDecisions: [
           {
@@ -68,6 +69,7 @@
       makeDecision(id, newConversation, skip) {
         this.conversationTree.push(...newConversation);
         this.unseenDecisions = this.unseenDecisions.filter(node => node.id != id);
+        
         if(!skip) {
           this.conversationTree.push({
             from: 'decision',

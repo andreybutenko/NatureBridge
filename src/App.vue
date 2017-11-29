@@ -54,11 +54,14 @@
     computed: {
       inventory() {
         return globalStore.inventory;
+      },
+      inventoryMessage() {
+        return globalStore.inventoryMessage;
       }
     },
     watch: {
-      inventory() {
-        this.showToast('You got a ' + this.inventory[this.inventory.length - 1] + '!');
+      inventoryMessage() {
+        this.showToast(globalStore.inventoryMessage);
       }
     }
   }

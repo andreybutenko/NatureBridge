@@ -17,6 +17,7 @@ export const globalStore = new Vue({
     return {
       visited: [],
       inventory: [],
+      inventoryMessage: '',
       journals: []
     }
   },
@@ -25,6 +26,7 @@ export const globalStore = new Vue({
       this.visited.push(name);
     },
     addItem(name) {
+      this.inventoryMessage = 'You got a ' + name + '!';
       this.inventory.push(name);
     },
     addJournal(title, response) {
