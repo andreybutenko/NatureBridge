@@ -6,7 +6,7 @@
 
       <div>
         <router-link to="Cabin">Visit your cabin</router-link>
-        <router-link to="TrailGame">Go for a hike</router-link>
+        <router-link to="TrailHead">Go for a hike</router-link>
         <router-link to="RangerStation">Enter the ranger station</router-link>
       </div>
     </div>
