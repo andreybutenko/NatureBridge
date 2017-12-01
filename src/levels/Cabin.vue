@@ -20,6 +20,32 @@
     data() {
       console.log('data', globalStore.inventory)
       return {
+        optionalDecisions: [
+          {
+            id: 3,
+            label: 'Journal?',
+            effect: () =>  {
+              this.makeDecision(3, [
+                { from: 'them', text: 'The Park Ranger will give you one if you ask. You\'re supposed to fill it with pictures and writings. A lot of it is along the Elwha River trail.' },
+                { from: 'me', text: 'Good to know!' }
+              ]);
+            }
+          },
+          {
+            id: 4,
+            label: 'Offer pencil',
+            effect: () => {
+              this.makeDecision(4, [
+                { from: 'me', text: 'I have a pencil, but it\'s my only one.' },
+                { from: 'them', text: 'Aw, thanks! I have an extra pen, but I can\'t really draw with it. Want to trade?' },
+                { from: 'me', text: 'Sure!', effect: () => {
+                  globalStore.removeItem('pencil');
+                  globalStore.addItem('pen');
+                }}
+              ]);
+            }
+          }
+        ],
         unseenDecisions: [
           {
             id: 0,
@@ -28,10 +54,12 @@
               this.makeDecision(0, [
                 { from: 'me', text: 'What are you looking for?' },
                 { from: 'them', text: 'I\'m trying to find a pencil to draw in my journal.' },
-                { from: 'me', text: 'Journal? How do I get one of those?' },
-                { from: 'them', text: 'The Park Ranger will give you one if you ask. You\'re supposed to fill it with pictures and writings. A lot of it is along the Elwha River trail.' },
-                { from: 'me', text: 'Good to know!' }
+                { from: 'me', text: 'Journal? How do I get one of those?' }
               ]);
+              if(globalStore.has('pencil')) {
+                this.unseenDecisions.unshift(this.optionalDecisions.filter(node => node.id == 4)[0]);
+              }
+              this.unseenDecisions.unshift(this.optionalDecisions.filter(node => node.id == 3)[0]);
             }
           },
           {
@@ -69,7 +97,7 @@
       makeDecision(id, newConversation, skip) {
         this.conversationTree.push(...newConversation);
         this.unseenDecisions = this.unseenDecisions.filter(node => node.id != id);
-        
+
         if(!skip) {
           this.conversationTree.push({
             from: 'decision',

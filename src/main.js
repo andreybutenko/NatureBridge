@@ -29,6 +29,9 @@ export const globalStore = new Vue({
       this.inventoryMessage = 'You got a ' + name + '!';
       this.inventory.push(name);
     },
+    removeItem(name) {
+      this.inventory = this.inventory.filter(node => node.name != name);
+    },
     addJournal(title, response) {
       this.journals.push({
         title: title,
