@@ -20,6 +20,7 @@
     padding: 6px 12px;
     border: 2px dotted black;
     border-radius: 5px;
+    cursor: default;
 
     &:after {
     	content: '';

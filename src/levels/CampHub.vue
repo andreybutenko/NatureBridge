@@ -28,15 +28,11 @@
 
 <script>
   import { globalStore } from '../main.js';
-  import LayeredImage from '../common/LayeredImage.vue';
-  import LayeredImageLabel from '../common/LayeredImageLabel.vue';
-  import LayeredImageNav from '../common/LayeredImageNav.vue';
-  import LayeredImageSprite from '../common/LayeredImageSprite.vue';
-  import LayeredImageChat from '../common/LayeredImageChat.vue';
+  import LayeredImagePackage from '../common/LayeredImage/';
 
   export default {
     name: 'CampHub',
-    components: { LayeredImage, LayeredImageLabel, LayeredImageNav, LayeredImageSprite, LayeredImageChat },
+    components: { ...LayeredImagePackage },
     mounted() {
       globalStore.visitLocation('CampHub');
     }
