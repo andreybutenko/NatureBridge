@@ -14,15 +14,22 @@
   .layered-image-nav {
     position: absolute;
     background-color: rgba(0, 0, 0, 0);
-    transition: 250ms all;
 
     &:hover {
-      background-color: rgba(0, 255, 0, 0.1)
+      animation-name: glow;
+      animation-duration: 750ms;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
     }
 
     &.debug {
       background-color: rgba(255, 0, 0, 0.25);
       cursor: pointer;
     }
+  }
+
+  @keyframes glow {
+    0%  { background-color: rgba(0, 0, 0, 0); }
+    100% { background-color: rgba(255, 255, 255, 0.25); }
   }
 </style>
