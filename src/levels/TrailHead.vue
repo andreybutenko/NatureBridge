@@ -30,21 +30,34 @@
 
                   }
 
+                  const messages = [
+                    { from: 'label', text: 'You decide to go on the hike, but have second thoughts.' }
+                  ];
+
                   if(!globalStore.has('water')) {
-                    this.conversationTree.unshift(...[
-                      { from: 'me', text: 'Actually, I better not. I don’t have any water.' }
-                    ]);
+                    messages.push({
+                      from: 'me',
+                      text: 'Actually, I better not. I don\'t have any water.'
+                    });
                   }
                   if(!globalStore.has('whistle')) {
-                    this.conversationTree.unshift(...[
-                      { from: 'me', text: 'But what if I see a bear? I don’t have a whistle.' }
-                    ]);
+                    messages.push({
+                      from: 'me',
+                      text: !globalStore.has('water') ?
+                        '\nAnd what if I see a bear? I don\'t have a whistle.' :
+                        'Actually, I better not. What if I see a bear? I don\'t have a whistle.'
+                    });
                   }
                   if(!globalStore.has('map')) {
-                    this.conversationTree.unshift(...[
-                      { from: 'me', text: 'Wait... I don\'t know where to go! I need a map.' }
-                    ]);
+                    messages.push({
+                      from: 'me',
+                      text: !globalStore.has('water') || !globalStore.has('whistle') ?
+                        'And I don\'t know where to go! I need a map.' :
+                        'Actually, I better not. I don\'t know where to go! I need a map.'
+                    });
                   }
+
+                  this.conversationTree.unshift(...messages);
                 }
               },
               {
