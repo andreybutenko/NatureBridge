@@ -15,13 +15,8 @@
         <LayeredImageLabel x="650px" y="340px" :far="false">Trail</LayeredImageLabel>
         <LayeredImageNav x="600px" y="150px" height="300px" width="200px" destination="TrailHead" />
       </LayeredImage>
-      <p>Welcome to NatureBridge! You have claimed your camp bed, rolled out your sleeping bag, and grabbed a snack from the dining hall. What would you like to do?</p>
 
-      <div>
-        <router-link to="Cabin">Visit your cabin</router-link>
-        <router-link to="TrailHead">Go for a hike</router-link>
-        <router-link to="RangerStation">Enter the ranger station</router-link>
-      </div>
+      <p>Welcome to NatureBridge!</p>
     </div>
   </div>
 </template>
