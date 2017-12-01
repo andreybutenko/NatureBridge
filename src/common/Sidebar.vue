@@ -31,7 +31,7 @@
 
 <style lang="scss" scoped>
   .sidebar {
-    flex: 0 0 400px;
+    flex: 0 0 200px;
     height: 100vh;
     background-color: #bdc3c7;
     padding: 16px;
@@ -39,10 +39,8 @@
 
   .btns {
     display: flex;
-    flex-direction: row;
-
-    background-color: white;
-    padding: 8px 16px;
+    flex-direction: column;
+    height: 100%;
 
     .btn-sidebar {
       flex: 1;
@@ -50,6 +48,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
 
       font-family: 'Saira Extra Condensed', sans-serif;
       font-size: 18px;
@@ -60,6 +59,15 @@
 
       &:hover {
         background-color: #ecf0f1;
+
+        img {
+          transform: scale(2) translateY(10px);
+        }
+      }
+
+      img {
+        transition: 250ms all;
+        filter: drop-shadow(12px 12px 16px rgba(0, 0, 0, 0.5));
       }
 
       img, .label {
