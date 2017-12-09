@@ -16,7 +16,8 @@
       </div>
     </div>
     <div class="conversation-footer">
-      <div class="conversation-bubble" :style="{ backgroundImage: speakerImage }"></div>
+      <div class="conversation-bubble" :style="{ backgroundImage: speakerImage }" v-if="speakerImage"></div>
+      <div v-else></div>
       <router-link :to="continueDest" class="continue-button" v-if="complete">{{ continueText }}</router-link>
       <div class="conversation-bubble" :style="{ backgroundImage: playerImage }"></div>
     </div>
@@ -26,7 +27,7 @@
 <script>
   export default {
     name: 'Conversation',
-    props: ['conversationTree', 'continueText', 'continueDest'],
+    props: ['conversationTree', 'continueText', 'continueDest', 'characterSprite'],
     data() {
       return {
         texts: [],
@@ -87,7 +88,12 @@
     },
     computed: {
       speakerImage() {
-        return 'url(' + require('../assets/mom-speech.png') + ')';
+        if(!this.characterSprite) {
+          return false;
+        }
+        else {
+          return 'url(' + this.characterSprite + ')';
+        }
       },
       playerImage() {
         return 'url(' + require('../assets/player-speech.png') + ')';

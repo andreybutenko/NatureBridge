@@ -6,7 +6,9 @@ import MessyRoomIntro from './MessyRoomIntro.vue';
 import RangerStation from './RangerStation.vue';
 import TrailGame from './TrailGame.vue';
 import TrailHead from './TrailHead.vue';
-import ConversationDemo from './ConversationDemo.vue';
+import TrailCabins from './TrailCabins.vue';
+import Weeders from './Weeders.vue';
+import WeedersChat from './WeedersChat.vue';
 
 export default {
   routes: [
@@ -18,6 +20,8 @@ export default {
     { path: '/TrailGame', name: 'TrailGame', component: TrailGame },
     { path: '/TrailHead', name: 'TrailHead', component: TrailHead },
     { path: '/RangerStation', name: 'RangerStation', component: RangerStation },
-    { path: '/ConversationDemo', name: 'ConversationDemo', component: ConversationDemo }
+    { path: '/TrailCabins', name: 'TrailCabins', component: TrailCabins },
+    { path: '/Weeders', name: 'Weeders', component: Weeders },
+    { path: '/WeedersChat', name: 'WeedersChat', component: WeedersChat },
   ]
 }

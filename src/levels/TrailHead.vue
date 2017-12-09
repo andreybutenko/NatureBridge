@@ -14,7 +14,7 @@
     name: 'TrailHead',
     components: { Conversation },
     mounted() {
-      globalStore.visitLocation('BusRide');
+      globalStore.visitLocation('TrailHead');
     },
     data() {
       return {
@@ -27,7 +27,8 @@
                 label: 'Go on a hike.',
                 effect: () => {
                   if(globalStore.has('water') && globalStore.has('whistle') && globalStore.has('map')) {
-
+                    this.$router.push('TrailCabins');
+                    return;
                   }
 
                   const messages = [
@@ -61,7 +62,8 @@
                 }
               },
               {
-                label: 'Return back.'
+                label: 'Return back.',
+                effect: () => this.$router.push('CampHub')
               }
             ]
           }

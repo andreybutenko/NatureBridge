@@ -16,7 +16,7 @@ export const globalStore = new Vue({
   data() {
     return {
       visited: [],
-      inventory: [],
+      inventory: ['pencil', 'water'],
       inventoryMessage: '',
       journals: []
     }

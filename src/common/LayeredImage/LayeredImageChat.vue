@@ -1,6 +1,6 @@
 <template>
   <div class="layered-image-chat" :style="{ top: y, left: x }"  :class="{ far: far }">
-    <slot></slot>
+    <span><slot></slot></span>
   </div>
 </template>
 
@@ -16,24 +16,19 @@
     position: absolute;
     font-family: 'VT323';
     font-size: 24px;
-    background-color: white;
     padding: 6px 12px;
-    border: 2px dotted black;
-    border-radius: 5px;
     cursor: default;
+    background-image: url('../../assets/misc/speech-bubble-right-long.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 220px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    &:after {
-    	content: '';
-    	position: absolute;
-    	left: 0;
-    	width: 0;
-    	height: 0;
-    	border: 25px solid transparent;
-    	border-right-color: white;
-    	border-left: 0;
-    	border-bottom: 0;
-      bottom: 0;
-    	margin-left: -25px;
+    & > span {
+      margin-bottom: 20px;
     }
   }
 </style>

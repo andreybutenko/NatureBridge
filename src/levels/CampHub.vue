@@ -4,12 +4,12 @@
       <!--<img src="../assets/base-camp.png" />-->
       <LayeredImage :imageUrl="require('../assets/base-camp.png')">
         <LayeredImageSprite x="250px" y="400px" :scale="1" :imageUrl="require('../assets/player.png')" />
-        <LayeredImageChat x="400px" y="400px">Where should I go?</LayeredImageChat>
+        <LayeredImageChat x="360px" y="350px">Where should I go?</LayeredImageChat>
 
         <LayeredImageLabel x="80px" y="340px">Cabin</LayeredImageLabel>
         <LayeredImageNav x="0px" y="150px" height="280px" width="280px" destination="Cabin" />
 
-        <LayeredImageLabel x="400px" y="290px" :far="true">Ranger Station</LayeredImageLabel>
+        <LayeredImageLabel x="400px" y="290px" :far="true">Station</LayeredImageLabel>
         <LayeredImageNav x="280px" y="100px" height="280px" width="320px" destination="RangerStation" />
 
         <LayeredImageLabel x="650px" y="340px" :far="false">Trail</LayeredImageLabel>

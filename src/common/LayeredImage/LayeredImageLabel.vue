@@ -16,13 +16,16 @@
     position: absolute;
     font-family: 'VT323';
     font-size: 32px;
-    background-color: #bdc3c7;
+    background-image: url('../../assets/misc/label-bg.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 130px;
+    text-align: center;
     padding: 8px 16px;
-    border: 2px dotted black;
-    border-radius: 5px;
 
     &.far {
       font-size: 24px;
+      width: 100px;
       padding: 6px 12px;
     }
   }

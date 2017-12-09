@@ -13,17 +13,23 @@
         <img src="../assets/ui/scrapbook.png" />
         <span class="label">Scrapbook</span>
       </div>
+      <div class="cheat-btn" @click="clickCheat()">Cheat</div>
     </div>
   </div>
 </template>
 
 <script>
+  import { globalStore } from '../main.js';
   export default {
     name: 'Sidebar',
     props: ['onDisplayModal'],
     methods: {
       clickNavigation(name) {
         this.onDisplayModal(name, true);
+      },
+      clickCheat() {
+        const itemName = prompt('Item name');
+        globalStore.addItem(itemName);
       }
     }
   }
@@ -73,6 +79,16 @@
       img, .label {
         display: block;
       }
+    }
+
+    .cheat-btn {
+      cursor: pointer;
+      background-color: red;
+      color: white;
+      text-align: center;
+      border-radius: 5;
+      padding: 16px;
+      margin-bottom: 48px;
     }
   }
 </style>
