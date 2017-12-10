@@ -39,7 +39,8 @@
   .sidebar {
     flex: 0 0 200px;
     height: 100vh;
-    background-color: #bdc3c7;
+    background-color: #000;
+    color: white;
     padding: 16px;
   }
 
@@ -64,7 +65,7 @@
       border-radius: 5px;
 
       &:hover {
-        background-color: #ecf0f1;
+        background-color: #111;
 
         img {
           transform: scale(2) translateY(10px);
@@ -73,7 +74,7 @@
 
       img {
         transition: 250ms all;
-        filter: drop-shadow(12px 12px 16px rgba(0, 0, 0, 0.5));
+        filter: drop-shadow(0px 0px 24px rgba(255, 255, 255, 0.8));
       }
 
       img, .label {

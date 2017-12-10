@@ -114,6 +114,7 @@
     justify-content: flex-end;
     position: relative;
     user-select: none;
+    background-color: white;
 
     .conversation-text {
       position: absolute;

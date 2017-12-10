@@ -43,5 +43,6 @@
 <style lang="scss" scoped>
   p {
     margin: 1em 0;
+    color: white;
   }
 </style>

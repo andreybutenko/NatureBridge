@@ -116,7 +116,11 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+  * {
+    color: white;
+  }
+
   .columns {
     display: flex;
     flex-direction: row;
@@ -141,5 +145,10 @@
 
   .game-area {
     margin: 16px 0;
+  }
+
+  .modal-content > h1,
+  .modal-content > p {
+    color: black;
   }
 </style>
