@@ -18,7 +18,7 @@
     <div class="conversation-footer">
       <div class="conversation-bubble" :style="{ backgroundImage: speakerImage }" v-if="speakerImage"></div>
       <div v-else></div>
-      <router-link :to="continueDest" class="continue-button" v-if="complete">{{ continueText }}</router-link>
+      <router-link :to="continueDest" class="continue-button" v-if="complete && !!continueDest">{{ continueText }}</router-link>
       <div class="conversation-bubble" :style="{ backgroundImage: playerImage }"></div>
     </div>
   </div>

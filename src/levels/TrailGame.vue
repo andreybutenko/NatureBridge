@@ -10,6 +10,7 @@
           <div class="success-popup" v-if="displaySuccess">
             <img src="../assets/trail/success.png" />
           </div>
+          <div class="fail-popup" v-if="displayFail"></div>
         </div>
         <div class="control-container">
         	<div @click="turn('left')"><img src="../assets/trail/left.png" /></div>
@@ -29,30 +30,31 @@
       return {
         stages: [
           {
-            name: 'painted-hills',
-            originalWidth: 14848,
-            originalHeight: 2616,
+            name: 'forest',
+            originalWidth: 1920,
+            originalHeight: 355,
             offsetDeg: 135,
-            initialRotation: 180,
-            successRange: [315, 360]
+            initialRotation: -90,
+            successRange: [60, 150]
           }
         ],
         config: {
-          stepDeg: 45
+          stepDeg: 30
         },
         name: '',
         successRange: [0, 0],
         degPxRatio: 0,
         offsetDeg: 0,
         rotation: 0,
-        displaySuccess: false
+        displaySuccess: false,
+        displayFail: false
       }
     },
     mounted() {
       globalStore.visitLocation('TrailGame');
     },
     created() {
-      this.loadStage('painted-hills');
+      this.loadStage('forest');
     },
     methods: {
       loadStage(name) {
@@ -80,10 +82,20 @@
     	  if(normalizedRotation >= this.successRange[0] && normalizedRotation <= this.successRange[1]) {
   		    this.flashSuccess();
     	  }
+        else {
+          this.flashFail();
+        }
       },
       flashSuccess() {
         this.displaySuccess = true;
-    	  setTimeout(() => this.displaySuccess = false, 500);
+    	  setTimeout(() => {
+          this.displaySuccess = false;
+          this.$router.push('FishScene');
+        }, 1000);
+      },
+      flashFail() {
+        this.displayFail = true;
+    	  setTimeout(() => this.displayFail = false, 1000);
       }
     },
     computed: {
@@ -91,13 +103,13 @@
         return (-1 * (this.rotation + this.offsetDeg) * this.degPxRatio) + 'px';
       },
       compassTransform() {
-        return 'rotate(-' + this.rotation + 'deg)';
+        return 'rotate(' + (-1 * this.rotation) + 'deg)';
       },
       minimapUrl() {
         return require('../assets/trail/' + this.name + '-map.png');
       },
       panoUrl() {
-        return 'url(\'' + require('../assets/trail/' + this.name + '-pano.jpg') + '\')';
+        return 'url(\'' + require('../assets/trail/' + this.name + '-pano.png') + '\')';
       }
     }
   }
@@ -169,6 +181,16 @@
 
   .success-popup {
     background-color: rgba(46, 204, 113, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 250ms;
+  }
+
+  .fail-popup {
+    background-color: rgba(198, 74, 43, 0.5);
     width: 100%;
     height: 100%;
     display: flex;

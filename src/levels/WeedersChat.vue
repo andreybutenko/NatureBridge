@@ -3,23 +3,24 @@
     <div class="center-content">
       <Conversation :conversationTree="conversationTree" :characterSprite="require('../assets/weeder-speech.png')" />
     </div>
+    <JournalEntry
+      prompt="How does removing invasive species affect resilience of ecosystem in a quickly-changing climate?"
+      :onComplete="() => this.next()"
+      :visible="composing" />
   </div>
 </template>
 
 <script>
   import { globalStore } from '../main.js';
   import Conversation from '../common/Conversation';
+  import JournalEntry from '../common/JournalEntry';
 
   export default {
-    name: 'Cabin',
-    components: { Conversation },
-    mounted() {
-      globalStore.visitLocation('Cabin');
-      this.addUnseenDecisions();
-    },
+    name: 'WeedersChat',
+    components: { Conversation, JournalEntry },
     data() {
-      console.log('data', globalStore.inventory)
       return {
+        composing: false,
         conversationTree: [
           { from: 'label', text: 'You go up to the weeders.' },
           {
@@ -59,9 +60,9 @@
                     },
                     {
                       from: 'them',
-                      text: 'Thanks for your help! Here, take this bucket: you can pick stinky bob wherever you come across it now.',
+                      text: 'Thanks for your help! Here, take this bucket and shovel: you can pick stinky bob wherever you come across it now.',
                       effect: () => {
-                        globalStore.addItem('bucket')
+                        globalStore.addItem('bucket and shovel')
                       }
                     },
                     {
@@ -85,9 +86,9 @@
                     },
                     {
                       from: 'them',
-                      text: 'No worries! Here, take this bucket: you can pick stinky bob wherever you come across it now.',
+                      text: 'No worries! Here, take this bucket and shovel: you can pick stinky bob wherever you come across it now.',
                       effect: () => {
-                        globalStore.addItem('bucket')
+                        globalStore.addItem('bucket and shovel')
                       }
                     },
                     {
@@ -97,6 +98,11 @@
                     {
                       from: 'label',
                       text: 'Walking away, you decide to write about invasive species in your journal.'
+                    },
+                    {
+                      from: 'label',
+                      text: 'You take out your journal.',
+                      effect: () => this.composing = true
                     }
                   );
                 }
@@ -105,8 +111,14 @@
           }
         ]
       }
+    },
+    methods: {
+      next() {
+        this.$router.push('TrailGame');
+      }
     }
   }
 </script>
 
 <style lang="scss">
+</style>

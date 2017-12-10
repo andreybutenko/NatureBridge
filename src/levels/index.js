@@ -9,6 +9,7 @@ import TrailHead from './TrailHead.vue';
 import TrailCabins from './TrailCabins.vue';
 import Weeders from './Weeders.vue';
 import WeedersChat from './WeedersChat.vue';
+import FishScene from './FishScene.vue';
 
 export default {
   routes: [
@@ -23,5 +24,6 @@ export default {
     { path: '/TrailCabins', name: 'TrailCabins', component: TrailCabins },
     { path: '/Weeders', name: 'Weeders', component: Weeders },
     { path: '/WeedersChat', name: 'WeedersChat', component: WeedersChat },
+    { path: '/FishScene', name: 'FishScene', component: FishScene}
   ]
 }

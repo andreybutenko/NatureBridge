@@ -18,10 +18,10 @@
   import LayeredImagePackage from '../common/LayeredImage/';
 
   export default {
-    name: 'TrailCabins',
+    name: 'Weeders',
     components: { ...LayeredImagePackage },
     mounted() {
-      globalStore.visitLocation('TrailCabins');
+      globalStore.visitLocation('Weeders');
     }
   }
 </script>
