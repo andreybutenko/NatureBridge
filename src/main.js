@@ -18,7 +18,12 @@ export const globalStore = new Vue({
       visited: [],
       inventory: ['pencil', 'water'],
       inventoryMessage: '',
-      journals: []
+      journals: [],
+      attrs: {
+        weedersTalked: false,
+        weedersHelped: false,
+        salmonFreed: false
+      }
     }
   },
   methods: {
@@ -40,6 +45,12 @@ export const globalStore = new Vue({
     },
     has(name) {
       return this.inventory.indexOf(name) > -1;
+    },
+    setAttr(name, val) {
+      this.attrs[name] = val;
+    },
+    getAttr(name) {
+      return this.attrs[name];
     }
   }
 })

@@ -8,7 +8,7 @@
         <LayeredImageNav x="0px" y="0px" height="600px" width="300px" destination="CampHub" />
 
         <LayeredImageLabel x="600px" y="450px">Continue</LayeredImageLabel>
-        <LayeredImageNav x="500px" y="0px" height="600px" width="300px" destination="Weeders" />
+        <LayeredImageNav x="500px" y="0px" height="600px" width="300px" :destination="destination" />
       </LayeredImage>
 
       <p>You set off on the trail!</p>
@@ -25,6 +25,16 @@
     components: { ...LayeredImagePackage },
     mounted() {
       globalStore.visitLocation('TrailCabins');
+    },
+    computed: {
+      destination() {
+        if(globalStore.getAttr('weedersTalked')) {
+          return 'WeedersAlt';
+        }
+        else {
+          return 'Weeders';
+        }
+      }
     }
   }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="layered-image-chat" :style="{ top: y, left: x }"  :class="{ far: far }">
+  <div class="layered-image-chat" :style="{ top: y, left: x }"  :class="{ far: far, flip: flip, tall: tall }">
     <span><slot></slot></span>
   </div>
 </template>
@@ -7,7 +7,7 @@
 <script>
   export default {
     name: 'LayeredImageChat',
-    props: ['x', 'y', 'far']
+    props: ['x', 'y', 'far', 'flip', 'tall']
   }
 </script>
 
@@ -22,13 +22,27 @@
     background-repeat: no-repeat;
     background-size: 100%;
     width: 220px;
-    height: 100px;
+    height: 105px;
     display: flex;
     align-items: center;
     justify-content: center;
 
     & > span {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+    }
+
+    &.tall {
+      background-image: url('../../assets/misc/speech-bubble-right-tall.png');
+      height: 200px;
+    }
+
+    &.flip {
+      background-image: url('../../assets/misc/speech-bubble-left-long.png');
+    }
+
+    &.flip.tall {
+      background-image: url('../../assets/misc/speech-bubble-left-tall.png');
+      height: 200px;
     }
   }
 </style>

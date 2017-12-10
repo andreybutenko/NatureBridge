@@ -5,10 +5,13 @@ import MessyRoom from './MessyRoom.vue';
 import MessyRoomIntro from './MessyRoomIntro.vue';
 import RangerStation from './RangerStation.vue';
 import TrailGame from './TrailGame.vue';
+import TrailGameAlt from './TrailGameAlt.vue';
 import TrailHead from './TrailHead.vue';
 import TrailCabins from './TrailCabins.vue';
 import Weeders from './Weeders.vue';
+import WeedersAlt from './WeedersAlt.vue';
 import WeedersChat from './WeedersChat.vue';
+import WeedersChatAlt from './WeedersChatAlt.vue';
 import FishScene from './FishScene.vue';
 
 export default {
@@ -19,11 +22,14 @@ export default {
     { path: '/CampHub', name: 'CampHub', component: CampHub },
     { path: '/Cabin', name: 'Cabin', component: Cabin },
     { path: '/TrailGame', name: 'TrailGame', component: TrailGame },
+    { path: '/TrailGameAlt', name: 'TrailGameAlt', component: TrailGameAlt },
     { path: '/TrailHead', name: 'TrailHead', component: TrailHead },
     { path: '/RangerStation', name: 'RangerStation', component: RangerStation },
     { path: '/TrailCabins', name: 'TrailCabins', component: TrailCabins },
     { path: '/Weeders', name: 'Weeders', component: Weeders },
+    { path: '/WeedersAlt', name: 'WeedersAlt', component: WeedersAlt },
     { path: '/WeedersChat', name: 'WeedersChat', component: WeedersChat },
+    { path: '/WeedersChatAlt', name: 'WeedersChatAlt', component: WeedersChatAlt },
     { path: '/FishScene', name: 'FishScene', component: FishScene}
   ]
 }
