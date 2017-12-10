@@ -5,6 +5,7 @@ Vue.options.devtool = true;
 
 import App from './App.vue'
 import LevelIndex from './levels/index.js';
+import trivia from './trivia.js';
 
 Vue.use(VueRouter);
 console.log(LevelIndex.routes)
@@ -16,14 +17,17 @@ export const globalStore = new Vue({
   data() {
     return {
       visited: [],
-      inventory: ['pencil', 'water'],
+      inventory: [],
       inventoryMessage: '',
       journals: [],
       attrs: {
         weedersTalked: false,
         weedersHelped: false,
-        salmonFreed: false
-      }
+        salmonFreed: false,
+        basecampSquirrel: false,
+        weederSquirrel: false
+      },
+      triviaRemaining: trivia
     }
   },
   methods: {
@@ -51,6 +55,9 @@ export const globalStore = new Vue({
     },
     getAttr(name) {
       return this.attrs[name];
+    },
+    getTrivia() {
+      return this.triviaRemaining.shift();
     }
   }
 })

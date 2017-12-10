@@ -3,6 +3,7 @@
     <div class="center-content">
       <!--<img src="../assets/base-camp.png" />-->
       <LayeredImage :imageUrl="require('../assets/base-camp.png')">
+        <SquirrelTrivia :shown="triviaEnabled" />
         <LayeredImageSprite x="250px" y="400px" :scale="1" :imageUrl="require('../assets/player.png')" />
         <LayeredImageChat x="360px" y="350px">Where should I go?</LayeredImageChat>
 
@@ -14,6 +15,8 @@
 
         <LayeredImageLabel x="650px" y="340px" :far="false">Trail</LayeredImageLabel>
         <LayeredImageNav x="600px" y="150px" height="300px" width="200px" destination="TrailHead" />
+
+        <LayeredImageSprite x="100px" y="450px" :scale="1" :imageUrl="require('../assets/squirrel.png')" :onclick="() => displayTrivia()" v-if="showSquirrel" />
       </LayeredImage>
 
       <p>Welcome to NatureBridge!</p>
@@ -24,12 +27,29 @@
 <script>
   import { globalStore } from '../main.js';
   import LayeredImagePackage from '../common/LayeredImage/';
+  import SquirrelTrivia from '../common/SquirrelTrivia';
 
   export default {
     name: 'CampHub',
-    components: { ...LayeredImagePackage },
+    components: { ...LayeredImagePackage, SquirrelTrivia },
     mounted() {
       globalStore.visitLocation('CampHub');
+    },
+    data() {
+      return {
+        triviaEnabled: false
+      }
+    },
+    computed: {
+      showSquirrel() {
+        return !globalStore.getAttr('basecampSquirrel');
+      }
+    },
+    methods: {
+      displayTrivia() {
+         this.triviaEnabled = true;
+         globalStore.setAttr('basecampSquirrel', true);
+      }
     }
   }
 </script>

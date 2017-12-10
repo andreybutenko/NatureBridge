@@ -84,7 +84,7 @@
           }
         ],
         conversationTree: [
-          { from: 'label', text: 'You return to your cabin and see your friend rummaging through his backpack.' },
+          { from: 'label', text: 'You return to your cabin and see your friend rummaging through her backpack.' },
           {
             from: 'decision'
           }

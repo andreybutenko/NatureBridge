@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="center-content">
-      <Conversation :conversationTree="conversationTree" :continueText="continueText" :continueDest="continueDest" />
+      <Conversation :conversationTree="conversationTree" :continueText="continueText" :continueDest="continueDest" :characterSprite="require('../assets/mom-speech.png')" />
     </div>
   </div>
 </template>
