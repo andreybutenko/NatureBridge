@@ -29,7 +29,7 @@
           <LayeredImageLabel x="280px" y="100px" :wide="true" :onclick="() => scene = 8">Splash water on Salmon</LayeredImageLabel>
           <LayeredImageLabel x="280px" y="150px" :wide="true" :onclick="() => scene = hasShovel ? 10 : 9">Dig trench to stream</LayeredImageLabel>
           <LayeredImageLabel x="280px" y="200px" :wide="true" :onclick="() => goBack()">Go back on trail</LayeredImageLabel>
-          <LayeredImageLabel x="280px" y="250px" :wide="true" :onclick="() => scene = 10">cheat</LayeredImageLabel>
+          <!-- <LayeredImageLabel x="280px" y="250px" :wide="true" :onclick="() => scene = 10">cheat</LayeredImageLabel> -->
         </template>
         <template v-if="scene == 8">
           <div class="dialog">

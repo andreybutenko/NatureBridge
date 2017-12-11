@@ -13,7 +13,7 @@
         <img src="../assets/ui/scrapbook.png" />
         <span class="label">Scrapbook</span>
       </div>
-      <div class="cheat-btn" @click="clickCheat()">Cheat</div>
+      <!-- <div class="cheat-btn" @click="clickCheat()">Cheat</div> -->
     </div>
   </div>
 </template>
