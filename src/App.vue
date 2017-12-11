@@ -98,7 +98,7 @@
     }
   }
 
-  a {
+  a:not(.normal) {
     display: inline-block;
     text-decoration: none;
     padding: 16px;

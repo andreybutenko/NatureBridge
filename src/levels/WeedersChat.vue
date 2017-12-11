@@ -1,12 +1,12 @@
 <template>
   <div class="container">
-    <div class="center-content">
-      <Conversation :conversationTree="conversationTree" :characterSprite="require('../assets/weeder-speech.png')" />
-    </div>
     <JournalEntry
       prompt="How does removing invasive species affect resilience of ecosystem in a quickly-changing climate?"
       :onComplete="() => this.next()"
       :visible="composing" />
+    <div class="center-content">
+      <Conversation :conversationTree="conversationTree" :characterSprite="require('../assets/weeder-speech.png')" />
+    </div>
   </div>
 </template>
 
@@ -28,7 +28,8 @@
           { from: 'label', text: 'You go up to the weeders.' },
           {
             from: 'me',
-            text: 'Hey, what are you doing?'
+            text: 'Hey, what are you doing?',
+            effect: () => this.composing = true
           },
           {
             from: 'them',

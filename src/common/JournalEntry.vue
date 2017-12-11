@@ -1,19 +1,26 @@
 <template>
-  <div class="journal-compose" v-show="visible">
-    <p class="prompt">{{ prompt }}</p>
-    <textarea v-model="response" placeholder="Type a response..."></textarea>
-    <div class="btn" @click="() => save()">Done</div>
+  <div class="journal-container">
+    <RangerWiki :shown="displayWiki" :ondismiss="() => displayWiki = false" />
+    <div class="journal-compose" v-show="visible">
+      <p class="prompt">{{ prompt }}</p>
+      <textarea v-model="response" placeholder="Type a response..."></textarea>
+      <div class="btn" @click="() => save()">Done</div>
+      <p class="read-more">Read about this on the <a class="normal" @click="() => displayWiki = true">Ranger Wiki!</a></p>
+    </div>
   </div>
 </template>
 
 <script>
   import { globalStore } from '../main.js';
+  import RangerWiki from './RangerWiki';
 
   export default {
     name: 'JournalEntry',
+    components: { RangerWiki },
     props: ['prompt', 'visible', 'onComplete'],
     data() {
       return {
+        displayWiki: false,
         response: ''
       }
     },
@@ -27,15 +34,24 @@
 </script>
 
 <style lang="scss" scoped>
+  .journal-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 999;
+  }
   .journal-compose {
     position: absolute;
     top: 0;
-    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: white;
     background-image: url('../assets/ui/journal-compose-bg.png');
     background-repeat: no-repeat;
     background-size: 100%;
-    height: 800px;
+    height: 724px;
     width: 500px;
     padding: 32px;
     margin-top: 16px;
@@ -49,6 +65,17 @@
     font-family: 'VT323';
     font-size: 24px;
     line-height: 1em;
+  }
+
+  .read-more {
+    padding: 16px 0;
+    text-align: center;
+
+    a {
+      cursor: pointer;
+      color: #3498db;
+      text-decoration: underline;
+    }
   }
 
   textarea {
