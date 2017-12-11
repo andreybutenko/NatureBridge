@@ -27,7 +27,7 @@
         </template>
         <template v-if="scene == -1 || scene == 7">
           <LayeredImageLabel x="280px" y="100px" :wide="true" :onclick="() => scene = 8">Splash water on Salmon</LayeredImageLabel>
-          <LayeredImageLabel x="280px" y="150px" :wide="true" :onclick="() => scene = 9">Dig trench to stream</LayeredImageLabel>
+          <LayeredImageLabel x="280px" y="150px" :wide="true" :onclick="() => scene = hasShovel ? 10 : 9">Dig trench to stream</LayeredImageLabel>
           <LayeredImageLabel x="280px" y="200px" :wide="true" :onclick="() => goBack()">Go back on trail</LayeredImageLabel>
           <LayeredImageLabel x="280px" y="250px" :wide="true" :onclick="() => scene = 10">cheat</LayeredImageLabel>
         </template>
@@ -75,7 +75,7 @@
     },
     data() {
       return {
-        scene: -1,
+        scene: 0,
         fishFreed: false
       }
     },
@@ -95,6 +95,9 @@
         else {
           return require('../assets/fish-trapped-bg.png');
         }
+      },
+      hasShovel() {
+        return globalStore.has('shovel');
       }
     },
     watch: {
