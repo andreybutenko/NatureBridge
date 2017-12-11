@@ -1,5 +1,6 @@
 import BusRide from './BusRide.vue';
 import CampHub from './CampHub.vue';
+import CampHubAlt from './CampHubAlt.vue';
 import Cabin from './Cabin.vue';
 import MessyRoom from './MessyRoom.vue';
 import MessyRoomIntro from './MessyRoomIntro.vue';
@@ -13,6 +14,7 @@ import WeedersAlt from './WeedersAlt.vue';
 import WeedersChat from './WeedersChat.vue';
 import WeedersChatAlt from './WeedersChatAlt.vue';
 import FishScene from './FishScene.vue';
+import Lake from './Lake.vue';
 
 export default {
   routes: [
@@ -20,6 +22,7 @@ export default {
     { path: '/MessyRoom', name: 'MessyRoom', component: MessyRoom },
     { path: '/BusRide', name: 'BusRide', component: BusRide },
     { path: '/CampHub', name: 'CampHub', component: CampHub },
+    { path: '/CampHubAlt', name: 'CampHubAlt', component: CampHubAlt },
     { path: '/Cabin', name: 'Cabin', component: Cabin },
     { path: '/TrailGame', name: 'TrailGame', component: TrailGame },
     { path: '/TrailGameAlt', name: 'TrailGameAlt', component: TrailGameAlt },
@@ -30,6 +33,7 @@ export default {
     { path: '/WeedersAlt', name: 'WeedersAlt', component: WeedersAlt },
     { path: '/WeedersChat', name: 'WeedersChat', component: WeedersChat },
     { path: '/WeedersChatAlt', name: 'WeedersChatAlt', component: WeedersChatAlt },
-    { path: '/FishScene', name: 'FishScene', component: FishScene}
+    { path: '/FishScene', name: 'FishScene', component: FishScene },
+    { path: '/Lake', name: 'Lake', component: Lake }
   ]
 }

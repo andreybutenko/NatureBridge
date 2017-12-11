@@ -1,5 +1,8 @@
 <template>
   <div class="modal-container" @click="onDismiss()">
+    <img class="map-expanded" src="../assets/ui/map-expanded.png">
+  </div>
+  <!-- <div class="modal-container" @click="onDismiss()">
     <div class="map modal-content big" @click.stop="() => {}">
       <PlayerMapNode name="Bed Room" :top="300" :left="20" :visible="hasVisited('MessyRoom')" />
 
@@ -15,7 +18,7 @@
       <PlayerMapLine :startTop="300" :startLeft="420" :endTop="300" :endLeft="620" :visible="hasVisited('CampHub')" />
       <PlayerMapNode name="Trail" :top="300" :left="620" :visible="hasVisited('TrailGame')" />
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script>

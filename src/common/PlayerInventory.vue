@@ -1,9 +1,13 @@
 <template>
   <div class="modal-container" @click="onDismiss()">
     <div class="modal-content big" @click.stop="() => {}">
-      <ul>
+      <img src="../assets/ui/backpack-open.png" class="backpack-icon" />
+      <ul v-if="inventory.length > 0">
         <li v-for="item in inventory">{{ item }}</li>
       </ul>
+      <p v-else>
+        Your backpack is empty!
+      </p>
     </div>
   </div>
 </template>
@@ -23,4 +27,8 @@
 </script>
 
 <style lang="scss" scoped>
+  .backpack-icon {
+    margin-top: -100px;
+    margin-left: -100px;
+  }
 </style>

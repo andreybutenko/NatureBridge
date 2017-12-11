@@ -51,7 +51,7 @@
   p {
     color: white;
   }
-  
+
   img {
     margin-bottom: 1em;
   }
