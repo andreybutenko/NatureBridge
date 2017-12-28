@@ -28,8 +28,7 @@
           { from: 'label', text: 'You go up to the weeders.' },
           {
             from: 'me',
-            text: 'Hey, what are you doing?',
-            effect: () => this.composing = true
+            text: 'Hey, what are you doing?'
           },
           {
             from: 'them',
