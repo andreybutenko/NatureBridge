@@ -1,5 +1,9 @@
 <template>
   <div class="container narrow">
+    <JournalEntry
+      prompt="Salmon have adapted to slow climate changes in the past, but it is not known if they can adapt to the faster speed of climate change today. How much do you think humans should help the ecosystem adjust? How much should we let the ecosystem naturally come to a new equilibrium?"
+      :onComplete="() => goBack()"
+      :visible="composing" />
     <div class="center-content" @click="() => next()">
       <LayeredImage :imageUrl="backgroundImage">
         <LayeredImageSprite x="600px" y="400px" :scale="1" :imageUrl="require('../assets/player.png')" :flip="true" />
@@ -54,8 +58,8 @@
         </template>
         <template v-if="scene == 12">
           <div class="dialog">
-            <p>This looks like the end of the trail.</p>
-            <div class="btn" @click.stop="() => goBack()">Go back</div>
+            <p>You find this concerning, and decide to write in your journal.</p>
+            <div class="btn" @click.stop="() => composing = true">Open journal</div>
           </div>
         </template>
       </LayeredImage>
@@ -66,17 +70,19 @@
 <script>
   import { globalStore } from '../main.js';
   import LayeredImagePackage from '../common/LayeredImage/';
+  import JournalEntry from '../common/JournalEntry';
 
   export default {
     name: 'FishScene',
-    components: { ...LayeredImagePackage },
+    components: { ...LayeredImagePackage, JournalEntry },
     mounted() {
       globalStore.visitLocation('FishScene');
     },
     data() {
       return {
         scene: 0,
-        fishFreed: false
+        fishFreed: false,
+        composing: false
       }
     },
     methods: {
