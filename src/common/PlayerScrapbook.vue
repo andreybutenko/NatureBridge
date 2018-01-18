@@ -3,8 +3,10 @@
     <div class="modal-content big modal-content-journal" @click.stop="() => {}">
       <!-- <div class="btn" @click="print()">Print this</div> -->
       <div class="left" v-if="journals.length > 0">
-        <b>{{ journals[0].title }}</b>
-        <p>{{ journals[0].response }}</p>
+        <template v-for="journal in journals">
+          <b>{{ journal.title }}</b>
+          <p>{{ journal.response }}</p>
+        </template>
       </div>
       <div class="right">
         <img src="../assets/journal/weeding.png" v-if="weedersHelped" />
@@ -66,13 +68,18 @@
   .left, .right {
     width: 323px;
     margin-left: 55px;
-    margin-right: 55px;
+    margin-right: 20px;
+    padding-right: 35px;
     margin-top: 60px;
     margin-bottom: 60px;
 
     img {
       width: 100%;
     }
+  }
+
+  .left {
+    overflow-y: scroll;
   }
 
   @media print {
