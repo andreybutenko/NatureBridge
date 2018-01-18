@@ -1,8 +1,13 @@
 <template>
   <div class="container">
+    <JournalEntry
+      prompt="  “For climate change adaptation, there is no recipe, no road map, and yet no time to lose; science and management partners must tackle the climate change issue in a timely way, despite uncertainty.”
+     With this statement in mind, what do you think are the most important strategies for the Park to take in the face of a changing climate?"
+      :onComplete="() => { hasComposed = true; composing = false; }"
+      :visible="composing" />
     <div class="center-content">
       <div>
-        <div class="pano-view" :style="{ backgroundImage: panoUrl, backgroundPositionX: panoPosition }" @click="attemptNavigation()">
+        <div class="pano-view" :style="{ backgroundImage: panoUrl, backgroundPositionX: panoPosition }">
         </div>
         <div class="control-container">
         	<div @click="turn('left')"><img src="../assets/trail/left.png" /></div>
@@ -10,6 +15,7 @@
         </div>
         <div class="text">
           {{ scrollingDisplay }}
+          <div class="btn-write" @click="() => composing = true" v-if="scrollingBuffer.length == 0 && !hasComposed">Reflect in your journal</div>
         </div>
       </div>
     </div>
@@ -18,9 +24,11 @@
 
 <script>
   import { globalStore } from '../main.js';
+  import JournalEntry from '../common/JournalEntry';
 
   export default {
     name: 'Lake',
+    components: { JournalEntry },
     data() {
       return {
         scrollingDisplay: '',
@@ -44,7 +52,9 @@
         offsetDeg: 0,
         rotation: 0,
         displaySuccess: false,
-        displayFail: false
+        displayFail: false,
+        composing: false,
+        hasComposed: false
       }
     },
     created() {
@@ -130,5 +140,15 @@
     margin-top: 16px;
     padding: 16px;
     text-align: center;
+  }
+
+  .btn-write {
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    padding: 16px;
+    margin: 8px 8px 8px 0;
+    color: white;
+    background-color: #3498db;
   }
 </style>

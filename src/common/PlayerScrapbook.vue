@@ -42,6 +42,10 @@
 </script>
 
 <style lang="scss" scoped>
+  b {
+    white-space: pre-wrap;
+  }
+
   p {
     white-space: pre-wrap;
     margin-bottom: 16px;

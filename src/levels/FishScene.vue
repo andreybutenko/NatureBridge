@@ -1,7 +1,8 @@
 <template>
   <div class="container narrow">
     <JournalEntry
-      prompt="Salmon have adapted to slow climate changes in the past, but it is not known if they can adapt to the faster speed of climate change today. How much do you think humans should help the ecosystem adjust? How much should we let the ecosystem naturally come to a new equilibrium?"
+      prompt="  Salmon have adapted to slow climate changes in the past, but it is not known if they can adapt to the faster speed of climate change today.
+     How much do you think humans should help the ecosystem adjust? How much should we let the ecosystem naturally come to a new equilibrium?"
       :onComplete="() => goBack()"
       :visible="composing" />
     <div class="center-content" @click="() => next()">
