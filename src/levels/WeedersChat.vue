@@ -79,6 +79,11 @@
                     {
                       from: 'label',
                       text: 'Walking away, you decide to write about invasive species in your journal.'
+                    },
+                    {
+                      from: 'label',
+                      text: 'You take out your journal.',
+                      effect: () => this.composing = true
                     }
                   );
                 }

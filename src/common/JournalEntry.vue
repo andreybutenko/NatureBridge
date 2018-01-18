@@ -1,7 +1,7 @@
 <template>
-  <div class="journal-container">
+  <div class="journal-container" v-if="visible">
     <RangerWiki :shown="displayWiki" :ondismiss="() => displayWiki = false" />
-    <div class="journal-compose" v-show="visible">
+    <div class="journal-compose">
       <p class="prompt">{{ prompt }}</p>
       <textarea v-model="response" placeholder="Type a response..."></textarea>
       <div class="btn" @click="() => save()">Done</div>
@@ -44,9 +44,9 @@
   }
   .journal-compose {
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(-50%);
     background-color: white;
     background-image: url('../assets/ui/journal-compose-bg.png');
     background-repeat: no-repeat;
