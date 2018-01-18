@@ -26,6 +26,7 @@
             label: 'Journal?',
             effect: () =>  {
               this.makeDecision(3, [
+                { from: 'me', text: 'Journal? How do I get one of those?' },
                 { from: 'them', text: 'The Park Ranger will give you one if you ask. You\'re supposed to fill it with pictures and writings. A lot of it is along the Elwha River trail.' },
                 { from: 'me', text: 'Good to know!' }
               ]);
@@ -53,8 +54,7 @@
             effect: () => {
               this.makeDecision(0, [
                 { from: 'me', text: 'What are you looking for?' },
-                { from: 'them', text: 'I\'m trying to find a pencil to draw in my journal.' },
-                { from: 'me', text: 'Journal? How do I get one of those?' }
+                { from: 'them', text: 'I\'m trying to find a pencil to draw in my journal.' }
               ]);
               if(globalStore.has('pencil')) {
                 this.unseenDecisions.unshift(this.optionalDecisions.filter(node => node.id == 4)[0]);
