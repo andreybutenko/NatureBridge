@@ -17,12 +17,20 @@
           <p>
             Over the next few decades, other lands in the US were added to this collection of federally protected parks, but there was no single organization that took care of all these different lands. On August 25th 1916, President Woodrow Wilson created the National Park Service to oversee all of the national parks and monuments. This act was called the Organic Act, and its goal was to create the National Park Service to preserve these lands so that they could be enjoyed by the public as well as future generations.
           </p>
+          <img src="../assets/wiki/wilson.png" />
+          <p>
+            <i>Image from US Library of Congress</i>
+          </p>
           <p>
             Actions from the President continued to affect the growth of the National Park Service. In 1933, Franklin D. Roosevelt added 56 sites that had been maintained by other government agencies to the National Park System (Executive Order in 1933). This act added sites to the National Park System that were not only beautiful, but that were also important historically and scientifically.
 Today the National Park System includes over 400 different lands across more than 84 million acres in 50 states and US territories. These different parks and monuments have been added to the System over time through acts of Congress. Congress is advised by the National Park Service itself as to what additions and changes should be made to the System. The President does not have the authority to create National Parks, but can declare land that is already federally controlled to be a National Monument (Antiquities Act of 1906).
           </p>
           <p>
             Over 20,000 employees work for the National Park Service today. Employees help maintain the parks and work with communities across the country to facilitate recreational activities, such as hiking and camping, as well as preserving historical and cultural significance of the lands. The National Park Service is the guardian of these precious lands and is an environmental advocate working to maintain the lands for future generations.
+          </p>
+          <img src="../assets/wiki/nps.png" />
+          <p>
+            <i>Image from National Park Service</i>
           </p>
           <p>
             <a href="https://www.nps.gov/aboutus/history.htm" target="_blank">Adapted from National Park Service</a>
@@ -33,6 +41,10 @@ Today the National Park System includes over 400 different lands across more tha
           <b>Invasive Species</b>
           <p>
             National parks are affected both by rapid changes in climate as well as the spread of invasive species. Invasive species are plants and animals that are not naturally found in a particular region and have damaging effects on the natural environment. Native species are those that are naturally found and contribute to the delicate balance of the ecosystem.
+          </p>
+          <img src="../assets/wiki/invasive-1.png" />
+          <p>
+            <i>Image from National Park Service</i>
           </p>
           <p>
             Park management must respond to both changes in climate as well as changes in plants and animals in order to preserve the park resources and the experience of visitors. Together, climate change and invasive species can affect the park in many ways, such as preventing native plants from growing in normal ways, forcing native species out of their normal habitats, and causing safety hazards for park visitors.
@@ -48,6 +60,10 @@ Today the National Park System includes over 400 different lands across more tha
           <p>
             Park managers can adjust to what scientists predict about future climate changes and impacts on the native species. To do this successfully, park managers must team up with neighboring parks and communities. Some approaches might try to resist changes to the environment, for example by removing invasive species. Other approaches may actually control changes in a manageable manner, for example by helping native species to adjust to climate changes with control of invasive species. Approaches will vary from park to park and depend on the specific ecosystems that exist in particular regions.
           </p>
+          <img src="../assets/wiki/invasive-2.png" />
+          <p>
+            <i>Image from National Park Service</i>
+          </p>
           <p>
             <a href="https://www.nps.gov/subjects/climatechange/invasivemgmt.htm" target="_blank">Adapted from National Park Service</a>
           </p>
@@ -56,55 +72,54 @@ Today the National Park System includes over 400 different lands across more tha
         <div class="text" v-if="selected == 2">
           <b>Rivers</b>
           <p>
-            Water defines Olympic National Park. In cloud form it delivers abundant rain and snow. As frozen glaciers it sculpts the peaks. In snow-melt rivulets it waters mountain meadows then feeds powerful rivers rushing to the sea. Alpine tarns perch on peaks and several huge lakes lie in the lowlands. These streams, rivers and lakes are a circulatory system—life-blood of the park's diversity.
+            In Olympic National Park, all of the land is influenced by water. Peaks are shaped by the ice of glaciers, valleys are carved out by rivers melting from snowpack above, and the diverse vegetation and wildlife depend on the presence of water to survive. Mount Olympus is the park’s highest peak and rivers flow down in all directions, hydrating the entirety of the park.
           </p>
           <p>
-            Mount Olympus, the park's highest peak, is in the middle of the range. Rivers radiate out from the central mountains like spokes on a wheel. On the park's west side, valleys are broad and U-shaped and rivers meander over wide floodplains. On other sides, the rivers are often constricted into narrow, steep-walled valleys.
+            A major river within Olympic is the Elwha River, which runs northward, just east of Lake Crescent. The river is an essential piece of a thriving ecosystem, particularly as habitat for fish that move between the ocean and freshwater. Eleven varieties of salmon and trout once counted on the Elwha as the location where they returned to lay their eggs. Further, the fish that populated the waters of Elwha were an important food source for the Lower Elwha Klallam tribe who lived along the river.
           </p>
           <p>
-            For millennia, the Elwha River ran wild, connecting mountains and seas in a thriving ecosystem. The river proved to be an ideal habitat for anadromous (sea-run) fish, with eleven varieties of salmon and trout spawning in its waters. For millennia these fish thrived in the river and provided food for the Lower Elwha Klallam tribe who resided along its banks.
+            This delicate ecosystem balance was upended when two dams were built along the river in the early 1900s. The dams created energy to fuel the region booming due to the growing lumber industry, but also created numerous problems for the plants and animals as well as the Lower Elwha Klallam. The dams prevented fish from accessing their spawning territory beyond the dams, they changed the way in which sediment and other debris moved by the river was transported downstream, and they created lakes behind the dams that flooded a lot of the land the Lower Elwha Klallam inhabited.
+          </p>
+
+          <img src="../assets/wiki/elwha-dam.png" />
+          <p>
+            <i>Image from National Park Service</i>
+          </p>
+
+          <p>
+            However, after almost 100 years, Congress determined that the dam should be removed, and in 2011 the largest dam removal project in the history of this country began. By 2014 both dams had been removed, but restoration of the river to its natural state is still underway. Scientists actively monitor fish species and river erosion to learn about how and how quickly a river can revert to its natural state.
+          </p>
+
+          <img src="../assets/wiki/elwha-pre.png" />
+
+          <p>
+            <i>Elwha River before dam removal. Image from The Seattle Times.</i>
+          </p>
+
+          <img src="../assets/wiki/elwha-pre.png" />
+
+          <p>
+            <i>Elwha River after dam removal. Image from The Seattle Times.</i>
           </p>
           <p>
-            In the late 1800s a growing nation looked to the Northwest to supply the lumber needed to build new cities.This brought rapid change to the Olympic Peninsula and especially to the Elwha River and the people of the Lower Elwha Klallam tribe. In the early 1900s, two dams, Elwha and Glines Canyon, were built on the river. The dams fueled regional growth, but blocked the migration of salmon upstream, disrupted the flow of sediment and wood downstream, and flooded the historic homelands and cultural sites of the Lower Elwha Klallam Tribe.
-          </p>
-          <p>
-            For over a century, the web of ecological and cultural connections in the Elwha Valley were broken - then the river's story changed course. In 1992, Congress passed the Elwha River Ecosystem and Fisheries Restoration Act, authorizing dam removal to restore the altered ecosystem. After two decades of planning, the largest dam removal in U.S. history began on September 17, 2011. Six months later Elwha Dam was gone, followed by the Glines Canyon Dam in 2014. Today, the Elwha River once again flows freely from its headwaters in the Olympic Mountains to the Strait of Juan de Fuca.
+            <a href="https://www.nps.gov/olym/learn/nature/elwha-ecosystem-restoration.htm" target="_blank">Adapted from National Park Service</a>
           </p>
         </div>
 
         <div class="text" v-if="selected == 3">
           <b>Climate Change</b>
           <p>
-            Climate change refers to a significant long-term shift in weather variables and includes not only shifts in mean conditions (e.g., increasing mean annual temperature and sea level) but also changes in climate variability (e.g., more intense storms and flooding).
-          </p>
-          <b>Climate Change At Olympic</b>
-          <p>
-            Like ecosystems around the world, the park is feeling the impact of human- driven climate change. Warmer winters mean some precipation that used to fall as snow—feeding our glaciers—is now falling as rain. So Olympic's glaciers are retreating. Blue Glacier on Mount Olympus lost three football fields in length and 74 feet (23m) of thickness between 1987 and 2010. Decreasing snowpack also means less water for salmon and other wildlife, plants and humans living downstream. Forest fires and mortality from forest pests are likely to increase in a warmer world.
+            What is climate change? Climate change refers to a significant long-term shift in weather variables and includes not only shifts in mean conditions (e.g., increasing average annual temperature and sea level) but also changes in climate variability (e.g., more intense storms and flooding). The human impact of burning fossil fuels is causing changes in the global climate that are out of the ordinary as compared to the cycles of ice ages that have been occurring over the past millions of years.
           </p>
           <p>
-            Is Olympic National Park large enough to give its resident species places to survive in a changing world? The diversity of landscapes and rainfall patterns here may provide a small buffer for the natural world as the human community makes decisions about addressing climate change. Choices we all make today may help species cope, so that our grandchildren can still experience the diverse wonder of Olympic.
+            Olympic National Park, like ecosystems everywhere on the planet, is affected by a changing climate. One major change is that of water. With warmer winters, more rain falls rather than snow, which runs off the slopes instead of contributing to snowpack to feed glaciers. Due to this effect, the glaciers in Olympic are growing smaller. Plants and animals, as well as humans, are also affected by this change because a smaller snowpack means less water melting through the spring and summer. Also, the peak flow through rivers will occur at a different time of the year, which will affect plants and animals the depend on water during a specific season. Trees may be further affected because with warmer temperatures forest fires and various tree pests and diseases will likely increase.
           </p>
           <p>
-            Environmental factors include everything that changes the local environment. This includes natural forces like weather and human effects like non-biodegradable litter.
+            Today, park managers are faced with many decisions about how to maintain the park and the ecosystems it contains to help protect plants and animals in the face of changing climate. These decisions cover many issues, including how to manage roads and trails, plant and animal species, and human impacts on the park, among many others.
           </p>
-          <ul>
-            <li><b>Water</b>: Rivers and glaciers carve out canyons and valleys. Ocean waves grind away cliff sides and create beaches of small rocks and shells. Water freezing in crevices splits cliffs into boulders and boulders into smaller rocks. Rain fosters the moss-laden rainforests of the Hoh and Quinault.</li>
-            <li><b>Earth</b>: Geological processes like earthquakes and tectonic forces shape mountains.</li>
-            <li><b>Wind</b>: Windstorms blow down trees and give seedlings the sun and space they need to grow.</li>
-            <li><b>Fire</b>: Lightning-caused fires burn off undergrowth and give new seedlings room to grow.</li>
-            <li><b>Roosevelt Elk</b>: Roosevelt elk help some plants get sunlight by keeping others from growing too high or dense.</li>
-            <li><b>Plants and Animals</b>: Insects eat plant material. Beavers dam streams. Roosevelt elk graze on shrubs and low-growing plants. Fungi and bacteria also play important roles, especially in the decomposition of plants or animals.</li>
-          </ul>
           <p>
-            Humans influence their environment simply by being in a place. These are a few examples of how we influence Olympic National Park:
+            <a href="https://www.nps.gov/olym/planyourvisit/upload/weather-2.pdf" target="_blank">Adapted from National Park Service</a>
           </p>
-          <ul>
-            <li><b>Highly-visible impacts</b> Roads, trails, walking over plants, and leaving trash behind all influence the natural environment.</li>
-            <li><b>Influences on animal life</b>: Feeding human food to animals can make them dependent and less able to forage on their own. Once accustomed to humans, larger animals like deer or bears can become dangerous in their search for food. Scaring wildlife with loud noises or altering their habitat can affect where and how they live.</lio>
-            <li><b>Global impacts</b>: Automobiles and industry putting tons of carbon dioxide into the atmosphere eventually causes worldwide temperatures to rise and glaciers to melt.</li>
-            <li><b>Impacts to Water Quality</b>: Chemical runoff, sedimentation, and accumulation of nitrogen in mountain lakes influence water quality in Olympic National Park. More information on NPS studies on water quality can be found here.</li>
-            <li><b>Impacts to Ecosystem</b>: The introduction and spreading of Nonnative Species and Invasive Plants can have many negative effects on the natural environment.</li>
-          </ul>
         </div>
       </div>
     </div>
@@ -166,7 +181,12 @@ Today the National Park System includes over 400 different lands across more tha
       .content .text {
         overflow-y: scroll;
         overflow-x: hidden;
-        height: 500px;
+        height: 450px;
+        text-align: left;
+      }
+
+      .content img {
+        max-width: 100%;
       }
     }
   }
