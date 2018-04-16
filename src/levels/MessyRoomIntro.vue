@@ -12,7 +12,7 @@
       <p>
         You wake up and realize that you forgot to finish packing the night before. Find as many items as you can before the bus leaves!
       </p>
-      <router-link class="btn" to="MessyRoom">Pack Fast!</router-link>
+      <router-link class="btn" to="Game/MessyRoom">Pack Fast!</router-link>
     </div>
   </div>
 </template>

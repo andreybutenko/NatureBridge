@@ -4,13 +4,20 @@ import VueRouter from 'vue-router';
 Vue.options.devtool = true;
 
 import App from './App.vue'
+import Game from './Game.vue'
+import Editor from './Editor.vue'
+import Welcome from './Welcome.vue'
 import LevelIndex from './levels/index.js';
 import trivia from './trivia.js';
 
 Vue.use(VueRouter);
 console.log(LevelIndex.routes)
 const router = new VueRouter({
-  routes: LevelIndex.routes
+  routes: [
+    { path: '', component: Welcome },
+    { path: '/game', component: Game, children: LevelIndex.routes },
+    { path: '/editor', component: Editor }
+  ]
 });
 
 export const globalStore = new Vue({

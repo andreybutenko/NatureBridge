@@ -16,24 +16,27 @@ import WeedersChatAlt from './WeedersChatAlt.vue';
 import FishScene from './FishScene.vue';
 import Lake from './Lake.vue';
 
+//import Welcome from '../spring/Welcome.vue';
+
 export default {
   routes: [
-    { path: '/', name: 'MessyRoomIntro', component: MessyRoomIntro },
-    { path: '/MessyRoom', name: 'MessyRoom', component: MessyRoom },
-    { path: '/BusRide', name: 'BusRide', component: BusRide },
-    { path: '/CampHub', name: 'CampHub', component: CampHub },
-    { path: '/CampHubAlt', name: 'CampHubAlt', component: CampHubAlt },
-    { path: '/Cabin', name: 'Cabin', component: Cabin },
-    { path: '/TrailGame', name: 'TrailGame', component: TrailGame },
-    { path: '/TrailGameAlt', name: 'TrailGameAlt', component: TrailGameAlt },
-    { path: '/TrailHead', name: 'TrailHead', component: TrailHead },
-    { path: '/RangerStation', name: 'RangerStation', component: RangerStation },
-    { path: '/TrailCabins', name: 'TrailCabins', component: TrailCabins },
-    { path: '/Weeders', name: 'Weeders', component: Weeders },
-    { path: '/WeedersAlt', name: 'WeedersAlt', component: WeedersAlt },
-    { path: '/WeedersChat', name: 'WeedersChat', component: WeedersChat },
-    { path: '/WeedersChatAlt', name: 'WeedersChatAlt', component: WeedersChatAlt },
-    { path: '/FishScene', name: 'FishScene', component: FishScene },
-    { path: '/Lake', name: 'Lake', component: Lake }
+    //{ path: '', name: 'Welcome', component: Welcome },
+    { path: '', name: 'MessyRoomIntro', component: MessyRoomIntro },
+    { path: 'MessyRoom', name: 'MessyRoom', component: MessyRoom },
+    { path: 'BusRide', name: 'BusRide', component: BusRide },
+    { path: 'CampHub', name: 'CampHub', component: CampHub },
+    { path: 'CampHubAlt', name: 'CampHubAlt', component: CampHubAlt },
+    { path: 'Cabin', name: 'Cabin', component: Cabin },
+    { path: 'TrailGame', name: 'TrailGame', component: TrailGame },
+    { path: 'TrailGameAlt', name: 'TrailGameAlt', component: TrailGameAlt },
+    { path: 'TrailHead', name: 'TrailHead', component: TrailHead },
+    { path: 'RangerStation', name: 'RangerStation', component: RangerStation },
+    { path: 'TrailCabins', name: 'TrailCabins', component: TrailCabins },
+    { path: 'Weeders', name: 'Weeders', component: Weeders },
+    { path: 'WeedersAlt', name: 'WeedersAlt', component: WeedersAlt },
+    { path: 'WeedersChat', name: 'WeedersChat', component: WeedersChat },
+    { path: 'WeedersChatAlt', name: 'WeedersChatAlt', component: WeedersChatAlt },
+    { path: 'FishScene', name: 'FishScene', component: FishScene },
+    { path: 'Lake', name: 'Lake', component: Lake }
   ]
 }

@@ -1,14 +1,6 @@
 <template>
   <div id="app">
-    <div class="ui-container">
-      <Sidebar
-        :onDisplayModal="displayModal" />
-      <PlayerMap v-if="mapVisible" :onDismiss="() => mapVisible = false" />
-      <PlayerInventory v-if="inventoryVisible" :onDismiss="() => inventoryVisible = false" />
-      <PlayerScrapbook v-if="scrapbookVisible" :onDismiss="() => scrapbookVisible = false" />
-      <router-view></router-view>
-      <Toast :text="toastText" :visible="toastVisible" />
-    </div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -79,7 +71,6 @@
   body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
-    background-color: #333;
   }
 
   .container {
@@ -145,12 +136,5 @@
         height: 600px;
       }
     }
-  }
-</style>
-
-<style lang="scss" scoped>
-  .ui-container {
-    display: flex;
-    flex-direction: row;
   }
 </style>
