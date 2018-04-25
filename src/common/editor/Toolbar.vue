@@ -1,18 +1,13 @@
 <template>
   <div class="editor-toolbar">
     <div class="btns">
-      <div class="btn" @click="clickNavigation('inventory')">
-        Import
-      </div>
       <div class="btn" @click="showSource()">
         Export
       </div>
-      <div class="btn" @click="clickNavigation('scrapbook')">
-        Settings
-      </div>
     </div>
-    <div class="btn-primary" @click="clickNavigation('scrapbook')">
-      <span>Preview</span>
+    <div class="btn-primary" @click="togglePreview()">
+      <span v-if="!previewEnabled">Preview</span>
+      <span v-else>Stop Preview</span>
     </div>
   </div>
 </template>
@@ -20,7 +15,7 @@
 <script>
   export default {
     name: 'Toolbar',
-    props: ['showSource']
+    props: ['showSource', 'previewEnabled', 'togglePreview']
   }
 </script>
 

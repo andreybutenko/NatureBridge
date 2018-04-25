@@ -69,6 +69,16 @@
             }
           },
           {
+            name: 'Chat bubble',
+            data: {
+              type: 'chat',
+              text: 'Chat Text',
+              top: '0%',
+              left: '0%',
+              flip: false
+            }
+          },
+          {
             name: 'Squirrel Trivia',
             data: {
               type: 'sprite',
@@ -77,6 +87,17 @@
               left: '0%',
               size: '8%',
               dancing: true
+            }
+          },
+          {
+            name: 'Clickable',
+            data: {
+              type: 'selectable',
+              top: '0%',
+              left: '0%',
+              width: '20%',
+              height: '20%',
+              layerTarget: -1
             }
           }
         ]

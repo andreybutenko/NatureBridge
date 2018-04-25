@@ -30,5 +30,6 @@
     max-width: 300px;
     background-color: #dfe6e9;
     overflow-y: scroll;
+    flex: 1;
   }
 </style>

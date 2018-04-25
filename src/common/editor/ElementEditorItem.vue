@@ -26,7 +26,7 @@
         if(this.property == 'type' || this.property == 'source') {
           return 'readonly';
         }
-        else if(this.property == 'size') {
+        else if(this.property == 'size' || this.property == 'width' || this.property == 'height') {
           return 'slider';
         }
         else if(typeof this.value == 'boolean') {
