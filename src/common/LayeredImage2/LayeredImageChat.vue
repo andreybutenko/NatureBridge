@@ -5,7 +5,7 @@
     :class="{ clickable: !!onclick, selected: selected, flip: flip }"
     @click.stop="onclick($event)">
     {{ text }}
-    <img class="chat-tail" src="/static/ui/chat-tail.png" />
+    <img class="chat-tail" src="/NatureBridge/static/ui/chat-tail.png" />
   </div>
 </template>
 
