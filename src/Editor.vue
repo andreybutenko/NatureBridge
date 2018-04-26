@@ -18,6 +18,9 @@
         <LayerEditor
           :layer="activeLayer"
           :changeLayer="changeLayer" />
+        <BackgroundEditor
+          :onUpdate="onBackgroundUpdate"
+          :index="activeLayer" />
         <StepEditor
           :data="layerStep"
           :onUpdate="onStepTypeUpdate" />
@@ -37,6 +40,7 @@
   import SceneGenerator from './common/LayeredImage2/SceneGenerator';
   import ElementEditor from './common/editor/ElementEditor';
   import StepEditor from './common/editor/StepEditor';
+  import BackgroundEditor from './common/editor/BackgroundEditor';
   import LayerEditor from './common/editor/LayerEditor';
 
   export default {
@@ -47,6 +51,7 @@
       SceneGenerator,
       ElementEditor,
       StepEditor,
+      BackgroundEditor,
       LayerEditor
     },
     data() {
@@ -129,6 +134,9 @@
           prompt: prompt,
           options: options
         };
+      },
+      onBackgroundUpdate(background) {
+        this.scene.background = 'backgrounds/' + background;
       },
       takeStep(i) {
         if(this.layerStep.stepType == 'Click through') {

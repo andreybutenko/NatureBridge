@@ -38,13 +38,57 @@
             }
           },
           {
-            name: 'person-kid',
+            name: 'Main Character',
             data: {
               type: 'sprite',
-              source: 'characters/player.png',
+              source: 'characters/main-character.png',
               top: '0%',
               left: '0%',
-              size: '20%',
+              size: '35%',
+              flip: false
+            }
+          },
+          {
+            name: 'Brown Jacket Kid',
+            data: {
+              type: 'sprite',
+              source: 'characters/brown-jacket-kid.png',
+              top: '0%',
+              left: '0%',
+              size: '35%',
+              flip: false
+            }
+          },
+          {
+            name: 'Green Jacket Kid',
+            data: {
+              type: 'sprite',
+              source: 'characters/green-jacket-kid.png',
+              top: '0%',
+              left: '0%',
+              size: '35%',
+              flip: false
+            }
+          },
+          {
+            name: 'Green Poncho Kid',
+            data: {
+              type: 'sprite',
+              source: 'characters/green-poncho-kid.png',
+              top: '0%',
+              left: '0%',
+              size: '35%',
+              flip: false
+            }
+          },
+          {
+            name: 'Pink Jacket Kid',
+            data: {
+              type: 'sprite',
+              source: 'characters/pink-jacket-kid.png',
+              top: '0%',
+              left: '0%',
+              size: '35%',
               flip: false
             }
           },
@@ -87,17 +131,6 @@
               left: '0%',
               size: '8%',
               dancing: true
-            }
-          },
-          {
-            name: 'Clickable',
-            data: {
-              type: 'selectable',
-              top: '0%',
-              left: '0%',
-              width: '20%',
-              height: '20%',
-              layerTarget: -1
             }
           }
         ]
