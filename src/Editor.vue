@@ -152,7 +152,7 @@
         this.previewEnabled = !this.previewEnabled;
       },
       escapeKeyListener: function(e) {
-        if(e.keyCode === 46 && this.selectedIndex != -1) {
+        if((e.keyCode === 46 || e.keyCode == 8) && this.selectedIndex != -1) {
           this.removeElement(this.selectedIndex);
         }
       }
@@ -180,7 +180,7 @@
               selected: this.selectedIndex == index,
               debug: element.type == 'selectable' || element.debug, // always true for selectable
               onclick: ((this.selectedIndex == -1 || this.selectedIndex == index) && !element.background) ?
-                          e => this.select(index, e.ctrlKey) :
+                          e => this.select(index, e.shiftKey) :
                           () => {}
             }
           })
