@@ -3,6 +3,7 @@
     <Toolbar
       :previewEnabled="previewEnabled"
       :togglePreview="togglePreview"
+      :showImport="showImport"
       :showSource="showSource" />
     <div class="workspace">
       <ElementSelector
@@ -97,7 +98,7 @@
         this.drag = drag;
       },
       addElement(data) {
-        this.layer.push(data);
+        this.layer.push({...data});
       },
       removeElement(index) {
         this.layer.splice(index - this.numElementsInBackground, 1);
@@ -105,6 +106,14 @@
       },
       setElementProperty(property, value) {
         this.currentSelected[property] = value;
+      },
+      showImport() {
+        const result = prompt("Paste generated code here:");
+        const obj = JSON.parse(result);
+
+        this.scene.background = obj.background;
+        this.layers = obj.layers;
+        thiss.layerSteps = obj.layerSteps;
       },
       showSource() {
         window.open('', null, 'status=yes,toolbar=no,menubar=no,location=no').document.write('<pre>' +

@@ -31,6 +31,7 @@
     border: 5px solid black;
     text-align: center;
     padding: 8px 16px;
+    user-select: none;
 
     &.clickable {
       cursor: pointer;

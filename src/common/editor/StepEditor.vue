@@ -19,7 +19,7 @@
           <input v-model="option.description">
         </div>
         <div class="layer-container">
-          <label>Layer:</label>
+          <label>Stage:</label>
           <input v-model="option.layer" type="number">
         </div>
         <div class="control-container">

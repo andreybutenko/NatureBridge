@@ -1,6 +1,9 @@
 <template>
   <div class="editor-toolbar">
     <div class="btns">
+      <div class="btn" @click="showImport()">
+        Import
+      </div>
       <div class="btn" @click="showSource()">
         Export
       </div>
@@ -15,7 +18,7 @@
 <script>
   export default {
     name: 'Toolbar',
-    props: ['showSource', 'previewEnabled', 'togglePreview']
+    props: ['showImport', 'showSource', 'previewEnabled', 'togglePreview']
   }
 </script>
 

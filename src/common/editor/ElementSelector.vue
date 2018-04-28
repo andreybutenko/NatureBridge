@@ -18,11 +18,6 @@
     components: {
       ElementSelectorItem
     },
-    methods: {
-      test() {
-        alert('hi')
-      }
-    },
     data() {
       return {
         items: [

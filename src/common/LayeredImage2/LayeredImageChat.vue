@@ -33,6 +33,7 @@
     border-radius: 20px;
     text-align: center;
     padding: 8px 16px;
+    user-select: none;
 
     &.clickable {
       cursor: pointer;
