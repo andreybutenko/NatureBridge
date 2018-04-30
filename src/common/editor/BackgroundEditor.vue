@@ -16,9 +16,20 @@
         background: 'base-camp.png',
         backgrounds: [
           'base-camp.png',
+          'basecamp_final.png',
+          'beetle_impact.png',
+          'campfire.png',
+          'compass_trailhead.png',
+          'compass_tutorial.png',
+          'dispose_waste.png',
           'fish-trapped-bg.png',
+          'landslide.png',
+          'no_music.png',
+          'old_mill.png',
+          'pickaxe.png',
           'ranger-inside.png',
           'trail-cabins.jpg',
+          'washed_out_bridge.png',
           'weeders-bg.png'
         ]
       }
