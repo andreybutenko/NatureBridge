@@ -3,9 +3,7 @@
     class="layered-image-label"
     :style="{ top: y, left: x }"
     :class="{ clickable: !!onclick, selected: selected }"
-    @click.stop="onclick($event)">
-    {{ text }}
-  </div>
+    @click.stop="onclick($event)">{{ text }}</div>
 </template>
 
 <script>

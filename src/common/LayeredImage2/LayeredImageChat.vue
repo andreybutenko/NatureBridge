@@ -3,9 +3,7 @@
     class="layered-image-chat"
     :style="{ top: y, left: x }"
     :class="{ clickable: !!onclick, selected: selected, flip: flip }"
-    @click.stop="onclick($event)">
-    {{ text }}
-    <img class="chat-tail" src="/NatureBridge/static/ui/chat-tail.png" />
+    @click.stop="onclick($event)">{{ text }}<img class="chat-tail" src="/NatureBridge/static/ui/chat-tail.png" />
   </div>
 </template>
 
@@ -34,6 +32,7 @@
     text-align: center;
     padding: 8px 16px;
     user-select: none;
+    white-space: pre;
 
     &.clickable {
       cursor: pointer;

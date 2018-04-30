@@ -8,6 +8,9 @@
     <span class="value" v-if="type == 'text'">
       <input type="text" :value="value" @input="setElementProperty(property, $event.target.value)">
     </span>
+    <span class="value" v-if="type == 'multiline-text'">
+      <textarea type="text" :value="value" @input="setElementProperty(property, $event.target.value)" />
+    </span>
     <span class="value" v-if="type == 'slider'">
       <input type="range" min="1" max="100" :value="removePercent(value)" @input="setElementProperty(property, $event.target.value + '%')">
     </span>
@@ -34,6 +37,9 @@
         }
         else if(this.property == 'top' || this.property == 'left') {
           return 'percent-text';
+        }
+        else if(this.property == 'text') {
+          return 'multiline-text';
         }
         else {
           return 'text';

@@ -161,7 +161,11 @@
         this.previewEnabled = !this.previewEnabled;
       },
       escapeKeyListener: function(e) {
-        if((e.keyCode === 46 || e.keyCode == 8) && this.selectedIndex != -1) {
+        if(
+          (e.keyCode === 46 || e.keyCode == 8) &&
+          this.selectedIndex != -1 &&
+          (document.activeElement.nodeName != 'TEXTAREA' && document.activeElement.nodeName != 'INPUT')) {
+            console.log(document.activeElement.nodeName);
           this.removeElement(this.selectedIndex);
         }
       }
