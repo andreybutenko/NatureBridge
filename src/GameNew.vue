@@ -48,14 +48,18 @@
         canvasWidth: 0,
         canvasHeight: 0,
         activeLayer: 1,
-        currentScene: 'IntroTest',
+        currentScene: 'HT1',
         showSquirrelTrivia: null,
         squirrelFound: []
       }
     },
     methods: {
       takeStep(i) {
-        if(this.layerStep.stepType == 'Click through') {
+        if(this.layerStep.hasOwnProperty('nextScene')) {
+          this.currentScene = this.layerStep.nextScene;
+          this.activeLayer = 1; // this line must go AFTER layerStep.nextScene
+        }
+        else if(this.layerStep.stepType == 'Click through') {
           this.activeLayer++;
         }
         else {
