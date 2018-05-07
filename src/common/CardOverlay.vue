@@ -24,7 +24,7 @@
     <div class="welcome-modal-container">
       <div class="welcome-modal">
         <div class="image">
-          <img src="/static/misc/national-parks.jpg" />
+          <img src="/NatureBridge/static/misc/national-parks.jpg" />
         </div>
         <div class="title">
           National Park Service
