@@ -1,8 +1,8 @@
 <template>
-  <div class="step-container" v-if="!!layerStep">
+  <div class="step-generator" v-if="!!layerStep">
     <div class="btn" v-if="layerStep.stepType == 'Click through'" @click="takeStep()">Next</div>
     <template v-else>
-      <div>{{ layerStep.prompt }}</div>
+      <div class="label" v-if="!!layerStep.prompt">{{ layerStep.prompt }}</div>
       <div class="btn" v-for="(option, i) in layerStep.options" @click="takeStep(i)">
         {{ option.description }}
       </div>
@@ -18,7 +18,12 @@
 </script>
 
 <style lang="scss" scoped>
-  .step-container {
+  .step-generator {
+    .label {
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
     .btn {
       background-color: #dfe6e9;
       border: 1px solid #636e72;
