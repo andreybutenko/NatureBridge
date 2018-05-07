@@ -23,9 +23,9 @@
       }
     },
     methods: {
-      click() {
+      click(e) {
         if(!!this.onclick) {
-          this.onclick();
+          this.onclick(e);
         }
       }
     }

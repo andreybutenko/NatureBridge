@@ -28,9 +28,11 @@
           'old_mill.png',
           'pickaxe.png',
           'ranger-inside.png',
+          'salmon-01.png',
           'trail-cabins.jpg',
           'washed_out_bridge.png',
-          'weeders-bg.png'
+          'weeders-bg.png',
+          'weeders_px-01.png'
         ]
       }
     },

@@ -11,9 +11,9 @@
     name: 'LayeredImageLabel',
     props: ['x', 'y', 'onclick', 'text', 'selected'],
     methods: {
-      click() {
+      click(e) {
         if(!!this.onclick) {
-          this.onclick();
+          this.onclick(e);
         }
       }
     }

@@ -19,6 +19,9 @@
         <LayerEditor
           :layer="activeLayer"
           :changeLayer="changeLayer" />
+        <CopyFrom
+          :index="activeLayer"
+          :copyFromPrevious="copyFromPrevious" />
         <BackgroundEditor
           :onUpdate="onBackgroundUpdate"
           :index="activeLayer" />
@@ -43,6 +46,7 @@
   import StepEditor from './common/editor/StepEditor';
   import BackgroundEditor from './common/editor/BackgroundEditor';
   import LayerEditor from './common/editor/LayerEditor';
+  import CopyFrom from './common/editor/CopyFrom';
 
   export default {
     name: 'Editor',
@@ -53,7 +57,8 @@
       ElementEditor,
       StepEditor,
       BackgroundEditor,
-      LayerEditor
+      LayerEditor,
+      CopyFrom
     },
     data() {
       return {
@@ -73,7 +78,7 @@
         ],
         scene: {
           background: 'backgrounds/base-camp.png',
-          mousemove: e => {
+          mousemove: (e) => {
             if(e.target.classList.contains('layered-image-img')) {
               this.offsetX = e.target.x;
               this.offsetY = e.target.y;
@@ -94,6 +99,7 @@
     },
     methods: {
       select(index, drag) {
+        console.log('select', index, drag)
         this.selectedIndex = index;
         this.drag = drag;
       },
@@ -135,6 +141,11 @@
             options: []
           })
         }
+      },
+      copyFromPrevious() {
+        this.layers[this.activeLayer - 1].forEach(obj => {
+          this.addElement({ ...obj });
+        });
       },
       onStepTypeUpdate(stepType, prompt, options) {
         this.layerSteps[this.activeLayer] = {

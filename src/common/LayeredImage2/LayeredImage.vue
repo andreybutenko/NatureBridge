@@ -1,5 +1,5 @@
 <template>
-  <div class="layered-image" @mousemove="mousemove || noop" @click="onclick || noop">
+  <div class="layered-image" @mousemove="onmousemove($event)" @click="click">
     <img class="layered-image-img" :src="imageUrl" />
     <slot></slot>
   </div>
@@ -10,7 +10,16 @@
     name: 'LayeredImage',
     props: ['imageUrl', 'mousemove', 'onclick'],
     methods: {
-      noop() {}
+      onmousemove(e) {
+        if(!!this.onmousemove) {
+          this.mousemove(e);
+        }
+      },
+      click() {
+        if(!!this.click) {
+          this.onclick();
+        }
+      }
     }
   }
 </script>
