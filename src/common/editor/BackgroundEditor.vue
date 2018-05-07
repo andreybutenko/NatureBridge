@@ -29,6 +29,7 @@
           'pickaxe.png',
           'ranger-inside.png',
           'salmon-01.png',
+          'salmon_final-01.png',
           'trail-cabins.jpg',
           'washed_out_bridge.png',
           'weeders-bg.png',
