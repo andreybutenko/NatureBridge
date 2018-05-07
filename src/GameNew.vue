@@ -1,5 +1,7 @@
 <template>
   <div class="game">
+    <SquirrelTrivia
+      :registerShow="registerShowSquirrelTrivia" />
     <div class="primary-view">
       <SceneGenerator
         :scene="sceneProcessed" />
@@ -25,12 +27,14 @@
   import Levels from './levelsNew';
   import SceneGenerator from './common/LayeredImage2/SceneGenerator2';
   import StepGenerator from './common/LayeredImage2/StepGenerator';
+  import SquirrelTrivia from './common/SquirrelTrivia';
 
   export default {
     name: 'GameNew',
     components: {
       SceneGenerator,
-      StepGenerator
+      StepGenerator,
+      SquirrelTrivia
     },
     metaInfo: {
       meta: [
@@ -44,7 +48,9 @@
         canvasWidth: 0,
         canvasHeight: 0,
         activeLayer: 1,
-        currentScene: 'IntroTest'
+        currentScene: 'IntroTest',
+        showSquirrelTrivia: null,
+        squirrelFound: []
       }
     },
     methods: {
@@ -57,9 +63,16 @@
         }
       },
       keyListener: function(e) {
+        console.log('key', e.keyCode)
+        if(e.keyCode == 65) {
+          this.showSquirrelTrivia();
+        }
         if((e.keyCode === 46 || e.keyCode == 8) && this.selectedIndex != -1) {
           //this.removeElement(this.selectedIndex);
         }
+      },
+      registerShowSquirrelTrivia(showSquirrelTrivia) {
+        this.showSquirrelTrivia = showSquirrelTrivia;
       }
     },
     computed: {
@@ -72,7 +85,23 @@
       sceneProcessed() {
         return {
           background: this.scene.background,
-          elements: this.layerElements
+          elements: this.layerElements.map((element, index) => {
+            if(element.type == 'sprite' && element.source == 'squirrel.png' && element.dancing == true) {
+              return {
+                ...element,
+                dancing: this.squirrelFound.indexOf(this.currentScene) == -1,
+                onclick: this.squirrelFound.indexOf(this.currentScene) == -1 ?
+                  () => {
+                    this.squirrelFound.push(this.currentScene);
+                    this.showSquirrelTrivia();
+                  } :
+                  () => {}
+              }
+            }
+            else {
+              return element;
+            }
+          })
         }
       },
       layerElements() {
@@ -91,10 +120,10 @@
       }
     },
     created: function() {
-      document.addEventListener('keyup', this.escapeKeyListener);
+      document.addEventListener('keyup', this.keyListener);
     },
     destroyed: function() {
-      document.removeEventListener('keyup', this.escapeKeyListener);
+      document.removeEventListener('keyup', this.keyListener);
     }
   }
 </script>
@@ -175,6 +204,7 @@
           &.btn-map {
             background-image: url('/static/ui/map.png');
           }
+
           &.btn-scrapbook {
             background-image: url('/static/ui/scrapbook.png');
           }
