@@ -4,7 +4,7 @@
     class="layered-image-sprite"
     :class="{ clickable: !!onclick, dancing: dancing, selected: selected }"
     :style="style"
-    @click.stop="onclick($event)">
+    @click.stop="click($event)">
   </div>
 </template>
 

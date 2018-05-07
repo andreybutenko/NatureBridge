@@ -1,112 +1,50 @@
 <template>
-  <div class="game-view">
-    <SceneGenerator
-      :takeStep="takeStep"
-      :scene="sceneProcessed" />
+  <div class="game">
+    <div class="primary-view">
+      <SceneGenerator
+        :scene="sceneProcessed" />
+    </div>
+    <div class="secondary-view">
+      <div class="step-container">
+        <StepGenerator
+          :takeStep="takeStep"
+          :layerStep="layerStep" />
+      </div>
+      <div class="game-btns-container">
+        [BUTTON] [BUTTON] [BUTTON]
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
   import Vue from 'vue';
-  import SceneGenerator from './common/LayeredImage2/SceneGenerator';
+  import Levels from './levelsNew';
+  import SceneGenerator from './common/LayeredImage2/SceneGenerator2';
+  import StepGenerator from './common/LayeredImage2/StepGenerator';
 
   export default {
     name: 'GameNew',
     components: {
-      SceneGenerator
+      SceneGenerator,
+      StepGenerator
+    },
+    metaInfo: {
+      meta: [
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      ]
     },
     data() {
       return {
-        previewEnabled: false,
-        selectedIndex: -1,
         offsetX: 0,
         offsetY: 0,
         canvasWidth: 0,
         canvasHeight: 0,
-        drag: false,
-        activeLayer: 0,
-        layers: [
-          []
-        ],
-        layerSteps: [
-          null
-        ],
-        scene: {
-          background: 'backgrounds/base-camp.png',
-          mousemove: e => {
-            if(e.target.classList.contains('layered-image-img')) {
-              this.offsetX = e.target.x;
-              this.offsetY = e.target.y;
-              this.canvasWidth = e.target.clientWidth;
-              this.canvasHeight = e.target.clientHeight;
-            }
-
-            if(this.selectedIndex > -1 && this.drag) {
-              const x = Math.round((e.pageX - this.offsetX) / this.canvasWidth * 100) + '%';
-              const y = Math.round((e.pageY - this.offsetY) / this.canvasHeight * 100) + '%';
-              this.currentSelected.left = x;
-              this.currentSelected.top = y;
-            }
-          },
-          elements: [] // automatically generated as sceneProcessed
-        }
+        activeLayer: 1,
+        currentScene: 'IntroTest'
       }
     },
     methods: {
-      select(index, drag) {
-        this.selectedIndex = index;
-        this.drag = drag;
-      },
-      addElement(data) {
-        this.layer.push({...data});
-      },
-      removeElement(index) {
-        this.layer.splice(index - this.numElementsInBackground, 1);
-        this.selectedIndex = -1;
-      },
-      setElementProperty(property, value) {
-        this.currentSelected[property] = value;
-      },
-      showImport() {
-        const result = prompt("Paste generated code here:");
-        const obj = JSON.parse(result);
-
-        this.scene.background = obj.background;
-        this.layers = obj.layers;
-        thiss.layerSteps = obj.layerSteps;
-      },
-      showSource() {
-        window.open('', null, 'status=yes,toolbar=no,menubar=no,location=no').document.write('<pre>' +
-          JSON.stringify({
-            background: this.scene.background,
-            layers: this.layers,
-            layerSteps: this.layerSteps
-          }, null, 2) +
-        '</pre>');
-      },
-      changeLayer(offset) {
-        this.selectedIndex = -1;
-        this.activeLayer = Math.max(this.activeLayer + offset, 0);
-        if(this.activeLayer >= this.layers.length) {
-          this.layers.push([]);
-          this.layerSteps.push({
-            stepType: 'Click through',
-            prompt: 'You respond with:',
-            options: []
-          })
-        }
-      },
-      onStepTypeUpdate(stepType, prompt, options) {
-        this.layerSteps[this.activeLayer] = {
-          index: this.activeLayer,
-          stepType: stepType,
-          prompt: prompt,
-          options: options
-        };
-      },
-      onBackgroundUpdate(background) {
-        this.scene.background = 'backgrounds/' + background;
-      },
       takeStep(i) {
         if(this.layerStep.stepType == 'Click through') {
           this.activeLayer++;
@@ -115,62 +53,38 @@
           this.activeLayer = this.layerStep.options[i].layer;
         }
       },
-      togglePreview() {
-        this.selectedIndex = -1;
-        this.activeLayer = 1;
-        this.previewEnabled = !this.previewEnabled;
-      },
-      escapeKeyListener: function(e) {
+      keyListener: function(e) {
         if((e.keyCode === 46 || e.keyCode == 8) && this.selectedIndex != -1) {
-          this.removeElement(this.selectedIndex);
+          //this.removeElement(this.selectedIndex);
         }
       }
     },
     computed: {
-      numElementsInBackground() {
-        return this.layers[0].length;
-      },
       layerStep() {
         return {
-          ...this.layerSteps[this.activeLayer],
+          ...this.scene.layerSteps[this.activeLayer],
           index: this.activeLayer
         }
       },
       sceneProcessed() {
         return {
-          ...this.scene,
-          onclick: () => {
-            this.selectedIndex = -1;
-            this.drag = false;
-          },
-          elements: this.layerElements.map((element, index) => {
-            return {
-              ...element,
-              selected: this.selectedIndex == index,
-              debug: element.type == 'selectable' || element.debug, // always true for selectable
-              onclick: ((this.selectedIndex == -1 || this.selectedIndex == index) && !element.background) ?
-                          e => this.select(index, e.shiftKey) :
-                          () => {}
-            }
-          })
+          background: this.scene.background,
+          elements: this.layerElements
         }
-      },
-      currentSelected() {
-        return this.layerElements.filter((element, index) => index == this.selectedIndex)[0];
       },
       layerElements() {
         if(this.activeLayer == 0) {
-          return this.layers[0];
+          return this.scene.layers[0];
         }
         else {
           return [
-            ...this.layers[0].map(x => {return { ...x, background: true }}),
-            ...this.layers[this.activeLayer]
+            ...this.scene.layers[0],
+            ...this.scene.layers[this.activeLayer]
           ];
         }
       },
-      layer() {
-        return this.layers[this.activeLayer];
+      scene() {
+        return Levels[this.currentScene];
       }
     },
     created: function() {
@@ -183,25 +97,50 @@
 </script>
 
 <style lang="scss" scoped>
+  $orientation-break: 600px;
   #app {
     background-color: white !important;
   }
 
-  .workspace {
+  .game {
     display: flex;
     flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 
-    & > * {
-      height: calc(100vh - 70px);
+    @media only screen and (max-width: $orientation-break) {
+      flex-direction: column;
     }
 
-    .wide {
-      flex: 1;
+    .primary-view {
+      flex: 1 0 75%;
+      background-color: red;
+      max-width: 100vw;
+
+      @media only screen and (max-width: $orientation-break) {
+        flex: 0 0 0;
+      }
     }
 
-    .vertical {
+    .secondary-view {
+      flex: 0 1 25%;
       display: flex;
       flex-direction: column;
+      background-color: blue;
+
+      @media only screen and (max-width: $orientation-break) {
+        flex: 1 0 0;
+      }
+
+      .step-container {
+        background-color: purple;
+        flex: 1;
+      }
+
+      .game-btns-container  {
+        background-color: yellow;
+      }
     }
   }
 </style>

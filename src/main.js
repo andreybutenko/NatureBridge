@@ -1,21 +1,25 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router';
+import Meta from 'vue-meta'
 
 Vue.options.devtool = true;
 
 import App from './App.vue'
 import Game from './Game.vue'
+import GameNew from './GameNew.vue'
 import Editor from './Editor.vue'
 import Welcome from './Welcome.vue'
 import LevelIndex from './levels/index.js';
 import trivia from './trivia.js';
 
 Vue.use(VueRouter);
-console.log(LevelIndex.routes)
+Vue.use(Meta);
+
 const router = new VueRouter({
   routes: [
     { path: '', component: Welcome },
     { path: '/game', component: Game, children: LevelIndex.routes },
+    { path: '/game2', component: GameNew },
     { path: '/editor', component: Editor }
   ]
 });
