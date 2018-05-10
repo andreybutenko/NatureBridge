@@ -26,6 +26,7 @@
           'landslide.png',
           'no_music.png',
           'old_mill.png',
+          'old_mill_river.png',
           'pickaxe.png',
           'ranger-inside.png',
           'salmon-01.png',
