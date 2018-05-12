@@ -468,9 +468,7 @@ export default {
     },
     {
       "index": 1,
-      "stepType": "Click through",
-      "prompt": "You respond with:",
-      "options": []
+      "stepType": "Click through"
     },
     {
       "index": 2,
@@ -485,15 +483,11 @@ export default {
     },
     {
       "index": 3,
-      "stepType": "Click through",
-      "prompt": "You respond with:",
-      "options": []
+      "stepType": "Click through"
     },
     {
       "index": 4,
-      "stepType": "Click through",
-      "prompt": "You respond with:",
-      "options": []
+      "stepType": "Click through"
     },
     {
       "index": 5,
@@ -523,15 +517,11 @@ export default {
     },
     {
       "index": 7,
-      "stepType": "Click through",
-      "prompt": "You respond with:",
-      "options": []
+      "stepType": "Click through"
     },
     {
       "index": 8,
-      "stepType": "Click through",
-      "prompt": "You respond with:",
-      "options": []
+      "stepType": "Click through"
     },
     {
       "index": 9,
@@ -546,15 +536,11 @@ export default {
     },
     {
       "index": 10,
-      "stepType": "Click through",
-      "prompt": "You respond with:",
-      "options": []
+      "stepType": "Click through"
     },
     {
       "index": 11,
-      "stepType": "Click through",
-      "prompt": "You respond with:",
-      "options": []
+      "stepType": "Click through"
     },
     {
       "index": 12,
@@ -617,27 +603,20 @@ export default {
     },
     {
       "index": 17,
-      "stepType": "Click through",
-      "prompt": "You respond with:",
-      "options": []
+      "stepType": "Click through"
     },
     {
       "index": 18,
-      "stepType": "Click through",
-      "prompt": "You respond with:",
-      "options": []
+      "stepType": "Click through"
     },
     {
       "index": 19,
-      "stepType": "Click through",
-      "prompt": "You respond with:",
-      "options": []
+      "stepType": "Click through"
     },
     {
       "index": 20,
       "stepType": "Click through",
-      "prompt": "You respond with:",
-      "options": []
+      "nextScene": "MT3"
     }
   ]
 }

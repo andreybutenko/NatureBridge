@@ -116,9 +116,7 @@ export default {
     null,
     {
       "index": 1,
-      "stepType": "Click through",
-      "prompt": "You respond with:",
-      "options": []
+      "stepType": "Click through"
     },
     {
       "index": 2,
@@ -159,39 +157,27 @@ export default {
     },
     {
       "index": 5,
-      "stepType": "Click through",
-      "prompt": "You respond with:",
-      "options": []
+      "stepType": "Click through"
     },
     {
       "index": 6,
-      "stepType": "Click through",
-      "prompt": "You respond with:",
-      "options": []
+      "stepType": "Click through"
     },
     {
       "index": 7,
-      "stepType": "Click through",
-      "prompt": "You respond with:",
-      "options": []
+      "stepType": "Click through"
     },
     {
       "index": 8,
-      "stepType": "Click through",
-      "prompt": "You respond with:",
-      "options": []
+      "stepType": "Click through"
     },
     {
       "index": 9,
-      "stepType": "Click through",
-      "prompt": "You respond with:",
-      "options": []
+      "stepType": "Click through"
     },
     {
       "index": 10,
       "stepType": "Click through",
-      "prompt": "You respond with:",
-      "options": [],
       "nextScene": "HT2"
     }
   ]

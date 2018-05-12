@@ -69,7 +69,7 @@
       keyListener: function(e) {
         console.log('key', e.keyCode)
         if(e.keyCode == 65) {
-          this.showSquirrelTrivia();
+          //this.showSquirrelTrivia();
         }
         if((e.keyCode === 46 || e.keyCode == 8) && this.selectedIndex != -1) {
           //this.removeElement(this.selectedIndex);
@@ -206,11 +206,11 @@
           }
 
           &.btn-map {
-            background-image: url('/NatureBridge/static/ui/map.png');
+            background-image: url('/static/ui/map.png');
           }
 
           &.btn-scrapbook {
-            background-image: url('/NatureBridge/static/ui/scrapbook.png');
+            background-image: url('/static/ui/scrapbook.png');
           }
         }
       }
