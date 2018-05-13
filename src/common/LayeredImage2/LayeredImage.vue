@@ -11,12 +11,12 @@
     props: ['imageUrl', 'mousemove', 'onclick'],
     methods: {
       onmousemove(e) {
-        if(!!this.onmousemove) {
+        if(!!this.mousemove) {
           this.mousemove(e);
         }
       },
       click() {
-        if(!!this.click) {
+        if(!!this.onclick) {
           this.onclick();
         }
       }

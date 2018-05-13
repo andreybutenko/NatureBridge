@@ -12,6 +12,7 @@ import Welcome from './Welcome.vue'
 import LevelIndex from './levels/index.js';
 import trivia from './trivia.js';
 
+
 Vue.use(VueRouter);
 Vue.use(Meta);
 

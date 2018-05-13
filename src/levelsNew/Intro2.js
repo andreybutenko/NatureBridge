@@ -30,33 +30,6 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Welcome to the National Park!",
-        "top": "41%",
-        "left": "53%",
-        "flip": false
-      }
-    ],
-    [
-      {
-        "type": "chat",
-        "text": "National Parks are here for your\nenjoyment, but it's important to be\nsafe and follow \nLeave No Trace Principles",
-        "top": "33%",
-        "left": "53%",
-        "flip": false
-      }
-    ],
-    [
-      {
-        "type": "chat",
-        "text": "Also be sure to know how to use your\nnavigation tools. Can you use your map\nand compass to find the direction to\nthe mountain pass?",
-        "top": "34%",
-        "left": "53%",
-        "flip": false
-      }
-    ],
-    [
-      {
-        "type": "chat",
         "text": "Great work!\nYou found the trail to the\nmountain pass!",
         "top": "33%",
         "left": "52%",
@@ -71,23 +44,65 @@ export default {
         "left": "53%",
         "flip": false
       }
+    ],
+    [
+      {
+        "type": "chat",
+        "text": "Great! Come in the Ranger Station\nwith me and we'll address your\nquestions.",
+        "top": "31%",
+        "left": "50%",
+        "flip": false
+      }
+    ],
+    [
+      {
+        "type": "chat",
+        "text": "Great! Just take this Ranger\Wiki, it has plenty of useful\ninformation if you're ever\ncurious.",
+        "top": "28%",
+        "left": "50%",
+        "flip": false
+      }
+    ],
+    [
+      {
+        "type": "chat",
+        "text": "Have a safe hike!",
+        "top": "41%",
+        "left": "51%",
+        "flip": false
+      }
     ]
   ],
   "layerSteps": [
     null,
     {
-      "index": 1
+      "stepType": "Click through"
+    },
+    {
+      "stepType": "Decision",
+      "prompt": "You respond with:",
+      "options": [
+        {
+          "layer": "3",
+          "description": "Yes, I have questions!"
+        },
+        {
+          "layer": "4",
+          "description": "Nope, ready to go!"
+        }
+      ]
     },
     {
       "stepType": "Click through",
-      "prompt": "You respond with:",
-      "options": []
+      "nextScene": "RangerStation"
     },
-    null,
-    null,
     {
-      "index": 5,
-      "stepType": "Click through"
+      "stepType": "Click through",
+      "highlightWiki": true
+    },
+    {
+      "stepType": "Click through",
+      "nextScene": "CompassNavigator"
     }
   ]
 }

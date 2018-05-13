@@ -35,36 +35,12 @@ export default {
         "left": "53%",
         "flip": false
       }
-    ],
-    [
-      {
-        "type": "chat",
-        "text": "National Parks are here for your\nenjoyment, but it's important to be\nsafe and follow \nLeave No Trace Principles",
-        "top": "33%",
-        "left": "53%",
-        "flip": false
-      }
-    ],
-    [
-      {
-        "type": "chat",
-        "text": "Also be sure to know how to use your\nnavigation tools. Can you use your map\nand compass to find the direction to\nthe mountain pass?",
-        "top": "34%",
-        "left": "53%",
-        "flip": false
-      }
-    ],
-
+    ]
   ],
   "layerSteps": [
     null,
     {
-      "stepType": "Click through",
-    },
-    {
-      "stepType": "Click through"
-    },
-    {
+      "index": 1,
       "stepType": "Click through",
       "nextScene": "CompassTutorial"
     }

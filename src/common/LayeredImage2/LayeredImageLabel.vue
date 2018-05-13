@@ -30,6 +30,7 @@
     text-align: center;
     padding: 8px 16px;
     user-select: none;
+    white-space: pre;
 
     &.clickable {
       cursor: pointer;

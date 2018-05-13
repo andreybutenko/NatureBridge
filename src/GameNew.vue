@@ -4,19 +4,24 @@
       :registerShow="registerShowSquirrelTrivia" />
     <div class="primary-view">
       <SceneGenerator
-        :scene="sceneProcessed" />
+        :scene="sceneProcessed"
+        v-if="!isMinigame" />
+      <MinigameViewer
+        :name="minigame"
+        :switchScene="switchScene" />
     </div>
     <div class="secondary-view">
       <div class="step-container">
         <div class="step">
           <StepGenerator
             :takeStep="takeStep"
-            :layerStep="layerStep" />
+            :layerStep="layerStep"
+            v-if="!isMinigame" />
         </div>
       </div>
       <div class="game-btns-container">
         <div class="game-btn btn-map"></div>
-        <div class="game-btn btn-scrapbook"></div>
+        <div class="game-btn btn-scrapbook" :class="{ pulse: !isMinigame && !!layerStep && layerStep.highlightWiki }"></div>
       </div>
     </div>
   </div>
@@ -27,6 +32,7 @@
   import Levels from './levelsNew';
   import SceneGenerator from './common/LayeredImage2/SceneGenerator2';
   import StepGenerator from './common/LayeredImage2/StepGenerator';
+  import MinigameViewer from './minigames/MinigameViewer';
   import SquirrelTrivia from './common/SquirrelTrivia';
 
   export default {
@@ -34,6 +40,7 @@
     components: {
       SceneGenerator,
       StepGenerator,
+      MinigameViewer,
       SquirrelTrivia
     },
     metaInfo: {
@@ -48,7 +55,7 @@
         canvasWidth: 0,
         canvasHeight: 0,
         activeLayer: 1,
-        currentScene: 'HT1',
+        currentScene: 'Intro1',
         showSquirrelTrivia: null,
         squirrelFound: []
       }
@@ -56,8 +63,7 @@
     methods: {
       takeStep(i) {
         if(this.layerStep.hasOwnProperty('nextScene')) {
-          this.currentScene = this.layerStep.nextScene;
-          this.activeLayer = 1; // this line must go AFTER layerStep.nextScene
+          this.switchScene(this.layerStep.nextScene);
         }
         else if(this.layerStep.stepType == 'Click through') {
           this.activeLayer++;
@@ -65,6 +71,10 @@
         else {
           this.activeLayer = this.layerStep.options[i].layer;
         }
+      },
+      switchScene(scene) {
+        this.currentScene = scene;
+        this.activeLayer = 1; // this line must go AFTER layerStep.nextScene
       },
       keyListener: function(e) {
         console.log('key', e.keyCode)
@@ -121,6 +131,14 @@
       },
       scene() {
         return Levels[this.currentScene];
+      },
+      minigame() {
+        return this.isMinigame ?
+          this.scene.minigame :
+          '';
+      },
+      isMinigame() {
+        return this.scene.hasOwnProperty('minigame');
       }
     },
     created: function() {
@@ -212,8 +230,20 @@
           &.btn-scrapbook {
             background-image: url('/static/ui/scrapbook.png');
           }
+
+          &.pulse {
+            animation-name: pulse-anim;
+            animation-duration: 500ms;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+          }
         }
       }
     }
+  }
+
+  @keyframes pulse-anim {
+    from { background-color: #81ecec; }
+    to { background-color: #00cec9; }
   }
 </style>
