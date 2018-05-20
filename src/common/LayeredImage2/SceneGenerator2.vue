@@ -4,7 +4,7 @@
       <template v-for="element in scene.elements">
         <LayeredImageSprite
           v-if="element.type == 'sprite'"
-          :imageUrl="'/static/' + element.source"
+          :imageUrl="'/NatureBridge/static/' + element.source"
           :x="element.left"
           :y="element.top"
           :size="element.size"
@@ -64,7 +64,7 @@
     props: ['scene'],
     computed: {
       imageUrl() {
-        return '/static/' + this.scene.background;
+        return '/NatureBridge/static/' + this.scene.background;
       }
     }
   }

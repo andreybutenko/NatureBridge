@@ -19,19 +19,19 @@
         <h1>Beetle Impact</h1>
         <p>It's your job to thin the beetle-infected trees!</p>
         <div class="ex">
-          <img src="/static/misc/pine.png" class="healthy" />
+          <img src="/NatureBridge/static/misc/pine.png" class="healthy" />
           <p>Trees will start off green and healthy!</p>
         </div>
         <div class="ex">
-          <img src="/static/misc/pine.png" class="infested" />
+          <img src="/NatureBridge/static/misc/pine.png" class="infested" />
           <p>They will turn red when they're infected by beetles.</p>
         </div>
         <div class="ex">
-          <img src="/static/misc/pine.png" class="infested trembling" />
+          <img src="/NatureBridge/static/misc/pine.png" class="infested trembling" />
           <p>If you don't thin them quickly, they'll start trembling!</p>
         </div>
         <div class="ex">
-          <img src="/static/misc/pine.png" class="infested-dead" />
+          <img src="/NatureBridge/static/misc/pine.png" class="infested-dead" />
           <p>Trees will die if you don't take any action.</p>
         </div>
         <p>
