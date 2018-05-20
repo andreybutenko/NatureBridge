@@ -12,6 +12,7 @@
           :flip="!!element.flip"
           :onclick="element.onclick"
           :selected="element.selected"
+          :customStyle="element.customStyle"
           :dancing="element.dancing" />
 
         <LayeredImageLabel

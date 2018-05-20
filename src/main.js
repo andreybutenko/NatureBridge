@@ -11,7 +11,7 @@ import Editor from './Editor.vue'
 import Welcome from './Welcome.vue'
 import LevelIndex from './levels/index.js';
 import trivia from './trivia.js';
-
+import BeetleImpact from './minigames/BeetleImpact.vue'
 
 Vue.use(VueRouter);
 Vue.use(Meta);
@@ -21,7 +21,8 @@ const router = new VueRouter({
     { path: '', component: Welcome },
     { path: '/game', component: Game, children: LevelIndex.routes },
     { path: '/game2', component: GameNew },
-    { path: '/editor', component: Editor }
+    { path: '/editor', component: Editor },
+    { path: '/beetle', component: BeetleImpact }
   ]
 });
 

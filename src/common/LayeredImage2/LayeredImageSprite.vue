@@ -11,14 +11,15 @@
 <script>
   export default {
     name: 'LayeredImageSprite',
-    props: ['x', 'y', 'imageUrl', 'size', 'flip', 'onclick', 'dancing', 'selected'],
+    props: ['x', 'y', 'imageUrl', 'size', 'flip', 'onclick', 'dancing', 'selected', 'customStyle'],
     computed: {
       style() {
         return {
           top: this.y,
           left: this.x,
           height: this.size,
-          transform: 'scaleX(' + (this.flip ? '-1' : '1') + ') translateX(' + (this.flip ? '-100%' : '0') + ')'
+          transform: 'scaleX(' + (this.flip ? '-1' : '1') + ') translateX(' + (this.flip ? '-100%' : '0') + ')',
+          ...this.customStyle
         }
       }
     },
@@ -36,6 +37,7 @@
   .layered-image-sprite {
     position: absolute;
     transform-origin: 0 0;
+    transition: all 250ms;
 
     &.clickable {
       cursor: pointer;
@@ -53,7 +55,9 @@
       background-color: rgba(255, 0, 0, 0.4);
     }
   }
+</style>
 
+<style lang="scss">
   @keyframes wiggle {
     0% {transform: rotate(0deg);}
     33% {transform: rotate(-10deg);}
