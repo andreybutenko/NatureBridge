@@ -12,6 +12,7 @@ import Welcome from './Welcome.vue'
 import LevelIndex from './levels/index.js';
 import trivia from './trivia.js';
 import BeetleImpact from './minigames/BeetleImpact.vue'
+import WeedInvasive from './minigames/WeedInvasive.vue'
 
 Vue.use(VueRouter);
 Vue.use(Meta);
@@ -22,7 +23,8 @@ const router = new VueRouter({
     { path: '/game', component: Game, children: LevelIndex.routes },
     { path: '/game2', component: GameNew },
     { path: '/editor', component: Editor },
-    { path: '/beetle', component: BeetleImpact }
+    { path: '/beetle', component: BeetleImpact },
+    { path: '/weed', component: WeedInvasive }
   ]
 });
 
