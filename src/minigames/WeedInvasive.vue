@@ -28,11 +28,11 @@
         <p>It's your job to weed stinky bob!</p>
         <p>They are an invasive species, which means they threaten the native species!</p>
         <div class="ex">
-          <img src="/static/misc/stinkybob.png" />
+          <img src="/NatureBridge/static/misc/stinkybob.png" />
           <p>Stinky bob have purple petals.</p>
         </div>
         <div class="ex">
-          <img src="/static/misc/native1.png" />
+          <img src="/NatureBridge/static/misc/native1.png" />
           <p>Native species have yellow petals.</p>
         </div>
         <p>
