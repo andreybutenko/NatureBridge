@@ -2,6 +2,13 @@
   <div class="game">
     <SquirrelTrivia
       :registerShow="registerShowSquirrelTrivia" />
+    <JournalEntry
+      :registerShow="registerShowJournalEntry"
+      :showRangerWiki="showRangerWiki"
+      :onComplete="onJournalEntryComplete" />
+    <RangerWiki
+      :registerShow="registerShowRangerWiki" />
+
     <div class="primary-view">
       <SceneGenerator
         :scene="sceneProcessed"
@@ -34,6 +41,8 @@
   import StepGenerator from './common/LayeredImage2/StepGenerator';
   import MinigameViewer from './minigames/MinigameViewer';
   import SquirrelTrivia from './common/SquirrelTrivia';
+  import JournalEntry from './common/JournalEntry';
+  import RangerWiki from './common/RangerWiki';
 
   export default {
     name: 'GameNew',
@@ -41,7 +50,9 @@
       SceneGenerator,
       StepGenerator,
       MinigameViewer,
-      SquirrelTrivia
+      SquirrelTrivia,
+      JournalEntry,
+      RangerWiki
     },
     metaInfo: {
       meta: [
@@ -57,12 +68,19 @@
         activeLayer: 1,
         currentScene: 'Intro1',
         showSquirrelTrivia: null,
+        showJournalEntry: null,
+        showRangerWiki: null,
+        postJournalEntryOption: -1,
         squirrelFound: []
       }
     },
     methods: {
-      takeStep(i) {
-        if(this.layerStep.hasOwnProperty('nextScene')) {
+      takeStep(i, skipJournalEntry) {
+        if(this.layerStep.hasOwnProperty('journalEntry') && !skipJournalEntry) {
+          this.showJournalEntry(this.layerStep.journalEntry);
+          this.postJournalEntryOption = i;
+        }
+        else if(this.layerStep.hasOwnProperty('nextScene')) {
           this.switchScene(this.layerStep.nextScene);
         }
         else if(this.layerStep.stepType == 'Click through') {
@@ -87,6 +105,15 @@
       },
       registerShowSquirrelTrivia(showSquirrelTrivia) {
         this.showSquirrelTrivia = showSquirrelTrivia;
+      },
+      registerShowJournalEntry(showJournalEntry) {
+        this.showJournalEntry = showJournalEntry;
+      },
+      registerShowRangerWiki(showRangerWiki) {
+        this.showRangerWiki = showRangerWiki;
+      },
+      onJournalEntryComplete() {
+        this.takeStep(this.postJournalEntryOption, true);
       }
     },
     computed: {

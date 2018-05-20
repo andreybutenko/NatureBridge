@@ -1,32 +1,39 @@
 <template>
-  <div class="journal-container" v-if="visible">
-    <RangerWiki :shown="displayWiki" :ondismiss="() => displayWiki = false" />
+  <div class="journal-container" v-if="shown">
     <div class="journal-compose">
       <p class="prompt">{{ prompt }}</p>
       <textarea v-model="response" placeholder="Type a response..."></textarea>
       <div class="btn" @click="() => save()">Done</div>
-      <p class="read-more">Read about this on the <a class="normal" @click="() => displayWiki = true">Ranger Wiki!</a></p>
+      <p class="read-more">Read about this on the <a class="normal" @click="showRangerWiki">Ranger Wiki!</a></p>
     </div>
   </div>
 </template>
 
 <script>
   import { globalStore } from '../main.js';
-  import RangerWiki from './RangerWiki';
 
   export default {
     name: 'JournalEntry',
-    components: { RangerWiki },
-    props: ['prompt', 'visible', 'onComplete'],
+    props: ['registerShow', 'showRangerWiki', 'onComplete'],
     data() {
       return {
-        displayWiki: false,
+        shown: false,
+        prompt: '',
         response: ''
       }
     },
+    mounted() {
+      this.registerShow(this.show);
+    },
     methods: {
+      show(prompt) {
+        this.shown = true;
+        this.prompt = prompt;
+        this.response = '';
+      },
       save() {
         globalStore.addJournal(this.prompt, this.response);
+        this.shown = false;
         this.onComplete();
       }
     }
@@ -41,6 +48,7 @@
     width: 100vw !important;
     height: 100vh;
     z-index: 999;
+    background-color: rgba(0, 0, 0, 0.5);
   }
   .journal-compose {
     position: absolute;

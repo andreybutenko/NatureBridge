@@ -60,6 +60,7 @@ export default {
     null,
     {
       "stepType": "Click through",
+      "journalEntry": "What do you think?"
     },
     {
       "stepType": "Click through"

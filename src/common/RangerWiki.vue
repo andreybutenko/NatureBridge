@@ -129,10 +129,24 @@ Today the National Park System includes over 400 different lands across more tha
 <script>
   export default {
     name: 'RangerWiki',
-    props: ['shown', 'ondismiss'],
+    props: ['registerShow'],
     data() {
       return {
-        selected: 0
+        selected: 0,
+        shown: false
+      }
+    },
+    mounted() {
+      this.registerShow(this.show);
+    },
+    methods: {
+      show(page) {
+        this.selected = page || 0;
+        this.shown = true;
+      },
+      ondismiss() {
+        this.selected = 0;
+        this.shown = false;
       }
     }
   }
@@ -141,12 +155,12 @@ Today the National Park System includes over 400 different lands across more tha
 <style lang="scss" scoped>
   .ranger-wiki-container {
     position: absolute;
-    top: 0;
-    bottom: 0;
     left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.4);
+    top: 0;
+    width: 100vw !important;
+    height: 100vh;
     z-index: 999;
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
