@@ -224,11 +224,11 @@
           }
 
           &.btn-map {
-            background-image: url('/NatureBridge/static/ui/map.png');
+            background-image: url('/static/ui/map.png');
           }
 
           &.btn-scrapbook {
-            background-image: url('/NatureBridge/static/ui/scrapbook.png');
+            background-image: url('/static/ui/scrapbook.png');
           }
 
           &.pulse {

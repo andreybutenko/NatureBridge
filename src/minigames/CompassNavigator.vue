@@ -46,7 +46,7 @@
               this.destination = 'HT1';
               this.destinationText = 'Historical Trail';
             }
-            else if((deg >= 330 && deg <= 360) || (deg >= 0 || deg <= 30)) {
+            else if((deg >= 330 && deg <= 360) || (deg >= 0 && deg <= 30)) {
               this.destination = 'MT1';
               this.destinationText = 'Mountain Trail';
             }

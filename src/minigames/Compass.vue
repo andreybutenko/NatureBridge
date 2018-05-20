@@ -105,10 +105,10 @@
         return 'rotate(' + (-1 * this.compassRotation) + 'deg)';
       },
       minimapUrl() {
-        return '/NatureBridge/static/misc/' + this.stage.file;
+        return '/static/misc/' + this.stage.file;
       },
       panoUrl() {
-        return 'url(/NatureBridge/static/backgrounds/' + this.stage.file + ')';
+        return 'url(/static/backgrounds/' + this.stage.file + ')';
       }
     }
   }
