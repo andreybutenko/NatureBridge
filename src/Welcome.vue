@@ -25,7 +25,7 @@
     <div class="welcome-modal-container">
       <div class="welcome-modal">
         <div class="image">
-          <img src="/static/misc/national-parks.jpg" />
+          <img src="/NatureBridge/static/misc/national-parks.jpg" />
         </div>
         <div class="title">
           National Park Service
@@ -74,7 +74,7 @@
 
 <style lang="scss" scoped>
   .welcome {
-    background-image: url('/static/misc/welcome-bg.png');
+    background-image: url('/NatureBridge/static/misc/welcome-bg.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
