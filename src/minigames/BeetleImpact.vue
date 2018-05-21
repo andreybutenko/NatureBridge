@@ -166,6 +166,7 @@
         setTimeout(() => {
           this.setInfectionTimer();
           this.infectRandomTree();
+          if(Math.random() > 0.75) this.infectRandomTree();
         }, this.infectionFrequency);
       },
       infectRandomTree() {
@@ -212,7 +213,7 @@
       },
       scene() {
         return {
-          background: "backgrounds/weeders_px-01.png",
+          background: "backgrounds/grass.png",
           elements: this.trees
         }
       }
