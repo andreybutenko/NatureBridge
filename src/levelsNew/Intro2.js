@@ -57,7 +57,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Great! Just take this Ranger\Wiki, it has plenty of useful\ninformation if you're ever\ncurious.",
+        "text": "Great! Just take this Field Guide, it has plenty of useful\ninformation if you're ever\ncurious.",
         "top": "28%",
         "left": "50%",
         "flip": false

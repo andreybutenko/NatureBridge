@@ -9,6 +9,9 @@
     <CompassNavigator
       :switchScene="switchScene"
       v-if="enabled('CompassNavigator')" />
+    <MessyRoom
+      :switchScene="switchScene"
+      v-if="enabled('MessyRoom')" />
     <WeedInvasive
       :switchScene="switchScene"
       v-if="enabled('WeedInvasive')" />
@@ -18,8 +21,9 @@
 <script>
   import BeetleImpact from './BeetleImpact';
   import CompassTutorial from './CompassTutorial';
-  import CompassNavigator from './CompassNavigator'
-  import WeedInvasive from './WeedInvasive'
+  import CompassNavigator from './CompassNavigator';
+  import MessyRoom from './MessyRoom'
+  import WeedInvasive from './WeedInvasive';
 
   export default {
     name: 'MinigameViewer',
@@ -28,6 +32,7 @@
       BeetleImpact,
       CompassTutorial,
       CompassNavigator,
+      MessyRoom,
       WeedInvasive
     },
     methods: {

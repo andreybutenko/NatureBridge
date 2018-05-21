@@ -4,7 +4,7 @@
       <p class="prompt">{{ prompt }}</p>
       <textarea v-model="response" placeholder="Type a response..."></textarea>
       <div class="btn" @click="() => save()">Done</div>
-      <p class="read-more">Read about this on the <a class="normal" @click="showRangerWiki">Ranger Wiki!</a></p>
+      <p class="read-more">Read about this in your <a class="normal" @click="showRangerWiki">Field Guide!</a></p>
     </div>
   </div>
 </template>

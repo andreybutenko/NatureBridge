@@ -65,7 +65,7 @@
       next() {
         this.stageId++;
         if(this.stageId >= this.stages.length) {
-          this.$router.push('Game');
+          this.$router.push('game2');
         }
       }
     }

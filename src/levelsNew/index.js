@@ -6,6 +6,7 @@ import RangerStation from './RangerStation';
 import BeetleImpactLvl from './BeetleImpactLvl';
 import CompassTutorialLvl from './CompassTutorialLvl';
 import CompassNavigatorLvl from './CompassNavigatorLvl';
+import MessyRoomLvl from './MessyRoomLvl';
 import WeedInvasiveLvl from './WeedInvasiveLvl';
 
 import HT1 from './HT1';
@@ -30,6 +31,7 @@ export default {
   RangerStation,
   CompassTutorial: CompassTutorialLvl,
   CompassNavigator: CompassNavigatorLvl,
+  MessyRoom: MessyRoomLvl,
   HT1,
   HT2,
   HT3,

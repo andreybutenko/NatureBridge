@@ -69,7 +69,7 @@
         canvasWidth: 0,
         canvasHeight: 0,
         activeLayer: 1,
-        currentScene: 'Intro1',
+        currentScene: 'MessyRoom',
         showSquirrelTrivia: null,
         showJournalEntry: null,
         showRangerWiki: null,

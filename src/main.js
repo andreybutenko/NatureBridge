@@ -13,6 +13,7 @@ import LevelIndex from './levels/index.js';
 import trivia from './trivia.js';
 import BeetleImpact from './minigames/BeetleImpact.vue'
 import WeedInvasive from './minigames/WeedInvasive.vue'
+import MessyRoom from './minigames/MessyRoom.vue'
 
 Vue.use(VueRouter);
 Vue.use(Meta);
@@ -20,11 +21,12 @@ Vue.use(Meta);
 const router = new VueRouter({
   routes: [
     { path: '', component: Welcome },
-    { path: '/game', component: Game, children: LevelIndex.routes },
+    //{ path: '/game', component: Game, children: LevelIndex.routes },
     { path: '/game2', component: GameNew },
     { path: '/editor', component: Editor },
     { path: '/beetle', component: BeetleImpact },
-    { path: '/weed', component: WeedInvasive }
+    { path: '/weed', component: WeedInvasive },
+    { path: '/messy', component: MessyRoom }
   ]
 });
 

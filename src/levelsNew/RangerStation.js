@@ -31,7 +31,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Let me find a Ranger Wiki for you!\nIt has lots of useful information\nabout National Parks.",
+        "text": "Let me find a Field Guide for you!\nIt has lots of useful information\nabout National Parks.",
         "top": "16%",
         "left": "3%",
         "flip": true
