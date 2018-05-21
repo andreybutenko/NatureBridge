@@ -8,6 +8,7 @@
       :onComplete="onJournalEntryComplete" />
     <RangerWiki
       :registerShow="registerShowRangerWiki" />
+    <!--<Principle />-->
 
     <div class="primary-view">
       <SceneGenerator
@@ -43,6 +44,7 @@
   import SquirrelTrivia from './common/SquirrelTrivia';
   import JournalEntry from './common/JournalEntry';
   import RangerWiki from './common/RangerWiki';
+  import Principle from './common/Principle';
 
   export default {
     name: 'GameNew',
@@ -52,7 +54,8 @@
       MinigameViewer,
       SquirrelTrivia,
       JournalEntry,
-      RangerWiki
+      RangerWiki,
+      Principle
     },
     metaInfo: {
       meta: [
