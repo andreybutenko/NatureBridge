@@ -130,6 +130,13 @@ export default {
         "left": "56%",
         "size": "32%",
         "flip": true
+      },
+      {
+        "type": "sprite",
+        "source": "characters/bird.png",
+        "top": "70%",
+        "left": "45%",
+        "size": "11%"
       }
     ],
     [
@@ -155,6 +162,13 @@ export default {
         "top": "34%",
         "left": "30%",
         "flip": true
+      },
+      {
+        "type": "sprite",
+        "source": "characters/bird.png",
+        "top": "70%",
+        "left": "45%",
+        "size": "11%"
       }
     ],
     [
@@ -180,6 +194,13 @@ export default {
         "top": "27%",
         "left": "67%",
         "flip": false
+      },
+      {
+        "type": "sprite",
+        "source": "characters/bird.png",
+        "top": "70%",
+        "left": "45%",
+        "size": "11%"
       }
     ],
     [
@@ -205,6 +226,13 @@ export default {
         "top": "28%",
         "left": "22%",
         "flip": true
+      },
+      {
+        "type": "sprite",
+        "source": "characters/bird.png",
+        "top": "70%",
+        "left": "45%",
+        "size": "11%"
       }
     ],
     [
@@ -230,6 +258,13 @@ export default {
         "top": "37%",
         "left": "30%",
         "flip": true
+      },
+      {
+        "type": "sprite",
+        "source": "characters/bird.png",
+        "top": "70%",
+        "left": "45%",
+        "size": "11%"
       }
     ],
     [
@@ -255,6 +290,13 @@ export default {
         "top": "17%",
         "left": "70%",
         "flip": false
+      },
+      {
+        "type": "sprite",
+        "source": "characters/bird.png",
+        "top": "70%",
+        "left": "45%",
+        "size": "11%"
       }
     ],
     [

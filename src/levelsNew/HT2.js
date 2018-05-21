@@ -17,6 +17,13 @@ export default {
         "left": "25%",
         "size": "35%",
         "flip": false
+      },
+      {
+        "type": "sprite",
+        "source": "characters/hammer.png",
+        "top": "76%",
+        "left": "63%",
+        "size": "19%"
       }
     ],
     [],

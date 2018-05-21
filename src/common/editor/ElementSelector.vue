@@ -127,6 +127,26 @@
               size: '8%',
               dancing: true
             }
+          },
+          {
+            name: 'Bird',
+            data: {
+              type: 'sprite',
+              source: 'characters/bird.png',
+              top: '0%',
+              left: '0%',
+              size: '8%'
+            }
+          },
+          {
+            name: 'Hammer',
+            data: {
+              type: 'sprite',
+              source: 'characters/hammer.png',
+              top: '0%',
+              left: '0%',
+              size: '20%'
+            }
           }
         ]
       }
