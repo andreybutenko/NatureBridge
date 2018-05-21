@@ -3,13 +3,14 @@
     <div class="beetle-impact">
       <div class="stats">
         <div>
-          <b>Weeds Remaining:</b> {{remaining}}
+          <b>Time Left:</b> {{timeLeft}}
         </div>
         <div>
           <b>Weeds Picked:</b> {{score.correct}}
         </div>
-        <div>
-          <b>Incorrectly Picked:</b> {{score.wrong}}
+        <div class="key">
+          <img src="/static/misc/plant2.png" />
+          <span>Pick only this plant!</span>
         </div>
       </div>
       <SceneGenerator :scene="scene" />
@@ -25,18 +26,18 @@
       </div>
       <div class="instructions-modal" v-if="!started">
         <h1>Invasive Species</h1>
-        <p>It's your job to weed stinky bob!</p>
-        <p>They are an invasive species, which means they threaten the native species!</p>
+        <p>It's your job to weed invasive species, which harm the native ecosystem!</p>
         <div class="ex">
-          <img src="/static/misc/stinkybob.png" />
-          <p>Stinky bob have purple petals.</p>
+          <img src="/static/misc/plant2.png" />
+          <p>These are the invasive species we want to pick.</p>
         </div>
         <div class="ex">
-          <img src="/static/misc/native1.png" />
-          <p>Native species have yellow petals.</p>
+          <img src="/static/misc/plant1.png" />
+          <img src="/static/misc/plant3.png" />
+          <p>These are the native plants we want to keep.</p>
         </div>
         <p>
-          Click on a plant to pick it. Make sure to only pick the stinky bob!
+          Click on a plant to pick it. Make sure to only pick the invasive species! Pick as many as possible in {{timeLeft}} seconds.
         </p>
         <div class="btn-start" @click="startGame">
           Let's Play!
@@ -44,7 +45,7 @@
       </div>
       <div class="instructions-modal" v-if="ended">
         <h1>Invasive Species</h1>
-        <p>Great job! You successfully thinned <b>{{score.correct}}</b> stinky bob.</p>
+        <p>Great job! You successfully picked <b>{{score.correct}}</b> invasive species.</p>
         <p>By removing invasive species, you are preventing damage to the ecosystem.</p>
         <div class="btn-start" @click="switchScene('MT1_2')">
           Continue
@@ -66,8 +67,10 @@
           gridWidth: 8.7,
           gridInterval: 0.4,
           offset: 0,
-          initialWeeds: 10
+          initialWeeds: 10,
+          weedId: 1
         },
+        timeLeft: 40,
         initialWeeds: -1,
         plants: [],
         started: false,
@@ -81,7 +84,6 @@
     },
     mounted() {
       this.generatePlants();
-      this.generateWeeds();
     },
     methods: {
       generatePlants() {
@@ -89,22 +91,26 @@
           for(let y = 0; y < this.config.gridWidth; y += this.config.gridInterval) {
             const id = x + '-' + y;
 
+            const weedId = this.config.weedId;
+
             this.plants.push({
               id: id,
               picked: false,
-              weed: false,
+              plantType: Math.floor(Math.random() * 3),
               onclick: () => this.clickPlant(id),
               get customStyle() {
                 return {
                   ...(this.picked ? { "display": "none" } : {}),
-                  ...(this.weed ? { "zIndex": "999" } : {})
+                  ...(this.plantType == weedId ? { "zIndex": "999" } : {})
                 }
               },
 
               left: this.getRandomPosition(x),
               top: this.getRandomPosition(y),
               get source() {
-                return this.weed ? 'misc/stinkybob.png' : 'misc/native1.png';
+                if(this.plantType == 0) return 'misc/plant1.png';
+                else if(this.plantType == 1) return 'misc/plant2.png';
+                else return 'misc/plant3.png';
               },
               type: 'sprite',
               size: '5%'
@@ -112,29 +118,33 @@
           }
         }
       },
-      generateWeeds() {
-        for(let i = 0; i < this.config.initialWeeds; i++) {
-          this.getRandomPlant().weed = true;
-        }
-        this.initialWeeds = this.plants.filter(plant => plant.weed == true).length;
-      },
 
       startGame() {
         this.started = true;
+        this.setCountdownTimer();
+      },
+
+      setCountdownTimer() {
+        if(this.timeLeft > 0) {
+          setTimeout(() => {
+            this.timeLeft--;
+            this.setCountdownTimer();
+          }, 1000);
+        }
+        else {
+          this.ended = true;
+        }
       },
 
       clickPlant(id) {
         const plant = this.getPlant(id);
         plant.picked = true;
-        if(plant.weed) {
+        if(plant.plantType == this.config.weedId) {
           this.score.correct++;
         }
         else {
           this.wrong = true;
           this.score.wrong++;
-        }
-        if(this.remaining <= 0) {
-          this.ended = true;
         }
       },
 
@@ -151,11 +161,11 @@
     },
     computed: {
       remaining() {
-        return this.initialWeeds - this.score.correct;
+        return this.plants.filter(plant => plant.plantType == this.config.weedId).length;
       },
       scene() {
         return {
-          background: "backgrounds/weeders_px-01.png",
+          background: "backgrounds/grass_dark.png",
           elements: this.plants
         }
       }
@@ -180,12 +190,25 @@
     .stats {
       display: flex;
       width: 100%;
-      background-color: #3498db;
+      background-color: #bdc3c7;
       padding: 16px;
+      align-items: center;
 
       & > * {
         flex: 1;
         text-align: center;
+      }
+
+      .key {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+
+        img {
+          height: 3em;
+          margin-right: 1em;
+        }
       }
     }
   }
