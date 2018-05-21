@@ -7,6 +7,7 @@
         <div class="btn" @click="selected = 1" :class="{ selected: selected == 1 }">Invasive Species</div>
         <div class="btn" @click="selected = 2" :class="{ selected: selected == 2 }">River</div>
         <div class="btn" @click="selected = 3" :class="{ selected: selected == 3 }">Climate Change</div>
+        <div class="btn" @click="selected = 4" :class="{ selected: selected == 4 }">Leave No Trace Principles</div>
       </div>
       <div class="content">
         <div class="text" v-if="selected == 0">
@@ -120,6 +121,20 @@ Today the National Park System includes over 400 different lands across more tha
           <p>
             <a href="https://www.nps.gov/olym/planyourvisit/upload/weather-2.pdf" target="_blank">Adapted from National Park Service</a>
           </p>
+        </div>
+
+        <div class="text" v-if="selected == 4">
+          <b>Leave No Trace Principles</b>
+          <ul>
+            <li>Plan Ahead and Prepare</li>
+            <li>Travel and Camp on Durable Surfaces</li>
+            <li>Dispose of Waste Properly</li>
+            <li>Leave What You Find</li>
+            <li>Minimize Campfire Impacts</li>
+            <li>Respect Wildlife</li>
+            <li>Be Considerate of Other Visitors</li>
+          </ul>
+          <p><i>The Leave No Trace copyrighted Seven Principles, trademarked logo, associated artwork and texts are the property of the Leave No Trace Center for Outdoor Ethics.</i></p>
         </div>
       </div>
     </div>
