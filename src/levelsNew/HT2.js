@@ -142,14 +142,11 @@ export default {
       "options": [
         {
           "layer": "5",
-          "description": "Yeah, I have plenty of room in my pack if you want to throw it in!\""
+          "description": "\"Yeah, I have plenty of room in my pack if you want to throw it in!\""
         },
         {
           "layer": "9",
           "description": "\"Not so fast! I don't think we should take an old artifact home with us...\""
-        },
-        {
-          "layer": 1
         }
       ]
     },
@@ -175,7 +172,8 @@ export default {
       "index": 8,
       "stepType": "Click through",
       "prompt": "You respond with:",
-      "options": []
+      "options": [],
+      "nextScene": "HT3"
     },
     {
       "index": 9,
@@ -193,7 +191,8 @@ export default {
       "index": 11,
       "stepType": "Click through",
       "prompt": "You respond with:",
-      "options": []
+      "options": [],
+      "nextScene": "HT3"
     }
   ]
 }

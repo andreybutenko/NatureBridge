@@ -1,24 +1,34 @@
 <template>
   <div class="minigame-viewer">
+    <BeetleImpact
+      :switchScene="switchScene"
+      v-if="enabled('BeetleImpact')" />
     <CompassTutorial
       :switchScene="switchScene"
       v-if="enabled('CompassTutorial')" />
     <CompassNavigator
       :switchScene="switchScene"
       v-if="enabled('CompassNavigator')" />
+    <WeedInvasive
+      :switchScene="switchScene"
+      v-if="enabled('WeedInvasive')" />
   </div>
 </template>
 
 <script>
-  import CompassTutorial from './CompassTutorial'
+  import BeetleImpact from './BeetleImpact';
+  import CompassTutorial from './CompassTutorial';
   import CompassNavigator from './CompassNavigator'
+  import WeedInvasive from './WeedInvasive'
 
   export default {
     name: 'MinigameViewer',
     props: ['name', 'switchScene'],
     components: {
+      BeetleImpact,
       CompassTutorial,
-      CompassNavigator
+      CompassNavigator,
+      WeedInvasive
     },
     methods: {
       enabled(name) {
@@ -102,11 +112,11 @@
           }
 
           &.btn-map {
-            background-image: url('/NatureBridge/static/ui/map.png');
+            background-image: url('/static/ui/map.png');
           }
 
           &.btn-scrapbook {
-            background-image: url('/NatureBridge/static/ui/scrapbook.png');
+            background-image: url('/static/ui/scrapbook.png');
           }
         }
       }

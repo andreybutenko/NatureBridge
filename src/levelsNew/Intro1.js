@@ -59,8 +59,7 @@ export default {
   "layerSteps": [
     null,
     {
-      "stepType": "Click through",
-      "journalEntry": "What do you think?"
+      "stepType": "Click through"
     },
     {
       "stepType": "Click through"

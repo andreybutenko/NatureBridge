@@ -103,7 +103,8 @@ export default {
           "layer": 1,
           "description": "Turn around and head back to the trail head"
         }
-      ]
+      ],
+      "nextScene": "CompassNavigator"
     }
   ]
 }

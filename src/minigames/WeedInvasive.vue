@@ -28,11 +28,11 @@
         <p>It's your job to weed stinky bob!</p>
         <p>They are an invasive species, which means they threaten the native species!</p>
         <div class="ex">
-          <img src="/NatureBridge/static/misc/stinkybob.png" />
+          <img src="/static/misc/stinkybob.png" />
           <p>Stinky bob have purple petals.</p>
         </div>
         <div class="ex">
-          <img src="/NatureBridge/static/misc/native1.png" />
+          <img src="/static/misc/native1.png" />
           <p>Native species have yellow petals.</p>
         </div>
         <p>
@@ -46,7 +46,7 @@
         <h1>Invasive Species</h1>
         <p>Great job! You successfully thinned <b>{{score.correct}}</b> stinky bob.</p>
         <p>By removing invasive species, you are preventing damage to the ecosystem.</p>
-        <div class="btn-start">
+        <div class="btn-start" @click="switchScene('MT1_2')">
           Continue
         </div>
       </div>
@@ -59,6 +59,7 @@
   export default {
     name: 'WeedInvasive',
     components: { SceneGenerator },
+    props: ['switchScene'],
     data() {
       return {
         config: {
@@ -67,6 +68,7 @@
           offset: 0,
           initialWeeds: 10
         },
+        initialWeeds: -1,
         plants: [],
         started: false,
         ended: false,
@@ -114,6 +116,7 @@
         for(let i = 0; i < this.config.initialWeeds; i++) {
           this.getRandomPlant().weed = true;
         }
+        this.initialWeeds = this.plants.filter(plant => plant.weed == true).length;
       },
 
       startGame() {
@@ -148,7 +151,7 @@
     },
     computed: {
       remaining() {
-        return this.config.initialWeeds - this.score.correct;
+        return this.initialWeeds - this.score.correct;
       },
       scene() {
         return {

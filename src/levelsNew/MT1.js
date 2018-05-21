@@ -97,15 +97,6 @@ export default {
         "left": "17%",
         "flip": true
       }
-    ],
-    [
-      {
-        "type": "chat",
-        "text": "Thanks for your help!",
-        "top": "49%",
-        "left": "56%",
-        "flip": true
-      }
     ]
   ],
   "layerSteps": [
@@ -154,12 +145,8 @@ export default {
           "layer": "9",
           "description": "Help weed!"
         }
-      ]
-    },
-    {
-      "index": 9,
-      "stepType": "Click through",
-      "nextScene": "MT2"
+      ],
+      "nextScene": "WeedInvasive"
     }
   ]
 }

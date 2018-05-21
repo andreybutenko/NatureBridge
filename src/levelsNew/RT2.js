@@ -128,7 +128,7 @@ export default {
     {
       "index": 4,
       "stepType": "Click through",
-      "nextScene": "RT3"
+      "nextScene": "BeetleImpact"
     }
   ]
 }

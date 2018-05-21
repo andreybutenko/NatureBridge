@@ -145,8 +145,7 @@ export default {
         "left": "59%",
         "flip": false
       }
-    ],
-    []
+    ]
   ],
   "layerSteps": [
     null,
@@ -198,7 +197,7 @@ export default {
       "options": [
         {
           "layer": "6",
-          "description": "\"Let's turn around and go back\""
+          "description": "\"Let's turn around\""
         }
       ]
     },
@@ -208,14 +207,12 @@ export default {
       "prompt": "",
       "options": [
         {
-          "layer": 1,
+          "layer": 7,
           "description": "Take a picture and head back."
         }
-      ]
-    },
-    {
-      "index": 7,
-      "stepType": "Click through"
+      ],
+      "journalEntry": "With increased future temperatures, more precipitation will fall as rain rather than snow and the winter snowpack will start melting earlier in the year. These changes will result in more water running through rivers, which will carry more rocks (sediment) and other debris like wood. Likely, we will see more flooding as well as more river erosion, causing landslides next to existing rivers. Should we work to repair and maintain trails and roads that are damaged due to changes in rivers, should we start building new trails and roads from scratch in new places, or should we no longer have access to these areas?",
+      "nextScene": "CompassNavigator"
     }
   ]
 }

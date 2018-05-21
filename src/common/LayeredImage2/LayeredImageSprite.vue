@@ -37,7 +37,7 @@
   .layered-image-sprite {
     position: absolute;
     transform-origin: 0 0;
-    transition: all 250ms;
+    transition: filter 250ms;
 
     &.clickable {
       cursor: pointer;
