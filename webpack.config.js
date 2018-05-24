@@ -1,12 +1,13 @@
 var path = require('path')
 var webpack = require('webpack')
 
+const dev = process.env.NODE_ENV == 'development'
+
 module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/NatureBridge/dist/', // prod
-    //publicPath: '/dist/', // dev
+    publicPath: dev ? '/dist/' : '/NatureBridge/dist/',
     filename: 'build.js'
   },
   module: {
@@ -87,7 +88,7 @@ module.exports = {
   devtool: '#eval-source-map'
 }
 
-if (process.env.NODE_ENV === 'production') {
+if (!dev) {
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
@@ -105,5 +106,17 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.LoaderOptionsPlugin({
       minimize: true
     })
+  ])
+  // Using GitHub pages, the /static/ directory is really /NatureBridge/static/
+  module.exports.module.rules = (module.exports.module.rules || []).concat([
+    {
+      test: /\.vue$/,
+      loader: 'string-replace-loader',
+      options: {
+        search: '\/static\/',
+        replace: '\/NatureBridge\/static\/',
+        flags: 'g'
+      }
+    }
   ])
 }

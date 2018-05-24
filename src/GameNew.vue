@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="game-btns-container">
-        <!-- <div class="game-btn btn-map" @click="cheat"></div> -->
+        <div class="game-btn btn-map" @click="cheat"></div>
         <div class="game-btn btn-scrapbook" :class="{ pulse: !isMinigame && !!layerStep && layerStep.highlightWiki }" @click="showRangerWiki"></div>
       </div>
     </div>
@@ -261,11 +261,11 @@
           }
 
           &.btn-map {
-            background-image: url('/NatureBridge/static/ui/map.png');
+            background-image: url('/static/ui/map.png');
           }
 
           &.btn-scrapbook {
-            background-image: url('/NatureBridge/static/ui/scrapbook.png');
+            background-image: url('/static/ui/scrapbook.png');
           }
 
           &.pulse {

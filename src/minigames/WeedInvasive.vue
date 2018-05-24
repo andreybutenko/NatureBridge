@@ -9,7 +9,7 @@
           <b>Weeds Picked:</b> {{score.correct}}
         </div>
         <div class="key">
-          <img src="/NatureBridge/static/misc/plant2.png" />
+          <img src="/static/misc/plant2.png" />
           <span>Pick only this plant!</span>
         </div>
       </div>
@@ -28,12 +28,12 @@
         <h1>Invasive Species</h1>
         <p>It's your job to weed invasive species, which harm the native ecosystem!</p>
         <div class="ex">
-          <img src="/NatureBridge/static/misc/plant2.png" />
+          <img src="/static/misc/plant2.png" />
           <p>These are the invasive species we want to pick.</p>
         </div>
         <div class="ex">
-          <img src="/NatureBridge/static/misc/plant1.png" />
-          <img src="/NatureBridge/static/misc/plant3.png" />
+          <img src="/static/misc/plant1.png" />
+          <img src="/static/misc/plant3.png" />
           <p>These are the native plants we want to keep.</p>
         </div>
         <p>

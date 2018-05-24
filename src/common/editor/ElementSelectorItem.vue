@@ -1,7 +1,7 @@
 <template>
   <div class="element-selector-item" @click="() => onclick(data)">
     <div class="img-container">
-      <img :src="'/NatureBridge/static/' + imageUrl" v-if="!!imageUrl"/>
+      <img :src="'/static/' + imageUrl" v-if="!!imageUrl"/>
     </div>
     <span>{{ name }}</span>
   </div>
