@@ -58,7 +58,7 @@
         return this.stages[this.stageId];
       },
       offset() {
-        return '-' + (this.stageId * 100) + 'vw';
+        return 'calc(-' + (this.stageId * 100) + 'vw + ' + (this.stageId * 16) + 'px)';
       }
     },
     methods: {
@@ -81,15 +81,17 @@
 
     display: flex;
 
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
 
     .welcome-modal-container {
-      width: 100vw;
+      width: 100%;
       height: 100vh;
 
-      flex: 0 0 100vw;
+      flex: 0 0 100%;
+      padding: 8px;
 
       display: inline-flex;
       justify-content: center;
@@ -101,6 +103,8 @@
         background-color: #dfe6e9;
         border-radius: 15px;
         width: 800px;
+        max-width: 100%;
+        margin: auto;
         overflow: hidden;
 
         .title {

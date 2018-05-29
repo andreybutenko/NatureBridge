@@ -247,7 +247,7 @@
         padding-top: 16px;
 
         .game-btn {
-          width: 140px;
+          flex: 1 1 140px;
           height: 64px;
           background-size: contain;
           background-position: center;
