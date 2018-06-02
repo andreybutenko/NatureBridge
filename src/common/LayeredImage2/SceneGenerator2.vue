@@ -76,5 +76,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex: 1 0 100%;
   }
 </style>
