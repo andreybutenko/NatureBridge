@@ -3,7 +3,14 @@
     <div class="center-content">
       <div>
         <div class="pano-view" :style="{ backgroundImage: panoUrl, backgroundPositionX: panoPosition }" @click="attemptNavigation()">
-          <img class="pano-minimap" :src="minimapUrl" />
+          <div class="pano-minimap-container">
+            <img class="pano-minimap" :src="minimapUrl" />
+            <img
+              v-for="mark in checkmarks"
+              style="position: absolute; height: 30px;"
+              :style="{ top: mark.y, left: mark.x }"
+              src="/static/misc/success.png" />
+          </div>
           <div class="compass">
             <div class="compass-pointer" :style="{ transform: compassTransform }"></div>
           </div>
@@ -30,7 +37,7 @@
 <script>
   export default {
     name: 'Compass',
-    props: ['stage', 'onSuccess'],
+    props: ['stage', 'checkmarks', 'onSuccess'],
     data() {
       return {
         degPxRatio: 0,
@@ -128,11 +135,15 @@
     background-position-x: 20px;
     transition: all 1s;
 
-    .pano-minimap {
+    .pano-minimap-container {
       position: absolute;
       left: 0;
       bottom: 0;
       width: 300px;
+
+      .pano-minimap {
+        width: 100%;
+      }
     }
 
     .compass {

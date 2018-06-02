@@ -9,6 +9,10 @@
     <CompassNavigator
       :switchScene="switchScene"
       v-if="enabled('CompassNavigator')" />
+    <Lake
+      :switchScene="switchScene"
+      :showJournalEntry="showJournalEntry"
+      v-if="enabled('Lake')" />
     <MessyRoom
       :switchScene="switchScene"
       v-if="enabled('MessyRoom')" />
@@ -22,16 +26,18 @@
   import BeetleImpact from './BeetleImpact';
   import CompassTutorial from './CompassTutorial';
   import CompassNavigator from './CompassNavigator';
+  import Lake from './Lake';
   import MessyRoom from './MessyRoom'
   import WeedInvasive from './WeedInvasive';
 
   export default {
     name: 'MinigameViewer',
-    props: ['name', 'switchScene'],
+    props: ['name', 'showJournalEntry', 'switchScene'],
     components: {
       BeetleImpact,
       CompassTutorial,
       CompassNavigator,
+      Lake,
       MessyRoom,
       WeedInvasive
     },
@@ -47,6 +53,10 @@
   $orientation-break: 600px;
   #app {
     background-color: white !important;
+  }
+
+  .minigame-viewer {
+    width: 100%;
   }
 
   .game {

@@ -16,6 +16,7 @@
         v-if="!isMinigame" />
       <MinigameViewer
         :name="minigame"
+        :showJournalEntry="showJournalEntry"
         :switchScene="switchScene" />
     </div>
     <div class="secondary-view">
@@ -45,6 +46,7 @@
   import JournalEntry from './common/JournalEntry';
   import RangerWiki from './common/RangerWiki';
   import Principle from './common/Principle';
+  import { globalStore } from './main.js';
 
   export default {
     name: 'GameNew',
@@ -98,6 +100,7 @@
         }
       },
       switchScene(scene) {
+        globalStore.visitLocation(scene);
         this.currentScene = scene;
         this.activeLayer = 1; // this line must go AFTER layerStep.nextScene
       },
@@ -120,7 +123,9 @@
         this.showRangerWiki = showRangerWiki;
       },
       onJournalEntryComplete() {
-        this.takeStep(this.postJournalEntryOption, true);
+        if(!this.minigame) {
+          this.takeStep(this.postJournalEntryOption, true);
+        }
       }
     },
     computed: {

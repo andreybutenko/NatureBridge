@@ -2,11 +2,15 @@
   <div>
     <Compass
       :stage="stage"
+      :checkmarks="markers"
       :onSuccess="onSuccess" />
     <div class="confirm-dialog-container" v-show="destination != ''">
       <div class="confirm-dialog">
         <p>
           Would you like to continue to the <b>{{ destinationText }}</b>?
+        </p>
+        <p class="warning" v-if="hasVisited(destination)">
+          <b>Note: </b> You've already gone down this trail!
         </p>
         <div class="action">
           <div class="cancel-btn" @click="destination = ''">
@@ -23,11 +27,21 @@
 
 <script>
   import Compass from './Compass';
+  import { globalStore } from '../main.js';
 
   export default {
     name: 'CompassTutorial',
     components: { Compass },
     props: ['switchScene'],
+    created() {
+      if(globalStore.hasVisited('MT1') && globalStore.hasVisited('HT1') && globalStore.hasVisited('RT1') && !globalStore.get('exploreFlag')) {
+        globalStore.set('exploreFlag', true);
+        this.switchScene('Finale1');
+      }
+      else {
+        globalStore.set('exploreFlag', false);
+      }
+    },
     data() {
       return {
         destination: '',
@@ -64,6 +78,18 @@
     methods: {
       onSuccess() {
         this.switchScene(this.destination);
+      },
+      hasVisited(name) {
+        return globalStore.hasVisited(name);
+      }
+    },
+    computed: {
+      markers() {
+        const res = [];
+        if(globalStore.hasVisited('MT1')) res.push({ x: '120px', y: '40px' });
+        if(globalStore.hasVisited('HT1')) res.push({ x: '10px', y: '90px' });
+        if(globalStore.hasVisited('RT1')) res.push({ x: '260px', y: '70px' });
+        return res;
       }
     }
   }
@@ -97,6 +123,10 @@
       p {
         font-family: 'Saira Extra Condensed', sans-serif;
         font-size: 32px;
+      }
+
+      .warning {
+        color: #d63031;
       }
 
       .action {

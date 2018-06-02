@@ -33,17 +33,9 @@ const router = new VueRouter({
 export const globalStore = new Vue({
   data() {
     return {
+      attrs: {},
       visited: [],
-      inventory: [],
-      inventoryMessage: '',
       journals: [],
-      attrs: {
-        weedersTalked: false,
-        weedersHelped: false,
-        salmonFreed: false,
-        basecampSquirrel: false,
-        weederSquirrel: false
-      },
       triviaRemaining: trivia
     }
   },
@@ -51,12 +43,8 @@ export const globalStore = new Vue({
     visitLocation(name) {
       this.visited.push(name);
     },
-    addItem(name) {
-      this.inventoryMessage = 'You got a ' + name + '!';
-      this.inventory.push(name);
-    },
-    removeItem(name) {
-      this.inventory = this.inventory.filter(node => node.name != name);
+    hasVisited(name) {
+      return this.visited.indexOf(name) > -1;
     },
     addJournal(title, response) {
       this.journals.push({
@@ -64,17 +52,14 @@ export const globalStore = new Vue({
         response: response
       })
     },
-    has(name) {
-      return this.inventory.indexOf(name) > -1;
-    },
-    setAttr(name, val) {
-      this.attrs[name] = val;
-    },
-    getAttr(name) {
-      return this.attrs[name];
-    },
     getTrivia() {
       return this.triviaRemaining.shift();
+    },
+    set(attr, value) {
+      this.attrs[attr] = value;
+    },
+    get(attr) {
+      return this.attrs[attr];
     }
   }
 })
