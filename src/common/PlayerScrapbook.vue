@@ -65,7 +65,7 @@
   }
 
   .modal-content-journal {
-    background-image: url('../assets/ui/ranger-wiki-bg.png');
+    //background-image: url('../assets/ui/ranger-wiki-bg.png');
     display: flex;
   }
 
