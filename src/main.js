@@ -9,6 +9,7 @@ import GameNew from './GameNew.vue'
 import Editor from './Editor.vue'
 import Welcome from './Welcome.vue'
 import trivia from './trivia.js';
+import BeetleImpact from './minigames/BeetleImpact.vue'
 
 Vue.use(VueRouter);
 Vue.use(Meta);
@@ -16,8 +17,9 @@ Vue.use(Meta);
 const router = new VueRouter({
   routes: [
     { path: '', component: Welcome },
-    { path: '/game2', component: GameNew },
-    { path: '/editor', component: Editor }
+    { path: '/game', component: GameNew },
+    { path: '/editor', component: Editor },
+    { path: '/beetle', component: BeetleImpact }
   ]
 });
 

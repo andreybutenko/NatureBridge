@@ -161,7 +161,8 @@ export default {
     },
     {
       "index": 6,
-      "stepType": "Click through"
+      "stepType": "Click through",
+      "nextScene": "HT2"
     },
     {
       "index": 7,

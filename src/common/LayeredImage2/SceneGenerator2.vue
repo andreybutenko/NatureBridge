@@ -1,5 +1,5 @@
 <template>
-  <div class="scene">
+  <div class="scene" :class="{ sub: sub }">
     <LayeredImage :mousemove="scene.mousemove" :onclick="scene.onclick" :imageUrl="imageUrl">
       <template v-for="element in scene.elements">
         <LayeredImageSprite
@@ -13,10 +13,19 @@
           :onclick="element.onclick"
           :selected="element.selected"
           :customStyle="element.customStyle"
-          :dancing="element.dancing" />
+          :dancing="element.dancing"
+          :trembling="element.trembling" />
 
         <LayeredImageLabel
           v-if="element.type == 'label'"
+          :x="element.left"
+          :y="element.top"
+          :onclick="element.onclick"
+          :selected="element.selected"
+          :text="element.text" />
+
+        <LayeredImageCountdown
+          v-if="element.type == 'countdown'"
           :x="element.left"
           :y="element.top"
           :onclick="element.onclick"
@@ -50,6 +59,7 @@
   import LayeredImageSprite from './LayeredImageSprite';
   import LayeredImageLabel from './LayeredImageLabel';
   import LayeredImageChat from './LayeredImageChat';
+  import LayeredImageCountdown from './LayeredImageCountdown';
   import LayeredImageSelectable from './LayeredImageSelectable';
 
   export default {
@@ -59,9 +69,10 @@
       LayeredImageSprite,
       LayeredImageLabel,
       LayeredImageChat,
+      LayeredImageCountdown,
       LayeredImageSelectable
     },
-    props: ['scene'],
+    props: ['scene', 'sub'],
     computed: {
       imageUrl() {
         return '/static/' + this.scene.background;
@@ -77,5 +88,9 @@
     justify-content: center;
     align-items: center;
     flex: 1 0 100%;
+
+    &.sub {
+      flex: inherit !important;
+    }
   }
 </style>

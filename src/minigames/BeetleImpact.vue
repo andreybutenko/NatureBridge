@@ -12,7 +12,7 @@
           <b>Trees Lost:</b> {{score.killed}}
         </div>
       </div>
-      <SceneGenerator :scene="scene" />
+      <SceneGenerator :scene="scene" :sub="true" />
     </div>
     <div class="instructions-background" v-if="!started || ended">
       <div class="instructions-modal" v-if="!started">
@@ -35,18 +35,25 @@
           <p>Trees will die if you don't take any action.</p>
         </div>
         <p>
-          Click on a tree to thin it. The beetle outbreak will get worse over the 40 seconds. Ready?
+          Click on a tree to thin it. It'll take a few seconds to cut it down, so act fast! The beetle outbreak will get worse over the 30 seconds. Ready?
         </p>
-        <div class="btn-start" @click="startGame">
-          Let's Play!
+        <div class="btn-container">
+          <div class="btn-start" @click="startGame">
+            Let's Play!
+          </div>
         </div>
       </div>
       <div class="instructions-modal" v-if="ended">
         <h1>Beetle Impact</h1>
         <p>Great job! You successfully thinned <b>{{score.saved}}</b> trees.</p>
         <p>By thinning beetle-infested trees, you are preventing damage to the ecosystem.</p>
-        <div class="btn-start" @click="switchScene('RT3')">
-          Continue
+        <div class="btn-container">
+          <div class="btn-start btn-restart" @click="reset()">
+            Play Again
+          </div>
+          <div class="btn-start" @click="switchScene('RT3')">
+            Continue
+          </div>
         </div>
       </div>
     </div>
@@ -64,7 +71,8 @@
         config: {
           gridWidth: 8.7,
           gridInterval: 0.9,
-          offset: 0
+          offset: 0,
+          initialInfected: 5
           // gridWidth: 8,
           // gridInterval: 1.1,
           // offset: 2
@@ -72,12 +80,12 @@
         trees: [],
         started: false,
         ended: false,
-        infectionFrequencySteps: [2500, 1000, 750, 500],
+        infectionFrequencySteps: [1000, 750, 400],
         infectionFrequencyDelay: 10000,
         infectionFrequencyStep: -1,
         infectionStepTime: 5000,
 
-        timeLeft: 40,
+        timeLeft: 30,
         score: {
           saved: 0,
           killed: 0
@@ -88,6 +96,17 @@
       this.generateTrees();
     },
     methods: {
+      reset() {
+        this.trees = [];
+        this.generateTrees();
+        this.started  = false;
+        this.ended = false;
+        this.timeLeft = 30;
+        this.score = {
+          saved: 0,
+          killed: 0
+        }
+      },
       generateTrees() {
         for(let x = 0; x < this.config.gridWidth; x += this.config.gridInterval) {
           for(let y = 0; y < this.config.gridWidth; y += this.config.gridInterval) {
@@ -96,6 +115,7 @@
               id: id,
               onclick: () => this.clickTree(id),
               infected: 0,
+              countdown: -1,
 
               get customStyle() {
                 if(this.infected == 0) {
@@ -112,7 +132,10 @@
                 }
               },
               get dancing() {
-                return this.infected == 2;
+                return this.infected == 2 && this.countdown == -1;
+              },
+              get trembling() {
+                return this.countdown > -1;
               },
 
               left: this.getRandomPosition(x),
@@ -129,15 +152,37 @@
         this.increaseDifficulty();
         this.setInfectionTimer();
         this.setCountdownTimer();
+        for(let i = 0 ; i < this.config.initialInfected; i++) {
+          this.infectRandomTree();
+        }
         this.started = true;
       },
 
       clickTree(id) {
         const tree = this.getTree(id);
-        if(tree.infected < 3 && tree.infected > 0) {
-          tree.infected = -1;
-          this.score.saved++;
+        if(tree.infected < 3 && tree.infected > 0 && tree.countdown == -1 && this.timeLeft > 0) {
+          tree.countdown = 3;
+          this.setCountdownDestroyTree(id);
         }
+      },
+
+      setCountdownDestroyTree(id) {
+        setTimeout(() => {
+          const tree = this.getTree(id);
+
+          // if the tree died in the meantime
+          if(tree.infected == 3 || tree.countdown == -1) return;
+
+          tree.countdown--;
+          if(tree.countdown == 0) {
+            tree.infected = -1;
+            tree.countdown = -1;
+            this.score.saved++;
+          }
+          else {
+            this.setCountdownDestroyTree(id);
+          }
+        }, 1000);
       },
 
       setCountdownTimer() {
@@ -149,6 +194,7 @@
         }
         else {
           this.ended = true;
+          this.trees.filter(tree => tree.countdown != -1).forEach(tree => tree.countdown = -1);
         }
       },
 
@@ -193,6 +239,7 @@
         }
         else if(tree.infected == 3)  {
           this.score.killed++;
+          tree.countdown = -1;
         }
       },
 
@@ -211,10 +258,23 @@
       infectionFrequency() {
         return this.infectionFrequencySteps[this.infectionFrequencyStep] || 100000000000000;
       },
+      countdowns() {
+        return this.trees.filter(tree => tree.countdown != -1).map(tree => {
+          return {
+            type: 'countdown',
+            left: tree.left,
+            top: 'calc(' + tree.top + ' + 25px)',
+            text: tree.countdown
+          }
+        })
+      },
       scene() {
         return {
           background: "backgrounds/grass.png",
-          elements: this.trees
+          elements: [
+            ...this.countdowns,
+            ...this.trees
+          ]
         }
       }
     }
@@ -291,17 +351,33 @@
         }
       }
 
-      .btn-start {
-        padding: 16px;
-        text-align: center;
-        color: white;
-        cursor: pointer;
-        background-color: #27ae60;
-        transition: all 250ms;
-        margin-top: 16px;
+      .btn-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
 
-        &:hover {
-          background-color: #2ecc71;
+        .btn-start {
+          flex: 1;
+          padding: 16px;
+          text-align: center;
+          color: white;
+          cursor: pointer;
+          background-color: #27ae60;
+          transition: all 250ms;
+          margin-top: 16px;
+
+          &.btn-restart {
+            color: black;
+            background-color: #fdcb6e;
+
+            &:hover {
+              background-color: #ffeaa7;
+            }
+          }
+
+          &:hover {
+            background-color: #2ecc71;
+          }
         }
       }
     }

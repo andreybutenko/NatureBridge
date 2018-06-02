@@ -315,7 +315,8 @@ export default {
     },
     {
       "index": 6,
-      "stepType": "Click through"
+      "stepType": "Click through",
+      "nextScene": "MT4"
     },
     {
       "index": 7,
