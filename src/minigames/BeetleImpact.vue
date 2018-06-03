@@ -3,13 +3,13 @@
     <div class="beetle-impact">
       <div class="stats">
         <div>
-          <b>Time Remaining:</b> {{timeLeft}}
+          <b>Time:</b> <span class="big">{{timeLeft}}</span>
         </div>
         <div>
-          <b>Trees Thinned:</b> {{score.saved}}
+          <b>Trees Thinned:</b> <span class="big">{{score.saved}}</span>
         </div>
         <div>
-          <b>Trees Lost:</b> {{score.killed}}
+          <b>Trees Lost:</b> <span class="big">{{score.killed}}</span>
         </div>
       </div>
       <SceneGenerator :scene="scene" :sub="true" />
@@ -47,6 +47,8 @@
         <h1>Beetle Impact</h1>
         <p>Great job! You successfully thinned <b>{{score.saved}}</b> trees.</p>
         <p>By thinning beetle-infested trees, you are preventing damage to the ecosystem.</p>
+        <p v-if="score.saved < targetScore">You need just {{Math.ceil(targetScore - score.saved)}} more to earn the <b>Tree Thinning Badge</b>!</p>
+        <p v-else>Congratulations, you earned the <b>Tree Thinning Badge</b> for your good performance!</p>
         <div class="btn-container">
           <div class="btn-start btn-restart" @click="reset()">
             Play Again
@@ -61,6 +63,7 @@
 </template>
 
 <script>
+  import { globalStore } from '../main.js';
   import SceneGenerator from '../common/LayeredImage2/SceneGenerator2';
   export default {
     name: 'BeetleImpact',
@@ -72,7 +75,8 @@
           gridWidth: 8.7,
           gridInterval: 0.9,
           offset: 0,
-          initialInfected: 5
+          initialInfected: 5,
+          awardThreshold: 0.65
           // gridWidth: 8,
           // gridInterval: 1.1,
           // offset: 2
@@ -88,7 +92,8 @@
         timeLeft: 30,
         score: {
           saved: 0,
-          killed: 0
+          killed: 0,
+          created: 0
         }
       }
     },
@@ -102,9 +107,11 @@
         this.started  = false;
         this.ended = false;
         this.timeLeft = 30;
+        this.infectionFrequencyStep = -1;
         this.score = {
           saved: 0,
-          killed: 0
+          killed: 0,
+          created: 0
         }
       },
       generateTrees() {
@@ -195,6 +202,9 @@
         else {
           this.ended = true;
           this.trees.filter(tree => tree.countdown != -1).forEach(tree => tree.countdown = -1);
+          if(this.score.saved > this.targetScore) {
+            this.earnBadge('tree-thinning');
+          }
         }
       },
 
@@ -224,6 +234,7 @@
           setTimeout(() => {
             this.progressInfection(tree.id);
           }, this.infectionStepTime);
+          this.score.created++;
         }
       },
       progressInfection(id) {
@@ -268,6 +279,9 @@
           }
         })
       },
+      targetScore() {
+        return this.score.created * this.config.awardThreshold;
+      },
       scene() {
         return {
           background: "backgrounds/grass.png",
@@ -282,101 +296,123 @@
 </script>
 
 <style lang="scss" scoped>
+  $orientation-break: 600px;
   .beetle-impact-container {
     position: relative;
     display: flex;
     justify-content: center;
     height: 100vh;
-  }
-  .beetle-impact {
-    user-select: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
-    .stats {
+    .beetle-impact {
+      user-select: none;
       display: flex;
-      width: 100%;
-      background-color: #3498db;
-      padding: 16px;
+      flex-direction: row-reverse;
+      justify-content: center;
+      align-items: stretch;
 
-      & > * {
-        flex: 1;
-        text-align: center;
+      @media only screen and (max-width: $orientation-break) {
+        flex-direction: column;
+      }
+
+      .stats {
+        display: flex;
+        flex-direction: column;
+        background-color: #3498db;
+        padding: 16px;
+
+        @media only screen and (max-width: $orientation-break) {
+          flex-direction: row;
+        }
+
+        & > * {
+          flex: 1;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        .big {
+          font-size: 64px;
+          display: block;
+
+          @media only screen and (max-width: $orientation-break) {
+            font-size: 32px;
+          }
+        }
       }
     }
-  }
 
-  .instructions-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 999;
+    .instructions-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 999;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-    .instructions-modal {
-      background-color: white;
-      padding: 32px;
+      .instructions-modal {
+        background-color: white;
+        padding: 32px;
 
-      .ex {
-        display: flex;
-        align-items: center;
-        margin: 1em 0;
+        .ex {
+          display: flex;
+          align-items: center;
+          margin: 1em 0;
 
-        img {
-          height: 2.5em;
-          margin-right: 1em;
-        }
-
-        .infested {
-          filter: hue-rotate(270deg) saturate(2)
-        }
-
-        .trembling {
-          transform-origin: 50% 100%;
-          animation-name: wiggle;
-          animation-duration: 2000ms;
-          animation-iteration-count: infinite;
-        }
-
-        .infested-dead {
-          filter: grayscale(1);
-        }
-      }
-
-      .btn-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-
-        .btn-start {
-          flex: 1;
-          padding: 16px;
-          text-align: center;
-          color: white;
-          cursor: pointer;
-          background-color: #27ae60;
-          transition: all 250ms;
-          margin-top: 16px;
-
-          &.btn-restart {
-            color: black;
-            background-color: #fdcb6e;
-
-            &:hover {
-              background-color: #ffeaa7;
-            }
+          img {
+            height: 2.5em;
+            margin-right: 1em;
           }
 
-          &:hover {
-            background-color: #2ecc71;
+          .infested {
+            filter: hue-rotate(270deg) saturate(2)
+          }
+
+          .trembling {
+            transform-origin: 50% 100%;
+            animation-name: wiggle;
+            animation-duration: 2000ms;
+            animation-iteration-count: infinite;
+          }
+
+          .infested-dead {
+            filter: grayscale(1);
+          }
+        }
+
+        .btn-container {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          .btn-start {
+            flex: 1;
+            padding: 16px;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+            background-color: #27ae60;
+            transition: all 250ms;
+            margin-top: 16px;
+
+            &.btn-restart {
+              color: black;
+              background-color: #fdcb6e;
+
+              &:hover {
+                background-color: #ffeaa7;
+              }
+            }
+
+            &:hover {
+              background-color: #2ecc71;
+            }
           }
         }
       }

@@ -29,6 +29,7 @@ export const globalStore = new Vue({
       attrs: {},
       visited: [],
       journals: [],
+      badges: [],
       triviaRemaining: trivia
     }
   },
@@ -53,6 +54,11 @@ export const globalStore = new Vue({
     },
     get(attr) {
       return this.attrs[attr];
+    },
+    earnBadge(name) {
+      if(this.badges.indexOf(name) < 0) {
+      this.badges.push(name);
+      }
     }
   }
 })
