@@ -3,25 +3,27 @@
     <div class="beetle-impact">
       <div class="stats">
         <div>
-          <b>Time Left:</b> {{timeLeft}}
+          <b>Time Left:</b> <span class="big">{{timeLeft}}</span>
         </div>
         <div>
-          <b>Weeds Picked:</b> {{score.correct}}
+          <b>Weeds Picked:</b> <span class="big">{{score.correct}}</span>
         </div>
         <div class="key">
           <img src="/static/misc/plant2.png" />
           <span>Pick only this plant!</span>
         </div>
       </div>
-      <SceneGenerator :scene="scene" />
+      <SceneGenerator :scene="scene" :sub="true" />
     </div>
     <div class="instructions-background" v-if="!started || ended || wrong">
       <div class="instructions-modal" v-if="wrong">
         <h1>Careful!</h1>
         <p>That was a native species, not a stinky bob!</p>
         <p>Remember: stinky bobs have <i>purple</i> petals.</p>
-        <div class="btn-start" @click="wrong = false">
-          Continue
+        <div class="btn-container">
+          <div class="btn-start" @click="wrong = false">
+            Continue
+          </div>
         </div>
       </div>
       <div class="instructions-modal" v-if="!started">
@@ -39,16 +41,25 @@
         <p>
           Click on a plant to pick it. Make sure to only pick the invasive species! Pick as many as possible in {{timeLeft}} seconds.
         </p>
-        <div class="btn-start" @click="startGame">
-          Let's Play!
+        <div class="btn-container">
+          <div class="btn-start" @click="startGame">
+            Let's Play!
+          </div>
         </div>
       </div>
       <div class="instructions-modal" v-if="ended">
         <h1>Invasive Species</h1>
         <p>Great job! You successfully picked <b>{{score.correct}}</b> invasive species.</p>
         <p>By removing invasive species, you are preventing damage to the ecosystem.</p>
-        <div class="btn-start" @click="switchScene('MT1_2')">
-          Continue
+        <p v-if="score.correct < config.awardThreshold">You need just {{Math.ceil(score.correct - config.awardThreshold)}} more to earn the <b>Weeding Badge</b>!</p>
+        <p v-else>Congratulations, you earned the <b>Weeding Badge</b> for your good performance!</p>
+        <div class="btn-container">
+          <div class="btn-start btn-restart" @click="reset()">
+            Play Again
+          </div>
+          <div class="btn-start" @click="switchScene('MT2_2')">
+            Continue
+          </div>
         </div>
       </div>
     </div>
@@ -56,6 +67,7 @@
 </template>
 
 <script>
+  import { globalStore } from '../main.js';
   import SceneGenerator from '../common/LayeredImage2/SceneGenerator2';
   export default {
     name: 'WeedInvasive',
@@ -67,11 +79,10 @@
           gridWidth: 8.7,
           gridInterval: 0.4,
           offset: 0,
-          initialWeeds: 10,
-          weedId: 1
+          weedId: 1,
+          awardThreshold: 35
         },
         timeLeft: 40,
-        initialWeeds: -1,
         plants: [],
         started: false,
         ended: false,
@@ -86,6 +97,17 @@
       this.generatePlants();
     },
     methods: {
+      reset() {
+        this.plants = [];
+        this.started = false;
+        this.ended = false;
+        this.score = {
+          correct: 0,
+          wrong: 0
+        };
+        this.timeleft = 40;
+      },
+
       generatePlants() {
         for(let x = 0; x < this.config.gridWidth; x += this.config.gridInterval) {
           for(let y = 0; y < this.config.gridWidth; y += this.config.gridInterval) {
@@ -133,6 +155,10 @@
         }
         else {
           this.ended = true;
+          this.wrong = false;
+          if(this.score.correct > this.config.awardThreshold) {
+            globalStore.earnBadge('weeding');
+          }
         }
       },
 
@@ -174,99 +200,136 @@
 </script>
 
 <style lang="scss" scoped>
+  $orientation-break: 600px;
   .beetle-impact-container {
     position: relative;
     display: flex;
     justify-content: center;
     height: 100vh;
-  }
-  .beetle-impact {
-    user-select: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
-    .stats {
+    .beetle-impact {
+      user-select: none;
       display: flex;
-      width: 100%;
-      background-color: #bdc3c7;
-      padding: 16px;
-      align-items: center;
+      flex-direction: row-reverse;
+      justify-content: center;
+      align-items: stretch;
 
-      & > * {
-        flex: 1;
-        text-align: center;
+      @media only screen and (max-width: $orientation-break) {
+        flex-direction: column;
       }
 
-      .key {
+      .stats {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
+        flex-direction: column;
+        background-color: #3498db;
+        padding: 16px;
 
-        img {
-          height: 3em;
-          margin-right: 1em;
+        @media only screen and (max-width: $orientation-break) {
+          flex-direction: row;
+        }
+
+        & > * {
+          flex: 1;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        .big {
+          font-size: 64px;
+          display: block;
+
+          @media only screen and (max-width: $orientation-break) {
+            font-size: 32px;
+          }
+        }
+
+        .key {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+
+          img {
+            height: 3em;
+            margin-right: 1em;
+          }
         }
       }
     }
-  }
 
-  .instructions-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 999;
+    .instructions-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 999;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-    .instructions-modal {
-      background-color: white;
-      padding: 32px;
+      .instructions-modal {
+        background-color: white;
+        padding: 32px;
 
-      .ex {
-        display: flex;
-        align-items: center;
-        margin: 1em 0;
+        .ex {
+          display: flex;
+          align-items: center;
+          margin: 1em 0;
 
-        img {
-          height: 2.5em;
-          margin-right: 1em;
+          img {
+            height: 2.5em;
+            margin-right: 1em;
+          }
+
+          .infested {
+            filter: hue-rotate(270deg) saturate(2)
+          }
+
+          .trembling {
+            transform-origin: 50% 100%;
+            animation-name: wiggle;
+            animation-duration: 2000ms;
+            animation-iteration-count: infinite;
+          }
+
+          .infested-dead {
+            filter: grayscale(1);
+          }
         }
 
-        .infested {
-          filter: hue-rotate(270deg) saturate(2)
-        }
+        .btn-container {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
 
-        .trembling {
-          transform-origin: 50% 100%;
-          animation-name: wiggle;
-          animation-duration: 2000ms;
-          animation-iteration-count: infinite;
-        }
+          .btn-start {
+            flex: 1;
+            padding: 16px;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+            background-color: #27ae60;
+            transition: all 250ms;
+            margin-top: 16px;
 
-        .infested-dead {
-          filter: grayscale(1);
-        }
-      }
+            &.btn-restart {
+              color: black;
+              background-color: #fdcb6e;
 
-      .btn-start {
-        padding: 16px;
-        text-align: center;
-        color: white;
-        cursor: pointer;
-        background-color: #27ae60;
-        transition: all 250ms;
-        margin-top: 16px;
+              &:hover {
+                background-color: #ffeaa7;
+              }
+            }
 
-        &:hover {
-          background-color: #2ecc71;
+            &:hover {
+              background-color: #2ecc71;
+            }
+          }
         }
       }
     }

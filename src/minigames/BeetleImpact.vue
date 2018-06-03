@@ -203,7 +203,7 @@
           this.ended = true;
           this.trees.filter(tree => tree.countdown != -1).forEach(tree => tree.countdown = -1);
           if(this.score.saved > this.targetScore) {
-            this.earnBadge('tree-thinning');
+            globalStore.earnBadge('tree-thinning');
           }
         }
       },
