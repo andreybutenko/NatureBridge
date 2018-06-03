@@ -1,5 +1,5 @@
 <template>
-  <div class="game">
+  <div class="game" :class="{ minigame: isMinigame }">
     <SquirrelTrivia
       :registerShow="registerShowSquirrelTrivia" />
     <JournalEntry
@@ -203,7 +203,28 @@
     flex-direction: row;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
+
+    @media only screen and (min-width: $orientation-break) {
+      &.minigame {
+        flex-direction: column;
+
+        .secondary-view {
+          width: 25%;
+          align-self: flex-end;
+          flex: 0 0 calc(64px + 32px);
+
+          .step-container {
+            display: none;
+          }
+
+          .game-btns-container {
+            border-top: 0;
+            padding: 0;
+          }
+        }
+      }
+    }
 
     @media only screen and (max-width: $orientation-break) {
       flex-direction: column;

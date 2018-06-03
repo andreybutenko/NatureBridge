@@ -5,6 +5,7 @@
       <h2 class="title">{{ timeRemaining }} seconds left...</h2>
       <div style="position: relative" class="game-area">
         <img
+          style="width: 100%"
       	  src="../assets/messy/room.png" />
 
         <MessyRoomItem
@@ -151,6 +152,8 @@
     }
   }
 
+
+
   .center-content {
     height: 100%;
   }
@@ -162,6 +165,7 @@
 
   .game-area {
     margin: 16px 0;
+    max-width: 100%;
   }
 
   .modal-content > h1,

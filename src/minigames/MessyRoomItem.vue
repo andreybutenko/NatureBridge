@@ -10,8 +10,20 @@
   export default {
     name: 'MessyRoomItem',
     props: ['name', 'top', 'left', 'onPress'],
+    mounted() {
+      setTimeout(() => {
+        const background = this.$el.parentNode.firstChild;
+        const width = background.offsetWidth;
+        this.scale = width / this.targetWidth;
+        console.log(width, this.targetWidth, width / this.targetWidth, this.scale)
+      }, 100);
+
+    },
     data() {
       return {
+        targetWidth: 800,
+        targetHeight: 600,
+        scale: 1,
         visible: true
       }
     },
@@ -23,8 +35,10 @@
         return {
           cursor: 'pointer',
           position: 'absolute',
-          top: this.top + 'px',
-          left: this.left + 'px'
+          top: (this.top / this.targetHeight * 100) + '%',
+          left: (this.left / this.targetWidth * 100) + '%',
+          transform: 'scale(' + this.scale + ')',
+          transformOrigin: '0 0'
         }
       }
     },
