@@ -1,12 +1,12 @@
 <template>
   <div class="container">
     <div class="center-content">
-      <h1 class="title">You're late! Get packed!</h1>
+      <h1 class="title">Pack for the Park!</h1>
       <h2 class="title">{{ timeRemaining }} seconds left...</h2>
       <div style="position: relative" class="game-area">
         <img
           style="width: 100%"
-      	  src="../assets/messy/room.png" />
+      	  src="/static/packing/background.png" />
 
         <MessyRoomItem
           v-for="item in items"
@@ -14,40 +14,68 @@
           :onPress="onPressItem"
           :name="item.name"
           :top="item.top"
-          :left="item.left" />
+          :left="item.left"
+          :visible="isVisible(item.name)" />
       </div>
 
       <div class="columns">
         <div class="column-container">
-          <div>
-            <b v-if="!!found.length">You found:</b>
-            <ul>
+          <div class="packed">
+            <b>You found:</b>
+            <ul class="two-column">
               <li v-for="item in found" :key="item.name">{{ item.display }}</li>
             </ul>
           </div>
         </div>
         <div class="column-container">
-          <div>
+          <div class="to-pack">
             <b>Items to pack:</b>
-            <ul>
+            <ul class="two-column">
               <li v-for="item in remaining" :key="item.name">{{ item.display }}</li>
             </ul>
-            <br v-for="item in found" />
+            <br v-for="(item, i) in found" v-if="i % 2 == 0" />
           </div>
         </div>
       </div>
 
-      <div class="modal-container" v-if="intro">
+      <div class="modal-container" v-if="intro && !viewingEssentials">
         <div class="modal-content">
           <h1 class="modal-title">Pack Fast!</h1>
           <p>
-            Oh no! You slept in, but you need to get packed for your trip to the National Park! Pack fast, you need to find these items in your room:
+            Before going to a park, it is important to be prepared. Make sure to pack the <span class="link" @click="viewingEssentials = true">10 Essentials</span> so you will be read for any situation.
           </p>
-          <ul>
+          <p>
+            Click on these items to pack them in your bag:
+          </p>
+          <ul class="two-column">
             <li v-for="item in remaining" :key="item.name">{{ item.display }}</li>
           </ul>
 
-          <div class="play-btn" @click="intro = false">Begin!</div>
+          <div class="btn-container">
+            <div class="play-btn" @click="intro = false">Begin!</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-container" v-if="viewingEssentials">
+        <div class="modal-content">
+          <h1 class="modal-title">10 Essentials</h1>
+          <ul>
+            <li>Navigation</li>
+            <li>Sun Protection</li>
+            <li>Insulation</li>
+            <li>Illumination</li>
+            <li>First Aid</li>
+            <li>Tool Kit</li>
+            <li>Fire</li>
+            <li>Nutrition</li>
+            <li>Hydration</li>
+            <li>Emergency Shelter</li>
+          </ul>
+
+          <div class="btn-container">
+            <div class="play-btn" @click="viewingEssentials = false">Back to instructions</div>
+          </div>
         </div>
       </div>
 
@@ -55,21 +83,27 @@
         <div class="modal-content" v-if="remaining.length == 0">
           <h1 class="modal-title">Hurray!</h1>
           <p>
-            You may have not been prepared in advance, but you were able to get packed last-minute in only {{ 30 - timeRemaining }} seconds.
+            Great packing! Now you have everything you need to have a safe and enjoyable trip to the Park. You earned your <b>Wilderness Preparedness Badge</b>!
           </p>
 
-          <div class="play-btn" @click="switchScene('Intro1')">Go to the Park!</div>
+          <div class="btn-container">
+            <div class="play-btn btn-restart" @click="reset()">Play Again</div>
+            <div class="play-btn" @click="switchScene('WaveGoodbye')">Let's get going!</div>
+          </div>
         </div>
         <div class="modal-content" v-else>
           <h1 class="modal-title">Game Over!</h1>
           <p>
-            You weren't able to get everything you needed packed, but you have to get going! You were still missing:
+            Time’s up! Looks like you weren’t able to find everything you needed in time.
           </p>
-          <ul>
-            <li v-for="item in remaining" :key="item.name">{{ item.display }}</li>
-          </ul>
+          <p>
+            Play again and find all the items to earn the <b>Wilderness Preparedness Badge</b>!
+          </p>
 
-          <div class="play-btn" @click="switchScene('Intro1')">Go to the Park!</div>
+          <div class="btn-container">
+            <div class="play-btn btn-restart" @click="reset()">Play Again</div>
+            <div class="play-btn" @click="switchScene('WaveGoodbye')">Continue on and borrow what you need from a friend on the way</div>
+          </div>
         </div>
       </div>
     </div>
@@ -91,11 +125,19 @@
         timerStarted: false,
         intro: true,
         gameOver: false,
+        viewingEssentials: false,
         items: [
-          { name: 'firstaid', display: 'First Aid', top: 432, left: 725 },
-          { name: 'jacket', display: 'Jacket', top: 505, left: 467 },
-          { name: 'flashlight', display: 'Flashlight', top: 515, left: 140 },
-          { name: 'rope', display: 'Rope', top: 235, left: 645 },
+          { name: 'compass', display: 'Compass', left: 750, top: 270 },
+          { name: 'firstaid', display: 'First Aid', left: 726, top: 434 },
+          { name: 'hat', display: 'Hat', left: 406, top: 532 },
+          { name: 'jacket', display: 'Jacket', left: 466, top: 508 },
+          { name: 'knife', display: 'Knife', left: 688, top: 446 },
+          { name: 'lunch', display: 'Lunch Bag', left: 716, top: 512 },
+          { name: 'matches', display: 'Box of Matches', left: 610, top: 280 },
+          { name: 'rope', display: 'Rope', left: 642, top: 240 },
+          { name: 'sunscreen', display: 'Sunscreen', left: 704, top: 234 },
+          { name: 'tarp', display: 'Tarp', left: 566, top: 260 },
+          { name: 'water bottle', display: 'Water Bottle', left: 628, top: 218 }
         ],
         found: []
       }
@@ -104,11 +146,21 @@
       globalStore.visitLocation('MessyRoom');
     },
     methods: {
+      reset() {
+        this.timeRemaining = 30;
+        this.timerStarted = false;
+        this.intro = true;
+        this.gameOver = false;
+        this.found = [];
+      },
       onPressItem(name) {
         this.found.push(...this.items.filter(item => item.name == name))
 
         if(!this.timerStarted) this.startTimer();
         if(this.remaining.length == 0) this.stopTimer();
+      },
+      isVisible(name) {
+        return this.found.map(item => item.name).indexOf(name) == -1;
       },
       startTimer() {
         this.timerStarted = true;
@@ -140,19 +192,69 @@
     flex-direction: row;
     flex: 1 0 100%;
     width: 100%;
+    max-width: 800px;
 
     .column-container {
       flex: 1;
       display: flex;
       justify-content: center;
 
-      & > div {
-        flex: 0 0 25%;
+      div {
+        flex: 1;
+      }
+
+      .to-pack {
+        border-left: 1px solid black;
+        padding-left: 16px;
       }
     }
   }
 
+  ul.two-column {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 
+    li {
+      flex: 1 1 50%;
+    }
+  }
+
+  .link {
+    color: #2980b9;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .play-btn {
+      flex: 1;
+      padding: 16px;
+      text-align: center;
+      color: white;
+      cursor: pointer;
+      background-color: #27ae60;
+      transition: all 250ms;
+      margin-top: 16px;
+
+      &.btn-restart {
+        color: black;
+        background-color: #fdcb6e;
+
+        &:hover {
+          background-color: #ffeaa7;
+        }
+      }
+
+      &:hover {
+        background-color: #2ecc71;
+      }
+    }
+  }
 
   .center-content {
     height: 100%;

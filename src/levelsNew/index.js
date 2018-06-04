@@ -10,6 +10,7 @@ import BeetleImpactLvl from './BeetleImpactLvl';
 import CompassTutorialLvl from './CompassTutorialLvl';
 import CompassNavigatorLvl from './CompassNavigatorLvl';
 import MessyRoomLvl from './MessyRoomLvl';
+import WaveGoodbyeLvl from './WaveGoodbyeLvl';
 import WeedInvasiveLvl from './WeedInvasiveLvl';
 
 import HT1 from './HT1';
@@ -48,5 +49,6 @@ export default {
   RT1,
   RT2,
   RT3,
+  WaveGoodbye: WaveGoodbyeLvl,
   WeedInvasive: WeedInvasiveLvl
 }

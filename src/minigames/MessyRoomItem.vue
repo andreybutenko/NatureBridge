@@ -9,27 +9,26 @@
 <script>
   export default {
     name: 'MessyRoomItem',
-    props: ['name', 'top', 'left', 'onPress'],
+    props: ['name', 'top', 'left', 'onPress', 'visible'],
     mounted() {
       setTimeout(() => {
         const background = this.$el.parentNode.firstChild;
         const width = background.offsetWidth;
         this.scale = width / this.targetWidth;
-        console.log(width, this.targetWidth, width / this.targetWidth, this.scale)
-      }, 100);
+        //console.log(width, this.targetWidth, width / this.targetWidth, this.scale)
+      }, 1000);
 
     },
     data() {
       return {
         targetWidth: 800,
         targetHeight: 600,
-        scale: 1,
-        visible: true
+        scale: 1
       }
     },
     computed: {
       imageUrl() {
-        return require('../assets/messy/' + this.name + '.png');
+        return '/static/packing/' + this.name + '.png';
       },
       style() {
         return {
@@ -44,7 +43,7 @@
     },
     methods: {
       onPressImage() {
-        this.visible = false;
+        //this.visible = false;
         this.onPress(this.name);
       }
     }

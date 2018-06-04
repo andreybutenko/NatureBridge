@@ -16,6 +16,9 @@
     <MessyRoom
       :switchScene="switchScene"
       v-if="enabled('MessyRoom')" />
+    <WaveGoodbye
+      :switchScene="switchScene"
+      v-if="enabled('WaveGoodbye')" />
     <WeedInvasive
       :switchScene="switchScene"
       v-if="enabled('WeedInvasive')" />
@@ -27,7 +30,8 @@
   import CompassTutorial from './CompassTutorial';
   import CompassNavigator from './CompassNavigator';
   import Lake from './Lake';
-  import MessyRoom from './MessyRoom'
+  import MessyRoom from './MessyRoom';
+  import WaveGoodbye from './WaveGoodbye';
   import WeedInvasive from './WeedInvasive';
 
   export default {
@@ -39,6 +43,7 @@
       CompassNavigator,
       Lake,
       MessyRoom,
+      WaveGoodbye,
       WeedInvasive
     },
     methods: {
