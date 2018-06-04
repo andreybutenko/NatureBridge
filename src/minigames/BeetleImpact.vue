@@ -16,8 +16,8 @@
     </div>
     <div class="instructions-background" v-if="!started || ended">
       <div class="instructions-modal" v-if="!started">
-        <h1>Beetle Impact</h1>
-        <p>It's your job to thin the beetle-infected trees!</p>
+        <h1>Forest Health</h1>
+        <p>It's your job to thin the beetle-infested trees in order to improve the health of the forest. </p>
         <div class="ex">
           <img src="/static/misc/pine.png" class="healthy" />
           <p>Trees will start off green and healthy!</p>
@@ -35,18 +35,18 @@
           <p>Trees will die if you don't take any action.</p>
         </div>
         <p>
-          Click on a tree to thin it. It'll take a few seconds to cut it down, so act fast! The beetle outbreak will get worse over the 30 seconds. Ready?
+          Click on a tree to thin it. It takes 3 seconds to cut down a tree after you click, so act fast! Ready?
         </p>
         <div class="btn-container">
           <div class="btn-start" @click="startGame">
-            Let's Play!
+            Protect the Forest!
           </div>
         </div>
       </div>
       <div class="instructions-modal" v-if="ended">
-        <h1>Beetle Impact</h1>
+        <h1>Forest Health</h1>
         <p>Great job! You successfully thinned <b>{{score.saved}}</b> trees.</p>
-        <p>By thinning beetle-infested trees, you are preventing damage to the ecosystem.</p>
+        <p>By thinning beetle-infested trees, you help promote growth of healthy trees.</p>
         <p v-if="score.saved < targetScore">You need just {{Math.ceil(targetScore - score.saved)}} more to earn the <b>Tree Thinning Badge</b>!</p>
         <p v-else>Congratulations, you earned the <b>Tree Thinning Badge</b> for your good performance!</p>
         <div class="btn-container">
