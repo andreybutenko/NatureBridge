@@ -1,7 +1,8 @@
 <template>
   <Compass
     :stage="stage"
-    :onSuccess="onSuccess" />
+    :onSuccess="onSuccess"
+    :showInstructions="true" />
 </template>
 
 <script>

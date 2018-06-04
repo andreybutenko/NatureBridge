@@ -29,8 +29,10 @@
         </div>
       </div>
       <div class="game-btns-container">
-        <div class="game-btn btn-map" @click="cheat"></div>
-        <div class="game-btn btn-scrapbook" :class="{ pulse: !isMinigame && !!layerStep && layerStep.highlightWiki }" @click="showRangerWiki"></div>
+        <div class="game-btn btn-teleport" @click="cheat"></div>
+        <div class="game-btn btn-map" :class="{ pulse: !isMinigame && !!layerStep && layerStep.highlightMap }" @click=""></div>
+        <div class="game-btn btn-scrapbook" @click=""></div>
+        <div class="game-btn btn-fieldguide" :class="{ pulse: !isMinigame && !!layerStep && layerStep.highlightWiki }" @click="showRangerWiki"></div>
       </div>
     </div>
   </div>
@@ -292,6 +294,14 @@
 
           &.btn-scrapbook {
             background-image: url('/static/ui/scrapbook.png');
+          }
+
+          &.btn-teleport {
+            background-image: url('/static/ui/teleport.png');
+          }
+
+          &.btn-fieldguide {
+            background-image: url('/static/ui/field guide.png');
           }
 
           &.pulse {

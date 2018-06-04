@@ -30,7 +30,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Great work!\nYou found the trail to the\nmountain pass!",
+        "text": "Great work! You’ll have no trouble out on the trail.",
         "top": "33%",
         "left": "52%",
         "flip": false
@@ -39,7 +39,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Do you have any other questions\nabout the park before you go explore?",
+        "text": "Do you have any other questions for me before you head out?",
         "top": "40%",
         "left": "53%",
         "flip": false
@@ -48,7 +48,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Great! Come in the Ranger Station\nwith me and we'll address your\nquestions.",
+        "text": "Great, come on in the Ranger Station.",
         "top": "31%",
         "left": "50%",
         "flip": false
@@ -57,7 +57,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Great! Just take this Field Guide, it has plenty of useful\ninformation if you're ever\ncurious.",
+        "text": "Great, here’s a field guide you can refer to along the way.",
         "top": "28%",
         "left": "50%",
         "flip": false
@@ -84,11 +84,11 @@ export default {
       "options": [
         {
           "layer": "3",
-          "description": "Yes, I have questions!"
+          "description": "Yes, I have questions."
         },
         {
           "layer": "4",
-          "description": "Nope, ready to go!"
+          "description": "No, I’m ready to get out on the trail."
         }
       ]
     },
@@ -101,8 +101,13 @@ export default {
       "highlightWiki": true
     },
     {
-      "stepType": "Click through",
-      "nextScene": "CompassNavigator"
+      "stepType": "Decision",
+      "nextScene": "CompassNavigator",
+      "options": [
+        {
+          "description": "Continue to Trailhead"
+        }
+      ]
     }
   ]
 }

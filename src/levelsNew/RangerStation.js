@@ -31,7 +31,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Let me find a Field Guide for you!\nIt has lots of useful information\nabout National Parks.",
+        "text": "Here's a Field Guide for you!\nIt has lots of useful information\nabout National Parks.",
         "top": "16%",
         "left": "3%",
         "flip": true
@@ -40,9 +40,9 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Here it is!\nTake a look.",
+        "text": "Remember, National Parks are here for your enjoyment,\nbut it’s important to be safe and follow the\nLeave No Trace Principles listed in your Field Guide.",
         "top": "24%",
-        "left": "40%",
+        "left": "10%",
         "flip": true
       }
     ],
@@ -62,15 +62,20 @@ export default {
       "stepType": "Click through"
     },
     {
-      "stepType": "Click through"
-    },
-    {
       "stepType": "Click through",
       "highlightWiki": true
     },
     {
-      "stepType": "Click through",
-      "nextScene": "CompassNavigator"
+      "stepType": "Click through"
+    },
+    {
+      "stepType": "Decision",
+      "nextScene": "CompassNavigator",
+      "options": [
+        {
+          "description": "Continue to Trailhead"
+        }
+      ]
     }
   ]
 }
