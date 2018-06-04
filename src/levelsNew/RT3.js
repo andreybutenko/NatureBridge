@@ -24,7 +24,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "I've heard there's a lot of\nflooding this year because\nthe snowpack is melting earlier.",
+        "text": "I heard there was a lot of\nflooding this year because\nthe snowpack melted earlier\nthis season.",
         "top": "9%",
         "left": "32%",
         "flip": true
@@ -33,7 +33,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "So that affects the\nwildlife and trail\naccess!",
+        "text": "So changes in the river\naffect both the wildlife and\ntrail access!",
         "top": "2%",
         "left": "77%",
         "flip": false

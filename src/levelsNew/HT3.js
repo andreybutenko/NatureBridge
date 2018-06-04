@@ -117,7 +117,7 @@ export default {
     {
       "index": 5,
       "stepType": "Decision",
-      "prompt": "This mining site has been out of use for over 100 years and the equipment remains quite fragile. The National Park Service has restored the equipment in the past so visitors can experience what it was like to work here. However, now the adjacent river has eroded closer to the equipment and continued restoration of the site has ended in order to preserve the natural erosion of the river.",
+      "prompt": "",
       "options": [
         {
           "layer": 6,
@@ -127,7 +127,7 @@ export default {
     },
     {
       "stepType": "Click through",
-      "journalEntry": "In some situations, the National Park Service must choose between protecting the natural landscape and protecting historical sites. If you were the land manager in this situation, would you choose to protect the historic mill or would you protect the river and allow it to erode naturally?"
+      "journalEntry": "In some situations, the National Park Service must choose between protecting the natural landscape and protecting historical sites. If you were the land manager in this situation, would you choose to protect the historic mining equipment or would you protect the river and allow it to erode naturally? Why?"
     },
     {
       "index": 6,

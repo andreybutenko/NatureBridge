@@ -110,6 +110,24 @@ export default {
         "left": "80%",
         "flip": false
       }
+    ],
+    [
+      {
+        "type": "chat",
+        "text": "But we can tell stories and jokes as we walk!",
+        "top": "50%",
+        "left": "18%",
+        "flip": true
+      }
+    ],
+    [
+      {
+        "type": "chat",
+        "text": "Ok! And without music playing, we can appreciate the quiet sounds of the forest.",
+        "top": "25s%",
+        "left": "83%",
+        "flip": false
+      }
     ]
   ],
   "layerSteps": [
@@ -161,8 +179,14 @@ export default {
     },
     {
       "index": 6,
-      "stepType": "Click through",
-      "nextScene": "HT2"
+      "stepType": "Decision",
+      "prompt": "",
+      "options": [
+        {
+          "layer": "11",
+          "description": "Next"
+        }
+      ]
     },
     {
       "index": 7,
@@ -178,6 +202,14 @@ export default {
     },
     {
       "index": 10,
+      "stepType": "Click through"
+    },
+    {
+      "index": 11,
+      "stepType": "Click through"
+    },
+    {
+      "index": 12,
       "stepType": "Click through",
       "nextScene": "HT2"
     }

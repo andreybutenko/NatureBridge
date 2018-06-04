@@ -76,7 +76,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Nope, we can't take\nanything home with us. \nNot even a rock!",
+        "text": "No, we can't take\nanything home with us.\nBut we can take\nplenty of pictures!",
         "top": "46%",
         "left": "2%",
         "flip": true
@@ -103,7 +103,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Nope, we can't take anything\nhome with us. Not even a rock!",
+        "text": "No, we can't take\nanything home with us.\nBut we can take\nplenty of pictures!",
         "top": "45%",
         "left": "45%",
         "flip": false
@@ -177,9 +177,13 @@ export default {
     },
     {
       "index": 8,
-      "stepType": "Click through",
-      "prompt": "You respond with:",
-      "options": [],
+      "stepType": "Decision",
+      "prompt": "",
+      "options": [
+        {
+          "description": "Take a picture and continue walking."
+        }
+      ],
       "nextScene": "HT3"
     },
     {
@@ -196,9 +200,13 @@ export default {
     },
     {
       "index": 11,
-      "stepType": "Click through",
-      "prompt": "You respond with:",
-      "options": [],
+      "stepType": "Decision",
+      "prompt": "",
+      "options": [
+        {
+          "description": "Take a picture and continue walking."
+        }
+      ],
       "nextScene": "HT3"
     }
   ]
