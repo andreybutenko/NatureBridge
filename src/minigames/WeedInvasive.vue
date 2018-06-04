@@ -18,8 +18,7 @@
     <div class="instructions-background" v-if="!started || ended || wrong">
       <div class="instructions-modal" v-if="wrong">
         <h1>Careful!</h1>
-        <p>That was a native species, not a stinky bob!</p>
-        <p>Remember: stinky bobs have <i>purple</i> petals.</p>
+        <p>That was a native plant, not an invasive plant!</p>
         <div class="btn-container">
           <div class="btn-start" @click="wrong = false">
             Continue
@@ -28,7 +27,7 @@
       </div>
       <div class="instructions-modal" v-if="!started">
         <h1>Invasive Species</h1>
-        <p>It's your job to weed invasive species, which harm the native ecosystem!</p>
+        <p>It's your job to remove invasive plants, which harm the ecosystem by preventing native species from thriving.</p>
         <div class="ex">
           <img src="/static/misc/plant2.png" />
           <p>These are the invasive species we want to pick.</p>
@@ -43,16 +42,15 @@
         </p>
         <div class="btn-container">
           <div class="btn-start" @click="startGame">
-            Let's Play!
+            Let's Weed!
           </div>
         </div>
       </div>
       <div class="instructions-modal" v-if="ended">
         <h1>Invasive Species</h1>
-        <p>Great job! You successfully picked <b>{{score.correct}}</b> invasive species.</p>
-        <p>By removing invasive species, you are preventing damage to the ecosystem.</p>
-        <p v-if="score.correct < config.awardThreshold">You need just {{Math.ceil(config.awardThreshold - score.correct)}} more to earn the <b>Weeding Badge</b>!</p>
-        <p v-else>Congratulations, you earned the <b>Weeding Badge</b> for your good performance!</p>
+        <p>Great work! You successfully weeded <b>{{score.correct}}</b> invasive plants.</p>
+        <p v-if="score.correct < config.awardThreshold">You need just {{Math.ceil(config.awardThreshold - score.correct)}} more to earn the <b>Species Protector Badge</b>!</p>
+        <p v-else>Congratulations, you earned the <b>Species Protector Badge</b> for your good performance!</p>
         <div class="btn-container">
           <div class="btn-start btn-restart" @click="reset()">
             Play Again
@@ -80,7 +78,7 @@
           gridInterval: 0.4,
           offset: 0,
           weedId: 1,
-          awardThreshold: 35
+          awardThreshold: 50
         },
         timeLeft: 40,
         plants: [],
@@ -99,13 +97,14 @@
     methods: {
       reset() {
         this.plants = [];
+        this.timeLeft = 40;
         this.started = false;
         this.ended = false;
+        this.generatePlants();
         this.score = {
           correct: 0,
           wrong: 0
         };
-        this.timeleft = 40;
       },
 
       generatePlants() {

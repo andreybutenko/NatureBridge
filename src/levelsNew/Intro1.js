@@ -39,7 +39,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Through your visit, \nyou’ll learn about the Park\nand how we interact with \nthe environment. ",
+        "text": "Through your visit, \nyou'll learn about the Park\nand how we interact with \nthe environment. ",
         "top": "32%",
         "left": "53%",
         "flip": false
@@ -48,7 +48,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "If you explore the entire Park,\nyou’ll become a Deputy Ranger!\nYou can earn badges by completing \nchallenges along the way.\nKeep an eye out for \nsquirrels, which will add to your collection of badges.",
+        "text": "If you explore the entire Park,\nyou'll become a Deputy Ranger!\nYou can earn badges by completing \nchallenges along the way.\nKeep an eye out for \nsquirrels, which will add to your collection of badges.",
         "top": "32%",
         "left": "51%",
         "flip": false
@@ -57,7 +57,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "As you hike, you’ll see examples of how \nhuman-caused climate change impacts the Park.",
+        "text": "As you hike, you'll see examples of how \nhuman-caused climate change impacts the Park.",
         "top": "32%",
         "left": "51%",
         "flip": false
@@ -82,7 +82,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Here’s a map you can use to explore all the trails. It’s important to practice navigation before heading out. Can you use your map and compass to find the trail to the mountain pass?",
+        "text": "Here's a map you can use to explore all the trails. It's important to practice navigation before heading out. Can you use your map and compass to find the trail to the mountain pass?",
         "top": "31%",
         "left": "52%",
         "flip": false

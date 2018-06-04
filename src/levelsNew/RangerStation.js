@@ -40,7 +40,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Remember, National Parks are here for your enjoyment,\nbut it’s important to be safe and follow the\nLeave No Trace Principles listed in your Field Guide.",
+        "text": "Remember, National Parks are here for your enjoyment,\nbut it's important to be safe and follow the\nLeave No Trace Principles listed in your Field Guide.",
         "top": "24%",
         "left": "10%",
         "flip": true

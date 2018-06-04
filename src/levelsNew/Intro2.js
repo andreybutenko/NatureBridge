@@ -30,7 +30,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Great work! You’ll have no trouble out on the trail.",
+        "text": "Great work! You'll have no trouble out on the trail.",
         "top": "33%",
         "left": "52%",
         "flip": false
@@ -57,7 +57,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Great, here’s a field guide you can refer to along the way.",
+        "text": "Great, here's a field guide you can refer to along the way.",
         "top": "28%",
         "left": "50%",
         "flip": false
@@ -88,7 +88,7 @@ export default {
         },
         {
           "layer": "4",
-          "description": "No, I’m ready to get out on the trail."
+          "description": "No, I'm ready to get out on the trail."
         }
       ]
     },

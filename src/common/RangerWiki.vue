@@ -73,7 +73,7 @@ Today the National Park System includes over 400 different lands across more tha
         <div class="text" v-if="selected == 2">
           <b>Rivers</b>
           <p>
-            In Olympic National Park, all of the land is influenced by water. Peaks are shaped by the ice of glaciers, valleys are carved out by rivers melting from snowpack above, and the diverse vegetation and wildlife depend on the presence of water to survive. Mount Olympus is the park’s highest peak and rivers flow down in all directions, hydrating the entirety of the park.
+            In Olympic National Park, all of the land is influenced by water. Peaks are shaped by the ice of glaciers, valleys are carved out by rivers melting from snowpack above, and the diverse vegetation and wildlife depend on the presence of water to survive. Mount Olympus is the park's highest peak and rivers flow down in all directions, hydrating the entirety of the park.
           </p>
           <p>
             A major river within Olympic is the Elwha River, which runs northward, just east of Lake Crescent. The river is an essential piece of a thriving ecosystem, particularly as habitat for fish that move between the ocean and freshwater. Eleven varieties of salmon and trout once counted on the Elwha as the location where they returned to lay their eggs. Further, the fish that populated the waters of Elwha were an important food source for the Lower Elwha Klallam tribe who lived along the river.

@@ -131,7 +131,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "But we have to\nallow nature to\ndo its own thing!",
+        "text": "But even if we\ncan't help the salmon,\nthe Park may be able to.",
         "top": "23%",
         "left": "42%",
         "flip": false
@@ -231,7 +231,7 @@ export default {
     {
       "index": 14,
       "stepType": "Click through",
-      "journalEntry": "Salmon have adapted to slow climate changes in the past, but it is not known if they will be able to adapt fast enough to the current speed of climate changes. In the face of changing climate, how much do you think humans should intervene helping the ecosystem, including fish and other animals, to adjust? How much should we let the ecosystem naturally come to a new balance?",
+      "journalEntry": "Salmon have adapted to slow climate changes in the past, but it is not known if they will be able to adapt fast enough to the current rate of climate changes. How much do you think the Park should intervene to help the ecosystem, including fish and other animals, to adjust? How much should we let the ecosystem naturally come to a new balance?",
       "nextScene": "RT2"
     }
   ]

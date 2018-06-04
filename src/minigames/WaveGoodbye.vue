@@ -4,7 +4,7 @@
       <h1>Tell someone where you're going!</h1>
       <img src="/static/characters/mom-wave.png" />
       <p>
-        Don’t forget to let someone know your plan. Tell them where you’re going and when you expect to be back!
+        Don't forget to let someone know your plan. Tell them where you're going and when you expect to be back!
       </p>
       <div class="continue-btn" @class="switchScene('Intro1')">
         Head to the Park

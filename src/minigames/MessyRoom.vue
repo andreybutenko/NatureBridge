@@ -94,7 +94,7 @@
         <div class="modal-content" v-else>
           <h1 class="modal-title">Game Over!</h1>
           <p>
-            Time’s up! Looks like you weren’t able to find everything you needed in time.
+            Time's up! Looks like you weren't able to find everything you needed in time.
           </p>
           <p>
             Play again and find all the items to earn the <b>Wilderness Preparedness Badge</b>!
