@@ -1,5 +1,5 @@
 export default {
-  "background": "backgrounds/washed_out_bridge.png",
+  "background": "backgrounds/washed_out_bridge_hr.jpeg",
   "layers": [
     [
       {

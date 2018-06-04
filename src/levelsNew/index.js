@@ -17,7 +17,7 @@ import HT2 from './HT2';
 import HT3 from './HT3';
 
 import MT1 from './MT1';
-import MT1_2 from './MT1-2';
+import MT1_2 from './MT1_2';
 import MT2 from './MT2';
 import MT3 from './MT3';
 import MT4 from './MT4';

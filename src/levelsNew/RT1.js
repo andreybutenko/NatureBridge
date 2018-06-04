@@ -1,5 +1,5 @@
 export default {
-  "background": "backgrounds/salmon_final-01.png",
+  "background": "backgrounds/salmon_hr.jpg",
   "layers": [
     [
       {

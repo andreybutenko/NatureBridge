@@ -1,5 +1,5 @@
 export default {
-  "background": "backgrounds/dispose_waste.png",
+  "background": "backgrounds/dispose_waste_hr.jpeg",
   "layers": [
     [],
     [

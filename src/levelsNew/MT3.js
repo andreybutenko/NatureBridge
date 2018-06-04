@@ -1,5 +1,5 @@
 export default {
-  "background": "backgrounds/campfire.png",
+  "background": "backgrounds/campfire_hr.jpeg",
   "layers": [
     [],
     [

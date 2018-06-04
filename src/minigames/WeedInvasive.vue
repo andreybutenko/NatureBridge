@@ -51,13 +51,13 @@
         <h1>Invasive Species</h1>
         <p>Great job! You successfully picked <b>{{score.correct}}</b> invasive species.</p>
         <p>By removing invasive species, you are preventing damage to the ecosystem.</p>
-        <p v-if="score.correct < config.awardThreshold">You need just {{Math.ceil(score.correct - config.awardThreshold)}} more to earn the <b>Weeding Badge</b>!</p>
+        <p v-if="score.correct < config.awardThreshold">You need just {{Math.ceil(config.awardThreshold - score.correct)}} more to earn the <b>Weeding Badge</b>!</p>
         <p v-else>Congratulations, you earned the <b>Weeding Badge</b> for your good performance!</p>
         <div class="btn-container">
           <div class="btn-start btn-restart" @click="reset()">
             Play Again
           </div>
-          <div class="btn-start" @click="switchScene('MT2_2')">
+          <div class="btn-start" @click="switchScene('MT1_2')">
             Continue
           </div>
         </div>

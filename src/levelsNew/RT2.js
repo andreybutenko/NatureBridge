@@ -1,5 +1,5 @@
 export default {
-  "background": "backgrounds/beetle_impact.png",
+  "background": "backgrounds/beetle_impact_hr.jpeg",
   "layers": [
     [],
     [

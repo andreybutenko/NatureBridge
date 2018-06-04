@@ -1,5 +1,5 @@
 export default {
-  "background": "backgrounds/basecamp_final.png",
+  "background": "backgrounds/basecamp_final_hr.jpg",
   "layers": [
     [
       {

@@ -14,7 +14,7 @@
     data() {
       return {
         stage: {
-          file: 'compass_tutorial.png',
+          file: 'compass_tutorial_hr.png',
           originalWidth: 3969,
           originalHeight: 900,
           offsetDeg: 0,

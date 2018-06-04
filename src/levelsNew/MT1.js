@@ -1,5 +1,5 @@
 export default {
-  "background": "backgrounds/weeders_px-01.png",
+  "background": "backgrounds/weeders_hr.jpeg",
   "layers": [
     [
       {

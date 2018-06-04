@@ -1,5 +1,5 @@
 export default {
-  "background": "backgrounds/pickaxe.png",
+  "background": "backgrounds/pickaxe_hr.jpeg",
   "layers": [
     [
       {

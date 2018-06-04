@@ -1,5 +1,5 @@
 export default {
-  "background": "backgrounds/no_music.png",
+  "background": "backgrounds/no_music_hr.jpeg",
   "layers": [
     [
       {

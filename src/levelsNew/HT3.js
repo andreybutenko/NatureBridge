@@ -1,5 +1,5 @@
 export default {
-  "background": "backgrounds/old_mill_river.png",
+  "background": "backgrounds/old_mill_hr.png",
   "layers": [
     [
       {

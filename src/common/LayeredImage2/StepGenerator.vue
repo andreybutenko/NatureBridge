@@ -19,6 +19,8 @@
 
 <style lang="scss" scoped>
   .step-generator {
+    user-select: none;
+    
     .label {
       margin-bottom: 8px;
       font-size: 18px;

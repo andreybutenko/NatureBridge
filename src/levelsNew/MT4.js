@@ -1,5 +1,5 @@
 export default {
-  "background": "backgrounds/landslide.png",
+  "background": "backgrounds/landslide_hr.jpeg",
   "layers": [
     [],
     [
