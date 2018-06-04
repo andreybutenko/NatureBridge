@@ -4,7 +4,9 @@ import Intro2 from './Intro2';
 import RangerStation from './RangerStation';
 
 import Finale1 from './Finale1';
+import Finale2 from './Finale2';
 import LakeLvl from './LakeLvl';
+import EndLvl from './EndLvl';
 
 import BeetleImpactLvl from './BeetleImpactLvl';
 import CompassTutorialLvl from './CompassTutorialLvl';
@@ -30,7 +32,9 @@ import RT3 from './RT3';
 export default {
   BeetleImpact: BeetleImpactLvl,
   Finale1,
+  Finale2,
   Lake: LakeLvl,
+  End: EndLvl,
   IntroTest,
   Intro1,
   Intro2,

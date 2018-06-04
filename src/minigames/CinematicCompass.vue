@@ -5,8 +5,8 @@
       <div class="control-container">
       	<div @click="turn('left')"><img src="../assets/trail/left.png" /></div>
         <div @click="stage.clickHandler()" class="labelled">
-          <img src="../assets/ui/scrapbook.png" />
-          <p>WRITE</p>
+          <img :src="action.src" />
+          <p>{{action.text}}</p>
         </div>
       	<div @click="turn('right')"><img src="../assets/trail/right.png" /></div>
       </div>
@@ -17,7 +17,7 @@
 <script>
   export default {
     name: 'CinematicCompass',
-    props: ['stage'],
+    props: ['stage', 'action'],
     data() {
       return {
         degPxRatio: 0,

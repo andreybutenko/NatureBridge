@@ -9,6 +9,8 @@
     <CompassNavigator
       :switchScene="switchScene"
       v-if="enabled('CompassNavigator')" />
+    <End
+      v-if="enabled('End') "/>
     <Lake
       :switchScene="switchScene"
       :showJournalEntry="showJournalEntry"
@@ -29,6 +31,7 @@
   import BeetleImpact from './BeetleImpact';
   import CompassTutorial from './CompassTutorial';
   import CompassNavigator from './CompassNavigator';
+  import End from './End';
   import Lake from './Lake';
   import MessyRoom from './MessyRoom';
   import WaveGoodbye from './WaveGoodbye';
@@ -41,6 +44,7 @@
       BeetleImpact,
       CompassTutorial,
       CompassNavigator,
+      End,
       Lake,
       MessyRoom,
       WaveGoodbye,

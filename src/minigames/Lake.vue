@@ -1,7 +1,8 @@
 <template>
   <div>
     <CinematicCompass
-      :stage="stage" />
+      :stage="stage"
+      :action="action[step]" />
   </div>
 </template>
 
@@ -24,9 +25,26 @@
           stepDeg: 30,
           showMap: false,
           clickHandler: () => {
-            this.showJournalEntry('For climate change adaptation, there is no recipe, no road map, and yet no time to lose; science and society must tackle the climate change issue in a timely way, despite uncertainty. What your most important values for the Park to take in the face of a changing climate? What do you love about the parks that you want to see protected?')
+            if(this.step == 0) {
+              this.showJournalEntry('For climate change adaptation, there is no recipe, no road map, and yet no time to lose; science and society must tackle the climate change issue in a timely way, despite uncertainty. What your most important values for the Park to take in the face of a changing climate? What do you love about the parks that you want to see protected?');
+              this.step = 1;
+            }
+            else if(this.step == 1) {
+              this.switchScene('Finale2');
+            }
           }
-        }
+        },
+        step: 0,
+        action: [
+          {
+            src: '/static/ui/scrapbook.png',
+            text: 'WRITE'
+          },
+          {
+            src: '/static/misc/return.png',
+            text: 'RANGER STATION'
+          }
+        ]
       }
     }
   }
