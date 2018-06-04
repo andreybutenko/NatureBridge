@@ -3,7 +3,8 @@
     <Compass
       :stage="stage"
       :checkmarks="markers"
-      :onSuccess="onSuccess" />
+      :onSuccess="onSuccess"
+      :instructions="'Look around to you find a trail you’d like to explore.'" />
     <div class="confirm-dialog-container" v-show="destination != ''">
       <div class="confirm-dialog">
         <p>

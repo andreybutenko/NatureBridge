@@ -22,7 +22,7 @@
           </div>
           <div class="instructions-popup" v-if="displayInstructions" @click.stop="">
             <div class="content">
-              <p>The red pointer on your compass in the upper right corner will always point north. The mountain pass trail on your map is in a southeast direction. Click the right and left arrows to turn your view and head in the correct direction down the trail.</p>
+              <p>{{ instructions }}</p>
               <div class="btn-continue" @click.stop="displayInstructions = false">Continue</div>
             </div>
           </div>
@@ -43,14 +43,14 @@
 <script>
   export default {
     name: 'Compass',
-    props: ['stage', 'checkmarks', 'onSuccess', 'showInstructions'],
+    props: ['stage', 'checkmarks', 'onSuccess', 'instructions'],
     data() {
       return {
         degPxRatio: 0,
         rotation: 0,
         displaySuccess: false,
         displayFail: false,
-        displayInstructions: !!this.showInstructions
+        displayInstructions: true
       }
     },
     created() {

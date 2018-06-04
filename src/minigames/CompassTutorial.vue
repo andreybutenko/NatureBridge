@@ -2,7 +2,7 @@
   <Compass
     :stage="stage"
     :onSuccess="onSuccess"
-    :showInstructions="true" />
+    :instructions="'The red pointer on your compass in the upper right corner will always point north. The mountain pass trail on your map is in a southeast direction. Click the right and left arrows to turn your view and head in the correct direction down the trail. '" />
 </template>
 
 <script>
