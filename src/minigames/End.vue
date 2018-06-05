@@ -60,6 +60,7 @@
     .content {
       background-color: #ffffff;
       display: flex;
+      margin: auto;
       justify-content: center;
       align-items: center;
       flex-direction: column;

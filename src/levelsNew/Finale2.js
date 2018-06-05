@@ -110,7 +110,8 @@ export default {
       "index": 5,
       "stepType": "Click through",
       "prompt": "You respond with:",
-      "options": []
+      "options": [],
+      "nextScene": "End"
     }
   ]
 }
