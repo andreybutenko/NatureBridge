@@ -5,77 +5,119 @@ export default {
       {
         "type": "sprite",
         "source": "characters/ranger.png",
-        "top": "34%",
-        "left": "51%",
-        "size": "59%",
+        "top": "42%",
+        "left": "66%",
+        "size": "50%",
         "flip": true
       },
       {
         "type": "sprite",
         "source": "characters/main-character.png",
-        "top": "46%",
-        "left": "21%",
-        "size": "45%",
+        "top": "45%",
+        "left": "35%",
+        "size": "48%",
+        "flip": false
+      },
+      {
+        "type": "sprite",
+        "source": "characters/green-jacket-kid.png",
+        "top": "50%",
+        "left": "23%",
+        "size": "48%",
         "flip": false
       }
     ],
     [
       {
         "type": "chat",
-        "text": "Welcome to the Ranger Station!",
+        "text": "Welcome to the\nRanger Station.",
         "top": "28%",
-        "left": "13%",
+        "left": "57%",
         "flip": true
       }
     ],
     [
       {
         "type": "chat",
-        "text": "Here's a Field Guide for you!\nIt has lots of useful information\nabout National Parks.",
-        "top": "16%",
-        "left": "3%",
+        "text": "If you have any\nquestions about the\nPark, you can look them \nup in this Field Guide.",
+        "top": "19%",
+        "left": "45%",
         "flip": true
       }
     ],
     [
       {
         "type": "chat",
-        "text": "Remember, National Parks are here for your enjoyment,\nbut it's important to be safe and follow the\nLeave No Trace Principles listed in your Field Guide.",
-        "top": "24%",
-        "left": "10%",
+        "text": "Thanks!",
+        "top": "38%",
+        "left": "45%",
+        "flip": false
+      },
+      {
+        "type": "chat",
+        "text": "Great!",
+        "top": "40%",
+        "left": "15%",
         "flip": true
       }
     ],
     [
       {
         "type": "chat",
-        "text": "Okay, now you're ready to go.\nHave a safe hike!",
-        "top": "24%",
-        "left": "30%",
+        "text": "You can access\nit out on the\ntrail by clicking\non it in your pack.",
+        "top": "18%",
+        "left": "55%",
         "flip": true
+      }
+    ],
+    [
+      {
+        "type": "chat",
+        "text": "Will do.",
+        "top": "36%",
+        "left": "48%",
+        "flip": false
       }
     ]
   ],
   "layerSteps": [
     null,
     {
-      "stepType": "Click through"
+      "index": 1,
+      "stepType": "Click through",
+      "prompt": "You respond with:",
+      "options": []
     },
     {
+      "index": 2,
       "stepType": "Click through",
+      "prompt": "You respond with:",
+      "options": [],
       "highlightWiki": true
     },
     {
-      "stepType": "Click through"
+      "index": 3,
+      "stepType": "Click through",
+      "prompt": "You respond with:",
+      "options": []
     },
     {
+      "index": 4,
+      "stepType": "Click through",
+      "prompt": "You respond with:",
+      "options": []
+    },
+    {
+      "index": 5,
       "stepType": "Decision",
-      "nextScene": "CompassNavigator",
+      "prompt": "",
       "options": [
         {
-          "description": "Continue to Trailhead"
+          "layer": 1,
+          "description": "Head back outside"
         }
-      ]
+      ],
+      "nextScene": "CompassNavigator"
     }
   ]
 }

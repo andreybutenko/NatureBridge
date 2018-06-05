@@ -67,6 +67,7 @@
 
   .minigame-viewer {
     width: 100%;
+    margin: auto;
   }
 
   .game {
