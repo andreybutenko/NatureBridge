@@ -176,6 +176,9 @@
       stopTimer() {
         window.clearInterval(this.timer);
         this.gameOver = true;
+        if(this.remaining.length == 0) {
+          globalStore.earnBadge('wilderness_preparedness');
+        }
       }
     },
     computed: {

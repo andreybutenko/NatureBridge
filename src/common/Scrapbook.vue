@@ -1,5 +1,5 @@
 <template>
-  <div class="modal-container" @click="onDismiss()">
+  <div class="modal-container" @click="ondismiss()" v-if="shown">
     <div class="modal-content big modal-content-journal" @click.stop="() => {}">
       <!-- <div class="btn" @click="print()">Print this</div> -->
       <div class="left">
@@ -24,15 +24,14 @@
 
   export default {
     name: 'Scrapbook',
-    props: ['onDismiss'],
+    props: ['registerShow'],
     components: { ScrapbookPage },
     mounted() {
-      setTimeout(() => {
-        this.constructPages();
-      }, 100);
+      this.registerShow(this.show);
     },
     data() {
       return {
+        shown: false,
         memoryAssociations: {
           'Intro1': 'arrival.png',
           'RT2': 'beetles.png',
@@ -47,26 +46,22 @@
     },
     computed: {
       journals() {
-        //return globalStore.journals
-        return [
-          {title: '1', response: 'asdv'},
-          {title: '2', response: 'asdv'},
-          {title: '3', response: 'asdv'},
-          {title: '4', response: 'asdv'},
-          {title: '5', response: 'asdv'},
-          {title: '6', response: 'asdv'}
-        ]
-      },
-      test() {
-        return Math.random() > 0.5;
+        return globalStore.journals
       },
       photos() {
-        return Object.keys(this.memoryAssociations)//.filter(location => globalStore.hasVisited(location))
-          .filter(location => Math.random() > 0.5)
-          .map(location => this.memoryAssociations[location])
+        return Object.keys(this.memoryAssociations)
+          .filter(location => globalStore.hasVisited(location))
+          .map(location => this.memoryAssociations[location]);
       }
     },
     methods: {
+      show() {
+        this.constructPages();
+        this.shown = true;
+      },
+      ondismiss() {
+        this.shown = false;
+      },
       constructPages() {
         let journalIndex = 0;
         let photoIndex = 0;

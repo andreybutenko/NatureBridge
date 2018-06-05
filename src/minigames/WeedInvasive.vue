@@ -156,7 +156,7 @@
           this.ended = true;
           this.wrong = false;
           if(this.score.correct > this.config.awardThreshold) {
-            globalStore.earnBadge('weeding');
+            globalStore.earnBadge('species_protector');
           }
         }
       },

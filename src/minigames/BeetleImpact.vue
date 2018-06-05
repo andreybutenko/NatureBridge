@@ -47,8 +47,8 @@
         <h1>Forest Health</h1>
         <p>Great job! You successfully thinned <b>{{score.saved}}</b> trees.</p>
         <p>By thinning beetle-infested trees, you help promote growth of healthy trees.</p>
-        <p v-if="score.saved < targetScore">You need just {{Math.ceil(targetScore - score.saved)}} more to earn the <b>Tree Thinning Badge</b>!</p>
-        <p v-else>Congratulations, you earned the <b>Tree Thinning Badge</b> for your good performance!</p>
+        <p v-if="score.saved < targetScore">You need just {{Math.ceil(targetScore - score.saved)}} more to earn the <b>Forest Health Badge</b>!</p>
+        <p v-else>Congratulations, you earned the <b>Forest Health Badge</b> for your good performance!</p>
         <div class="btn-container">
           <div class="btn-start btn-restart" @click="reset()">
             Play Again
@@ -203,7 +203,7 @@
           this.ended = true;
           this.trees.filter(tree => tree.countdown != -1).forEach(tree => tree.countdown = -1);
           if(this.score.saved > this.targetScore) {
-            globalStore.earnBadge('tree-thinning');
+            globalStore.earnBadge('forest_health');
           }
         }
       },

@@ -59,6 +59,9 @@ export const globalStore = new Vue({
       if(this.badges.indexOf(name) < 0) {
         this.badges.push(name);
       }
+    },
+    hasBadge(name) {
+      return this.badges.indexOf(name) >= 0;
     }
   }
 })

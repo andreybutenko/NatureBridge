@@ -1,5 +1,7 @@
 <template>
   <div class="game" :class="{ minigame: isMinigame }">
+    <Scrapbook
+      :registerShow="registerShowScrapbook" />
     <SquirrelTrivia
       :registerShow="registerShowSquirrelTrivia" />
     <MapPopup
@@ -19,6 +21,7 @@
       <MinigameViewer
         :name="minigame"
         :showJournalEntry="showJournalEntry"
+        :showScrapbook="showScrapbook"
         :switchScene="switchScene" />
     </div>
     <div class="secondary-view">
@@ -33,7 +36,7 @@
       <div class="game-btns-container">
         <div class="game-btn btn-teleport" @click="cheat"></div>
         <div class="game-btn btn-map" :class="{ pulse: !isMinigame && !!layerStep && layerStep.highlightMap }" @click="showMap"></div>
-        <div class="game-btn btn-scrapbook" @click=""></div>
+        <div class="game-btn btn-scrapbook" @click="showScrapbook"></div>
         <div class="game-btn btn-fieldguide" :class="{ pulse: !isMinigame && !!layerStep && layerStep.highlightWiki }" @click="showRangerWiki"></div>
       </div>
     </div>
@@ -50,6 +53,7 @@
   import MapPopup from './common/MapPopup';
   import Principle from './common/Principle';
   import RangerWiki from './common/RangerWiki';
+  import Scrapbook from './common/Scrapbook';
   import SquirrelTrivia from './common/SquirrelTrivia';
   import { globalStore } from './main.js';
 
@@ -63,6 +67,7 @@
       MapPopup,
       Principle,
       RangerWiki,
+      Scrapbook,
       SquirrelTrivia,
     },
     metaInfo: {
@@ -82,6 +87,7 @@
         showMap: null,
         showRangerWiki: null,
         showSquirrelTrivia: null,
+        showScrapbook: null,
         postJournalEntryOption: -1,
         squirrelFound: []
       }
@@ -131,6 +137,9 @@
       },
       registerShowMap(showMap) {
         this.showMap = showMap;
+      },
+      registerShowScrapbook(showScrapbook) {
+        this.showScrapbook = showScrapbook;
       },
       onJournalEntryComplete() {
         if(!this.minigame) {

@@ -1,22 +1,46 @@
 <template>
   <div class="wave-goodbye">
     <div class="content">
-      <h1>Tell someone where you're going!</h1>
-      <img src="/static/characters/mom-wave.png" />
-      <p>
-        Don't forget to let someone know your plan. Tell them where you're going and when you expect to be back!
-      </p>
-      <div class="continue-btn" @class="switchScene('Intro1')">
-        Head to the Park
+      <h1>Congratulations!</h1>
+      <p>You completed your National Park Adventure! You are now a Deputy Ranger!</p>
+      <img class="ranger-badge" src="/static/badges/deputy_ranger.png" />
+      <p>You also earned {{earnedBadges}} out of 3 additional badges!</p>
+      <div class="badge-container">
+        <div v-for="(badge, i) in badges">
+          <img :src="getSrc(badge)" />
+          <span>{{humanBadges[i]}}</span>
+        </div>
+      </div>
+      <div class="continue-btn" @click="showScrapbook">
+        Review your adventure
       </div>
     </div>
   </div>
 </template>
 
 <script>
+  import { globalStore } from '../main.js';
+
   export default {
     name: 'End',
-    props: ['switchScene']
+    props: ['showScrapbook'],
+    data() {
+      return {
+        badges: ['forest_health', 'species_protector', 'wilderness_preparedness'],
+        humanBadges: ['Forest Health', 'Species Protector', 'Wilderness Preparedness']
+      }
+    },
+    methods: {
+      getSrc(badge) {
+        const fileName = globalStore.hasBadge(badge) ? badge : 'blank';
+        return '/static/badges/' + fileName + '.png';
+      }
+    },
+    computed: {
+      earnedBadges() {
+        return this.badges.filter(badge => globalStore.hasBadge(badge)).length;
+      }
+    }
   }
 </script>
 
@@ -26,7 +50,12 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #3498db;
+    background-image: url('/static/misc/welcome-bg.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-y: scroll;
+    margin: 0;
 
     .content {
       background-color: #ffffff;
@@ -34,14 +63,30 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      max-width: 400px;
+      max-width: 800px;
       padding: 16px;
       text-align: center;
 
-      img {
+      .ranger-badge {
         padding: 32px 0;
         width: 300px;
         max-width: 100%;
+      }
+
+      .badge-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        div {
+          flex: 1;
+        }
+
+        img,
+        span {
+          display: block;
+        }
       }
 
       .continue-btn {

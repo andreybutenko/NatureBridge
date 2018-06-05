@@ -10,6 +10,7 @@
       :switchScene="switchScene"
       v-if="enabled('CompassNavigator')" />
     <End
+      :showScrapbook="showScrapbook"
       v-if="enabled('End') "/>
     <Lake
       :switchScene="switchScene"
@@ -39,7 +40,7 @@
 
   export default {
     name: 'MinigameViewer',
-    props: ['name', 'showJournalEntry', 'switchScene'],
+    props: ['name', 'showJournalEntry', 'showScrapbook', 'switchScene'],
     components: {
       BeetleImpact,
       CompassTutorial,

@@ -6,7 +6,7 @@
       <p>
         Don't forget to let someone know your plan. Tell them where you're going and when you expect to be back!
       </p>
-      <div class="continue-btn" @class="switchScene('Intro1')">
+      <div class="continue-btn" @click="switchScene('Intro1')">
         Head to the Park
       </div>
     </div>
