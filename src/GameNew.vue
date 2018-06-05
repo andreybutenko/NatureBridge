@@ -2,6 +2,8 @@
   <div class="game" :class="{ minigame: isMinigame }">
     <SquirrelTrivia
       :registerShow="registerShowSquirrelTrivia" />
+    <MapPopup
+      :registerShow="registerShowMap" />
     <JournalEntry
       :registerShow="registerShowJournalEntry"
       :showRangerWiki="showRangerWiki"
@@ -30,7 +32,7 @@
       </div>
       <div class="game-btns-container">
         <div class="game-btn btn-teleport" @click="cheat"></div>
-        <div class="game-btn btn-map" :class="{ pulse: !isMinigame && !!layerStep && layerStep.highlightMap }" @click=""></div>
+        <div class="game-btn btn-map" :class="{ pulse: !isMinigame && !!layerStep && layerStep.highlightMap }" @click="showMap"></div>
         <div class="game-btn btn-scrapbook" @click=""></div>
         <div class="game-btn btn-fieldguide" :class="{ pulse: !isMinigame && !!layerStep && layerStep.highlightWiki }" @click="showRangerWiki"></div>
       </div>
@@ -44,10 +46,11 @@
   import SceneGenerator from './common/LayeredImage2/SceneGenerator2';
   import StepGenerator from './common/LayeredImage2/StepGenerator';
   import MinigameViewer from './minigames/MinigameViewer';
-  import SquirrelTrivia from './common/SquirrelTrivia';
   import JournalEntry from './common/JournalEntry';
-  import RangerWiki from './common/RangerWiki';
+  import MapPopup from './common/MapPopup';
   import Principle from './common/Principle';
+  import RangerWiki from './common/RangerWiki';
+  import SquirrelTrivia from './common/SquirrelTrivia';
   import { globalStore } from './main.js';
 
   export default {
@@ -56,10 +59,11 @@
       SceneGenerator,
       StepGenerator,
       MinigameViewer,
-      SquirrelTrivia,
       JournalEntry,
+      MapPopup,
+      Principle,
       RangerWiki,
-      Principle
+      SquirrelTrivia,
     },
     metaInfo: {
       meta: [
@@ -74,9 +78,10 @@
         canvasHeight: 0,
         activeLayer: 1,
         currentScene: 'MessyRoom',
-        showSquirrelTrivia: null,
         showJournalEntry: null,
+        showMap: null,
         showRangerWiki: null,
+        showSquirrelTrivia: null,
         postJournalEntryOption: -1,
         squirrelFound: []
       }
@@ -123,6 +128,9 @@
       },
       registerShowRangerWiki(showRangerWiki) {
         this.showRangerWiki = showRangerWiki;
+      },
+      registerShowMap(showMap) {
+        this.showMap = showMap;
       },
       onJournalEntryComplete() {
         if(!this.minigame) {
