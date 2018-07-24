@@ -76,6 +76,24 @@ export default {
     [
       {
         "type": "chat",
+        "text": "Most of the native species here\nhave been used for things like food\nand medicine by the Native\nAmericans who lived on these\nlands for thousands of years.",
+        "top": "29%",
+        "left": "27%",
+        "flip": false
+      }
+    ],
+    [
+      {
+        "type": "chat",
+        "text": "Yes! By removing invasive\nspecies, we can help preserve\nthe ecosystem that has existed\nfor so long",
+        "top": "39%",
+        "left": "42%",
+        "flip": true
+      }
+    ],
+    [
+      {
+        "type": "chat",
         "text": "Would you like\nto help us?",
         "top": "48%",
         "left": "64%",
