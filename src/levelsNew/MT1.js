@@ -155,6 +155,14 @@ export default {
       "stepType": "Click through"
     },
     {
+      "index": 7,
+      "stepType": "Click through"
+    },
+    {
+      "index": 7,
+      "stepType": "Click through"
+    },
+    {
       "index": 8,
       "stepType": "Decision",
       "prompt": "",
