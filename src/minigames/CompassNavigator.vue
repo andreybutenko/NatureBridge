@@ -4,7 +4,7 @@
       :stage="stage"
       :checkmarks="markers"
       :onSuccess="onSuccess"
-      :instructions="'Look around to you find a trail you\'d like to explore.'" />
+      :instructions="!showLakeDialog && 'Look around to you find a trail you\'d like to explore.'" />
     <div class="confirm-dialog-container" v-show="destination != ''">
       <div class="confirm-dialog">
         <p>
@@ -23,6 +23,21 @@
         </div>
       </div>
     </div>
+    <div class="confirm-dialog-container" v-show="showLakeDialog">
+      <div class="confirm-dialog">
+        <p>
+          What a day! You still have a little time to put your feet up over at the Ranger Station Lake.
+        </p>
+        <div class="action">
+          <div class="cancel-btn" @click="showLakeDialog = false;">
+            No, explore some more first
+          </div>
+          <div class="continue-btn" @click="switchScene('Lake')">
+            Head to the Lake
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -35,18 +50,17 @@
     components: { Compass },
     props: ['switchScene'],
     created() {
-      if(globalStore.hasVisited('MT1') && globalStore.hasVisited('HT1') && globalStore.hasVisited('RT1') && !globalStore.get('exploreFlag')) {
-        globalStore.set('exploreFlag', true);
-        this.switchScene('Finale1');
-      }
-      else {
-        globalStore.set('exploreFlag', false);
+      if(globalStore.hasVisited('MT1') &&
+          globalStore.hasVisited('HT1') &&
+          globalStore.hasVisited('RT1')) {
+            this.showLakeDialog = true;
       }
     },
     data() {
       return {
         destination: '',
         destinationText: '',
+        showLakeDialog: false,
         stage: {
           file: 'compass_trailhead.png',
           originalWidth: 4867,

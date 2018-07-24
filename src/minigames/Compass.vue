@@ -53,6 +53,11 @@
         displayInstructions: true
       }
     },
+    mounted() {
+      if(!this.instructions) {
+        this.displayInstructions = false;
+      }
+    },
     created() {
       this.setup();
     },
