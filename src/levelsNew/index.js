@@ -27,6 +27,7 @@ import MT4 from './MT4';
 
 import RT1 from './RT1';
 import RT2 from './RT2';
+import RT2_2 from './RT2_2';
 import RT3 from './RT3';
 
 export default {
@@ -52,6 +53,7 @@ export default {
   MT4,
   RT1,
   RT2,
+  RT2_2,
   RT3,
   WaveGoodbye: WaveGoodbyeLvl,
   WeedInvasive: WeedInvasiveLvl
