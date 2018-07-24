@@ -53,6 +53,8 @@
       choose(index) {
         if(this.chosen == -1) {
           this.chosen = index;
+
+          globalStore.addTriviaResult(this.chosen == this.correct);
         }
       }
     }

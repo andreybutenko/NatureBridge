@@ -4,7 +4,7 @@
       <h1>Congratulations!</h1>
       <p>You completed your National Park Adventure! You are now a Deputy Ranger!</p>
       <img class="ranger-badge" src="/static/badges/deputy_ranger.png" />
-      <p>You also earned {{earnedBadges}} out of 3 additional badges!</p>
+      <p>You also earned {{earnedBadges}} out of {{totalBadges}} additional badges!</p>
       <div class="badge-container">
         <div v-for="(badge, i) in badges">
           <img :src="getSrc(badge)" />
@@ -26,8 +26,8 @@
     props: ['showScrapbook'],
     data() {
       return {
-        badges: ['forest_health', 'species_protector', 'wilderness_preparedness'],
-        humanBadges: ['Forest Health', 'Species Protector', 'Wilderness Preparedness']
+        badges: ['forest_health', 'species_protector', 'wilderness_preparedness', 'park_trivia'],
+        humanBadges: ['Forest Health', 'Species Protector', 'Wilderness Preparedness', 'Park Trivia']
       }
     },
     methods: {
@@ -39,6 +39,9 @@
     computed: {
       earnedBadges() {
         return this.badges.filter(badge => globalStore.hasBadge(badge)).length;
+      },
+      totalBadges() {
+        return this.badges.length;
       }
     }
   }

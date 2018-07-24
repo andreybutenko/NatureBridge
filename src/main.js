@@ -30,7 +30,11 @@ export const globalStore = new Vue({
       visited: [],
       journals: [],
       badges: [],
-      triviaRemaining: trivia
+      triviaRemaining: trivia,
+      triviaScore: {
+        correct: 0,
+        total: 0
+      }
     }
   },
   methods: {
@@ -48,6 +52,17 @@ export const globalStore = new Vue({
     },
     getTrivia() {
       return this.triviaRemaining.shift();
+    },
+    addTriviaResult(correct) {
+      this.triviaScore.total++;
+      if(correct) {
+        this.triviaScore.correct++;
+      }
+
+      if(this.triviaScore.correct >= 5 &&
+        !this.hasBadge('park_trivia')) {
+          this.earnBadge('park_trivia');
+      }
     },
     set(attr, value) {
       this.attrs[attr] = value;
