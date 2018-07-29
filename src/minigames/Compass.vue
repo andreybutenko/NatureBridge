@@ -6,10 +6,11 @@
           <div class="pano-minimap-container">
             <img class="pano-minimap" :src="minimapUrl" />
             <img
-              v-for="mark in checkmarks"
+              v-for="(mark, i) in checkmarks"
               style="position: absolute; height: 30px;"
               :style="{ top: mark.y, left: mark.x }"
-              src="/static/misc/success.png" />
+              src="/static/misc/success.png"
+              :key="i" />
           </div>
           <div class="compass">
             <div class="compass-pointer" :style="{ transform: compassTransform }"></div>

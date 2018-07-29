@@ -4,7 +4,7 @@
       :stage="stage"
       :checkmarks="markers"
       :onSuccess="onSuccess"
-      :instructions="!showLakeDialog && 'Look around to you find a trail you\'d like to explore.'" />
+      :instructions="!showLakeDialog && 'Click the arrows to navigate to a trail you\'d like to explore.'" />
     <div class="confirm-dialog-container" v-show="destination != ''">
       <div class="confirm-dialog">
         <p>
@@ -62,7 +62,7 @@
         destinationText: '',
         showLakeDialog: false,
         stage: {
-          file: 'compass_trailhead.png',
+          file: 'compass_trailhead_hr.png',
           originalWidth: 4867,
           originalHeight: 900,
           offsetDeg: 135,
