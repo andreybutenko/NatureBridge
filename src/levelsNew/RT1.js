@@ -131,7 +131,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "But even if we\ncan't help the salmon,\nthe Park may be able to.",
+        "text": "But even if we\ncan't help the salmon\ndirectly, we can\nsupport the Park’s\nrestoration efforts!",
         "top": "23%",
         "left": "42%",
         "flip": false
