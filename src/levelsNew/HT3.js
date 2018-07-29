@@ -59,12 +59,6 @@ export default {
       }
     ],
     [
-      {
-        "type": "label",
-        "text": "This looks like\nthe end of the\nHistorical Trail.",
-        "top": "41%",
-        "left": "40%"
-      }
     ]
   ],
   "layerSteps": [
@@ -117,7 +111,7 @@ export default {
     {
       "index": 5,
       "stepType": "Decision",
-      "prompt": "",
+      "prompt": "\"This mining site has been out of use for over 100 years and the equipment remains quite fragile. The National Park Service has restored the equipment in the past so visitors can experience what it was like to work here. However, now the adjacent river has eroded closer to the equipment and continued restoration of the site has ended in order to preserve the natural erosion of the river.\"",
       "options": [
         {
           "layer": 6,
