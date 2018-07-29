@@ -35,9 +35,9 @@
       </div>
       <div class="game-btns-container">
         <div class="game-btn btn-teleport" @click="cheat"></div>
-        <div class="game-btn btn-map" :class="{ pulse: !isMinigame && !!layerStep && layerStep.highlightMap }" @click="showMap"></div>
-        <div class="game-btn btn-scrapbook" @click="showScrapbook"></div>
-        <div class="game-btn btn-fieldguide" :class="{ pulse: !isMinigame && !!layerStep && layerStep.highlightWiki }" @click="showRangerWiki"></div>
+        <div class="game-btn btn-map" :class="{ pulse: !isMinigame && !!layerStep && layerStep.highlightMap }" @click="showMap" title="Open map"></div>
+        <div class="game-btn btn-scrapbook" @click="showScrapbook" title="Open journal"></div>
+        <div class="game-btn btn-fieldguide" :class="{ pulse: !isMinigame && !!layerStep && layerStep.highlightWiki }" @click="showRangerWiki" title="Open field guide"></div>
       </div>
     </div>
   </div>
