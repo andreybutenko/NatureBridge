@@ -130,13 +130,13 @@
           { name: 'compass', display: 'Compass', left: 750, top: 270 },
           { name: 'firstaid', display: 'First Aid', left: 726, top: 434 },
           { name: 'hat', display: 'Hat', left: 406, top: 532 },
+          { name: 'flashlight', display: 'Flashlight', left: 150, top: 516 },
           { name: 'jacket', display: 'Jacket', left: 466, top: 508 },
           { name: 'knife', display: 'Knife', left: 688, top: 446 },
           { name: 'lunch', display: 'Lunch Bag', left: 716, top: 512 },
           { name: 'matches', display: 'Box of Matches', left: 610, top: 280 },
-          // { name: 'rope', display: 'Rope', left: 642, top: 240 },
           { name: 'sunscreen', display: 'Sunscreen', left: 704, top: 234 },
-          { name: 'tarp', display: 'Tarp', left: 566, top: 260 },
+          { name: 'tarp', display: 'Tarp', left: 482, top: 428 },
           { name: 'water bottle', display: 'Water Bottle', left: 628, top: 218 }
         ],
         found: []
