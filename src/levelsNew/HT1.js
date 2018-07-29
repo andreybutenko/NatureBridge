@@ -36,8 +36,8 @@ export default {
       {
         "type": "chat",
         "text": "Loud music and noises\ncan ruin the outdoor experience\nfor you and for others on the trail.",
-        "top": "41%",
-        "left": "27%",
+        "top": "39%",
+        "left": "20%",
         "flip": true
       }
     ],
@@ -46,7 +46,7 @@ export default {
         "type": "chat",
         "text": "Oops! Sorry!",
         "top": "54%",
-        "left": "83%",
+        "left": "80%",
         "flip": false
       }
     ],
@@ -114,9 +114,9 @@ export default {
     [
       {
         "type": "chat",
-        "text": "But we can tell stories and jokes as we walk!",
-        "top": "50%",
-        "left": "18%",
+        "text": "Even if we shouldn’t blast music\non the trail, we can still tell\nstories and jokes as we walk!",
+        "top": "38%",
+        "left": "23%",
         "flip": true
       }
     ],
@@ -124,11 +124,11 @@ export default {
       {
         "type": "chat",
         "text": "Ok! And without music playing, we can appreciate the quiet sounds of the forest.",
-        "top": "25s%",
-        "left": "83%",
+        "top": "18%",
+        "left": "81%",
         "flip": false
       }
-    ]
+    ],
   ],
   "layerSteps": [
     null,
