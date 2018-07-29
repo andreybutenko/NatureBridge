@@ -90,6 +90,7 @@
         showScrapbook: null,
         postJournalEntryOption: -1,
         squirrelFound: []
+        
       }
     },
     methods: {
