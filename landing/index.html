@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Park Adventure: Landing Page</title>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css?family=Open+Sans|Saira+Extra+Condensed');
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
+      }
+
+      .welcome-modal-container {
+        width: 100vw;
+        height: 100vh;
+
+        flex: 0 0 100%;
+        padding: 8px;
+
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        transition: 250ms all;
+      }
+
+        .welcome-modal {
+          background-color: #dfe6e9;
+          border-radius: 15px;
+          width: 800px;
+          max-width: 100%;
+          margin: auto;
+          overflow: hidden;
+        }
+
+          .title {
+            background-color: #456f99;
+            color: white;
+            padding: 16px 32px;
+            font-family: 'Saira Extra Condensed', sans-serif;
+            font-size: 32px;
+          }
+
+          .content {
+            padding: 16px 32px;
+          }
+
+            ul li {
+              margin: 5px 0;
+            }
+
+            p {
+              margin-bottom: 1em;
+            }
+
+          .action {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 16px;
+          }
+
+          .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+
+            .btn {
+              display: inline-block;
+              background-color: #74b9ff;
+              color: black;
+              border-radius: 15px;
+              padding: 32px 64px;
+              text-align: center;
+              cursor: pointer;
+              transition: 250ms all;
+              text-decoration: none;
+              width: 100%;
+              margin-bottom: 1em;
+            }
+
+              .btn:hover {
+                background-color: #8fc7ff;
+              }
+
+            .btn-secondary {
+              background-color: #bdc3c7;
+              font-size: 14px;
+              width: 80%;
+              padding: 16px 32px;
+            }
+    </style>
+  </head>
+  <body>
+    <div class="welcome-modal-container">
+      <div class="welcome-modal">
+        <div class="title">Park Adventure</div>
+        <div class="content">
+          <a href="https://docs.google.com/forms/d/1YZurqAQ9Ih1HJAD9HP9U-YBuffNta7iXXuZ_5x19GAo/edit" class="btn">Click here to help us out by taking a few minutes to<br/><b>play the game and fill out the full evaluation.</b></a>
+          <a href="https://andreybutenko.github.io/NatureBridge/" class="btn btn-secondary">Click here to skip straight to the game.</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
