@@ -68,10 +68,40 @@
             padding: 16px;
           }
 
+          .alert {
+            background-color: #f1c40f;
+            padding: 16px 32px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+          }
+
+          @media only screen and (max-width: 500px) {
+            .alert {
+              flex-direction: column
+            }
+
+            .alert p {
+              padding-top: 1em;
+              text-align: center;
+              padding-left: 0 !important;
+            }
+          }
+
+            .alert img {
+              height: 2em;
+            }
+
+            .alert p {
+              padding-left: 32px;
+              margin-bottom: 0;
+            }
+
           .content {
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-top: 32px;
           }
 
             .btn {
@@ -104,6 +134,13 @@
     <div class="welcome-modal-container">
       <div class="welcome-modal">
         <div class="title">Park Adventure</div>
+        <div class="alert">
+          <img src="/static/widescreen.png" />
+          <p>
+            <b>Make sure to play this game on your computer or a laptop.</b><br/>
+            We are still working on formatting issues with smaller screen sizes. Thank you!
+          </p>
+        </div>
         <div class="content">
           <a href="https://docs.google.com/forms/d/1YZurqAQ9Ih1HJAD9HP9U-YBuffNta7iXXuZ_5x19GAo/edit" class="btn">Click here to help us out by taking a few minutes to<br/><b>play the game and fill out the full evaluation.</b></a>
           <a href="https://andreybutenko.github.io/NatureBridge/" class="btn btn-secondary">Click here to skip straight to the game.</a>
