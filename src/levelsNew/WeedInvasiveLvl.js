@@ -1,3 +1,4 @@
 export default {
-  "minigame":  "WeedInvasive"
+  "minigame":  "WeedInvasive",
+  "hideSidebar": true
 }

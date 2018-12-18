@@ -1,5 +1,5 @@
 <template>
-  <div class="wave-goodbye">
+  <div class="the-end">
     <div class="content">
       <h1>Congratulations!</h1>
       <p>You completed your National Park Adventure! You are now a Deputy Ranger!</p>
@@ -48,7 +48,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .wave-goodbye {
+  .the-end {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,6 +67,7 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      width: 100vw;
       max-width: 800px;
       padding: 16px;
       text-align: center;
@@ -90,6 +91,7 @@
         img,
         span {
           display: block;
+          width: 100%;
         }
       }
 

@@ -218,6 +218,11 @@
     flex-direction: row;
     flex-wrap: wrap;
 
+    @media only screen and (max-width: 580px) {
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+
     li {
       flex: 1 1 50%;
     }

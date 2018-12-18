@@ -1,3 +1,4 @@
 export default {
-  "minigame":  "MessyRoom"
+  "minigame":  "MessyRoom",
+  "hideSidebar": true
 }

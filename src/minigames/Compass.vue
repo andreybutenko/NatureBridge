@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" :style="getContainerScaling()">
     <div class="center-content">
       <div>
         <div class="pano-view" :style="{ backgroundImage: panoUrl, backgroundPositionX: panoPosition }" @click="attemptNavigation()">
@@ -42,9 +42,12 @@
 </template>
 
 <script>
+  import Scaler from '../common/Scaler';
+
   export default {
     name: 'Compass',
     props: ['stage', 'checkmarks', 'onSuccess', 'instructions'],
+    mixins: [Scaler],
     data() {
       return {
         degPxRatio: 0,

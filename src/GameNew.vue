@@ -1,5 +1,5 @@
 <template>
-  <div class="game" :class="{ minigame: isMinigame }">
+  <div class="game" :class="{ minigame: isMinigame, 'hide-sidebar': hideSidebar }">
     <Scrapbook
       :registerShow="registerShowScrapbook" />
     <SquirrelTrivia
@@ -82,7 +82,8 @@
         canvasWidth: 0,
         canvasHeight: 0,
         activeLayer: 1,
-        currentScene: 'MessyRoom',
+        //currentScene: 'MessyRoom',
+        currentScene: 'Intro1',
         showJournalEntry: null,
         showMap: null,
         showRangerWiki: null,
@@ -201,6 +202,9 @@
       },
       isMinigame() {
         return this.scene.hasOwnProperty('minigame');
+      },
+      hideSidebar() {
+        return this.scene.hideSidebar === true;
       }
     },
     created: function() {
@@ -225,6 +229,12 @@
     height: 100vh;
     overflow-x: hidden;
 
+    &.hide-sidebar {
+      .secondary-view {
+        display: none;
+      }
+    }
+/*
     @media only screen and (min-width: $orientation-break) {
       &.minigame {
         flex-direction: column;
@@ -245,7 +255,7 @@
         }
       }
     }
-
+*/
     @media only screen and (max-width: $orientation-break) {
       flex-direction: column;
     }
@@ -272,7 +282,7 @@
       padding: 16px;
 
       @media only screen and (max-width: $orientation-break) {
-        flex: 1 0 0;
+        flex: 1 0 120px;
       }
 
       .step-container {

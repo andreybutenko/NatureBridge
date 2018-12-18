@@ -1,3 +1,4 @@
 export default {
-  "minigame":  "CompassTutorial"
+  "minigame":  "CompassTutorial",
+  "hideSidebar": true
 }

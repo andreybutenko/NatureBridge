@@ -1,6 +1,6 @@
 <template>
   <div class="modal-container" @click="ondismiss()" v-if="shown">
-    <div class="modal-content big modal-content-journal" @click.stop="() => {}">
+    <div class="modal-content big modal-content-journal" :style="getContainerScaling()" @click.stop="() => {}">
       <!-- <div class="btn" @click="print()">Print this</div> -->
       <div class="left">
         <ScrapbookPage
@@ -21,10 +21,12 @@
 <script>
   import { globalStore } from '../main.js';
   import ScrapbookPage from './ScrapbookPage';
+  import Scaler from './Scaler';
 
   export default {
     name: 'Scrapbook',
     props: ['registerShow'],
+    mixins: [Scaler],
     components: { ScrapbookPage },
     mounted() {
       this.registerShow(this.show);

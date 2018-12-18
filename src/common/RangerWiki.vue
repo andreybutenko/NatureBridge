@@ -1,6 +1,6 @@
 <template>
   <div class="ranger-wiki-container" @click="ondismiss" v-if="shown">
-    <div class="ranger-wiki" @click.stop="() => {}">
+    <div class="ranger-wiki" :style="getContainerScaling()" @click.stop="() => {}">
       <div class="sections">
         <b>Topics</b>
         <div class="btn" @click="selected = 0" :class="{ selected: selected == 0}">10 Essentials</div>
@@ -215,9 +215,12 @@
 </template>
 
 <script>
+  import Scaler from '../common/Scaler';
+
   export default {
     name: 'RangerWiki',
     props: ['registerShow'],
+    mixins: [Scaler],
     data() {
       return {
         selected: 0,
