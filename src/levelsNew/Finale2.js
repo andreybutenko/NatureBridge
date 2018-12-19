@@ -31,57 +31,53 @@ export default {
       {
         "type": "chat",
         "text": "How was your day?",
-        "top": "45%",
-        "left": "47%",
-        "flip": false
+        "top": "51%",
+        "left": "45%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "Great! We explored all the \ntrails and learned a lot\n along the way!",
-        "top": "41%",
-        "left": "47%",
-        "flip": true
+        "text": "Great! We explored all the trails and learned a lot along the way!",
+        "top": "53%",
+        "left": "73%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "Fantastic! \nYou’ve officially \nearned your \nDeputy Ranger badges.",
-        "top": "38%",
-        "left": "46%",
-        "flip": false
+        "text": "Fantastic! You’ve officially earned your Deputy Ranger badges.",
+        "top": "50%",
+        "left": "45%"
       }
     ],
     [
       {
         "type": "chat",
         "text": "Cool!",
-        "top": "46%",
-        "left": "64%",
-        "flip": true
+        "top": "55%",
+        "left": "73%"
       },
       {
         "type": "chat",
         "text": "Thanks!",
-        "top": "51%",
-        "left": "84%",
-        "flip": false
+        "top": "58%",
+        "left": "85%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "Have a safe trip home,\nand come visit again soon!",
+        "text": "Have a safe trip home, and come visit again soon!",
         "top": "41%",
-        "left": "46%",
-        "flip": false
+        "left": "46%"
       }
     ]
   ],
   "layerSteps": [
-    null,
+    {
+      "index": 0
+    },
     {
       "index": 1,
       "stepType": "Click through",

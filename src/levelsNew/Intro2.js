@@ -31,34 +31,30 @@ export default {
       {
         "type": "chat",
         "text": "Remember, national parks are \nhere for your enjoyment, \nbut it’s important to \nbe safe and follow \nLeave No Trace Principles.",
-        "top": "30%",
-        "left": "52%",
-        "flip": false
+        "top": "50%",
+        "left": "50%"
       }
     ],
     [
       {
         "type": "chat",
         "text": "Have a great visit!",
-        "top": "41%",
-        "left": "53%",
-        "flip": false
+        "top": "50%",
+        "left": "50%"
       }
     ],
     [
       {
         "type": "chat",
         "text": "Thanks!",
-        "top": "44%",
-        "left": "63%",
-        "flip": true
+        "top": "55%",
+        "left": "85%"
       },
       {
         "type": "chat",
         "text": "Thanks!",
-        "top": "47%",
-        "left": "85%",
-        "flip": false
+        "top": "51%",
+        "left": "74%"
       }
     ]
   ],

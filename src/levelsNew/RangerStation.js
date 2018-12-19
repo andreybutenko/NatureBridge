@@ -30,58 +30,54 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Welcome to the\nRanger Station.",
-        "top": "28%",
-        "left": "57%",
-        "flip": true
+        "text": "Welcome to the Ranger Station.",
+        "top": "41%",
+        "left": "80%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "If you have any\nquestions about the\nPark, you can look them \nup in this Field Guide.",
-        "top": "19%",
-        "left": "45%",
-        "flip": true
+        "text": "If you have any questions about the Park, you can look them up in this Field Guide.",
+        "top": "41%",
+        "left": "82%"
       }
     ],
     [
       {
         "type": "chat",
         "text": "Thanks!",
-        "top": "38%",
-        "left": "45%",
-        "flip": false
+        "top": "45%",
+        "left": "45%"
       },
       {
         "type": "chat",
         "text": "Great!",
-        "top": "40%",
-        "left": "15%",
-        "flip": true
+        "top": "49%",
+        "left": "32%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "You can access\nit out on the\ntrail by clicking\non it in your pack.",
-        "top": "18%",
-        "left": "55%",
-        "flip": true
+        "text": "You can access it out on the trail by clicking on it in your pack.",
+        "top": "42%",
+        "left": "81%"
       }
     ],
     [
       {
         "type": "chat",
         "text": "Will do.",
-        "top": "36%",
-        "left": "48%",
-        "flip": false
+        "top": "45%",
+        "left": "45%"
       }
     ]
   ],
   "layerSteps": [
-    null,
+    {
+      "index": 0
+    },
     {
       "index": 1,
       "stepType": "Click through",
@@ -92,8 +88,7 @@ export default {
       "index": 2,
       "stepType": "Click through",
       "prompt": "You respond with:",
-      "options": [],
-      "highlightWiki": true
+      "options": []
     },
     {
       "index": 3,

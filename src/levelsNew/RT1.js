@@ -24,8 +24,8 @@ export default {
       {
         "type": "chat",
         "text": "Woah, is that a\nsalmon in the\nwater?",
-        "top": "31%",
-        "left": "4%",
+        "top": "43%",
+        "left": "26%",
         "flip": true
       }
     ],
@@ -33,8 +33,8 @@ export default {
       {
         "type": "chat",
         "text": "Yeah, it looks like it's\nstranded and cut off from\nthe rest of the river.",
-        "top": "22%",
-        "left": "42%",
+        "top": "33%",
+        "left": "40%",
         "flip": false
       }
     ],
@@ -42,8 +42,8 @@ export default {
       {
         "type": "chat",
         "text": "I've heard it's been\ngetting warmer and\ndrier the past\nseveral years...",
-        "top": "27%",
-        "left": "1%",
+        "top": "44%",
+        "left": "27%",
         "flip": true
       }
     ],
@@ -51,8 +51,8 @@ export default {
       {
         "type": "chat",
         "text": "... and that's been\nchanging how much\nwater is in\nthe river.",
-        "top": "27%",
-        "left": "1%",
+        "top": "45%",
+        "left": "28%",
         "flip": true
       }
     ],
@@ -60,8 +60,8 @@ export default {
       {
         "type": "chat",
         "text": "How does that affect\nthe salmon?",
-        "top": "26%",
-        "left": "43%",
+        "top": "34%",
+        "left": "40%",
         "flip": false
       }
     ],
@@ -69,8 +69,8 @@ export default {
       {
         "type": "chat",
         "text": "The snow is melting\nearlier and so less\nwater flows through\nthe river during\nsummer.",
-        "top": "23%",
-        "left": "1%",
+        "top": "45%",
+        "left": "27%",
         "flip": true
       }
     ],
@@ -78,8 +78,8 @@ export default {
       {
         "type": "chat",
         "text": "Each year, salmon\ncome back to the\nsame place to lay\ntheir eggs,\nbut if the water is\nlower it can impact\nthe fish.",
-        "top": "16%",
-        "left": "1%",
+        "top": "45%",
+        "left": "27%",
         "flip": true
       }
     ],
@@ -87,8 +87,8 @@ export default {
       {
         "type": "chat",
         "text": "I wish we could help\nthe salmon...",
-        "top": "28%",
-        "left": "43%",
+        "top": "33%",
+        "left": "40%",
         "flip": false
       }
     ],
@@ -96,8 +96,8 @@ export default {
       {
         "type": "chat",
         "text": "Wait! We can't\ndisturb the\nwildlife!",
-        "top": "29%",
-        "left": "5%",
+        "top": "43%",
+        "left": "26%",
         "flip": true
       }
     ],
@@ -105,8 +105,8 @@ export default {
       {
         "type": "chat",
         "text": "We have to leave\nit as it is,\neven if it's\nstranded!",
-        "top": "27%",
-        "left": "3%",
+        "top": "44%",
+        "left": "27%",
         "flip": true
       }
     ],
@@ -114,8 +114,8 @@ export default {
       {
         "type": "chat",
         "text": "Oh, I see...\nGood luck, salmon!",
-        "top": "27%",
-        "left": "42%",
+        "top": "34%",
+        "left": "39%",
         "flip": false
       }
     ],
@@ -123,8 +123,8 @@ export default {
       {
         "type": "chat",
         "text": "It's too bad\nwe can't do\nanything to \nhelp it...",
-        "top": "27%",
-        "left": "7%",
+        "top": "34%",
+        "left": "40%",
         "flip": true
       }
     ],
@@ -132,14 +132,16 @@ export default {
       {
         "type": "chat",
         "text": "But even if we\ncan't help the salmon\ndirectly, we can\nsupport the Park’s\nrestoration efforts!",
-        "top": "23%",
-        "left": "42%",
+        "top": "33%",
+        "left": "39%",
         "flip": false
       }
     ]
   ],
   "layerSteps": [
-    null,
+    {
+      "index": 0
+    },
     {
       "index": 1,
       "stepType": "Decision",

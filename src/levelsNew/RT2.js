@@ -47,9 +47,9 @@ export default {
       },
       {
         "type": "chat",
-        "text": "Look! All the pine\nneedles on this\ntree are red.",
-        "top": "28%",
-        "left": "36%",
+        "text": "Look! All the pine needles on this tree are red.",
+        "top": "40%",
+        "left": "59%",
         "flip": true
       }
     ],
@@ -72,10 +72,9 @@ export default {
       },
       {
         "type": "chat",
-        "text": "Yeah, I've heard that\ncan be caused by beetles\nthat attack the trees.",
-        "top": "30%",
-        "left": "66%",
-        "flip": false
+        "text": "Yeah, I've heard that can be caused by beetles that attack the trees.",
+        "top": "42%",
+        "left": "65%"
       }
     ],
     [
@@ -97,15 +96,17 @@ export default {
       },
       {
         "type": "chat",
-        "text": "Wow, there are\nlots of trees around\nus that also have\nred needles...",
-        "top": "23%",
-        "left": "33%",
-        "flip": true
+        "text": "Wow, there are lots of trees around us that also have red needles...",
+        "top": "40%",
+        "left": "57%"
       }
-    ]
+    ],
+    []
   ],
   "layerSteps": [
-    null,
+    {
+      "index": 0
+    },
     {
       "index": 1,
       "stepType": "Decision",

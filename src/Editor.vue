@@ -119,7 +119,7 @@
 
         this.scene.background = obj.background;
         this.layers = obj.layers;
-        thiss.layerSteps = obj.layerSteps;
+        this.layerSteps = obj.layerSteps;
       },
       showSource() {
         window.open('', null, 'status=yes,toolbar=no,menubar=no,location=no').document.write('<pre>' +

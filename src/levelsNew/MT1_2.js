@@ -31,8 +31,8 @@ export default {
       {
         "type": "chat",
         "text": "Thanks for your help!",
-        "top": "49%",
-        "left": "56%",
+        "top": "55%",
+        "left": "83%",
         "flip": true
       }
     ]

@@ -31,84 +31,77 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Cool! \nLook at that!",
-        "top": "50%",
-        "left": "12%",
-        "flip": true
+        "text": "Cool! Look at that!",
+        "top": "53%",
+        "left": "42%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "I wish we could take\nit home and show \nour friends!",
-        "top": "45%",
-        "left": "4%",
-        "flip": true
+        "text": "I wish we could take it home and show our friends!",
+        "top": "59%",
+        "left": "30%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "Oh no, we shouldn't\nactually take an old\nartifact home with us!",
-        "top": "47%",
-        "left": "2%",
-        "flip": true
+        "text": "Oh no, we shouldn't actually take an old artifact home with us!",
+        "top": "59%",
+        "left": "30%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "We need to leave it\nso others can enjoy \nit after us!",
-        "top": "46%",
-        "left": "5%",
-        "flip": true
+        "text": "We need to leave it so others can enjoy it after us!",
+        "top": "59%",
+        "left": "30%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "Well maybe we can at least\ntake this rock home to remember\nthe place where we saw the pick axe?",
-        "top": "43%",
-        "left": "44%",
-        "flip": false
+        "text": "Well maybe we can at least take this rock home to remember the place where we saw the pick axe?",
+        "top": "55%",
+        "left": "45%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "No, we can't take\nanything home with us.\nBut we can take\nplenty of pictures!",
-        "top": "46%",
-        "left": "2%",
-        "flip": true
+        "text": "No, we can't take anything home with us. But we can take plenty of pictures!",
+        "top": "59%",
+        "left": "30%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "We need to leave it so others\ncan enjoy it after us.",
-        "top": "45%",
-        "left": "46%",
-        "flip": false
+        "text": "We need to leave it so others can enjoy it after us.",
+        "top": "55%",
+        "left": "43%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "Well maybe we can\nat least take this\nrock home to remember\nthe place where we saw\nthe pick axe?",
-        "top": "40%",
-        "left": "2%",
-        "flip": true
+        "text": "Well maybe we can at least take this rock home to remember the place where we saw the pick axe?",
+        "top": "59%",
+        "left": "31%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "No, we can't take\nanything home with us.\nBut we can take\nplenty of pictures!",
-        "top": "45%",
-        "left": "45%",
-        "flip": false
+        "text": "No, we can't take anything home with us. But we can take plenty of pictures!",
+        "top": "55%",
+        "left": "44%"
       }
-    ]
+    ],
+    [],
+    []
   ],
   "layerSteps": [
     {
@@ -183,8 +176,7 @@ export default {
         {
           "description": "Take a picture and continue walking."
         }
-      ],
-      "nextScene": "HT3"
+      ]
     },
     {
       "index": 9,

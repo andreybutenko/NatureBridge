@@ -33,8 +33,8 @@ export default {
       {
         "type": "chat",
         "text": "Wow, this must\nbe some old\nmining equipment.",
-        "top": "44%",
-        "left": "1%",
+        "top": "60%",
+        "left": "20%",
         "flip": true
       }
     ],
@@ -43,8 +43,8 @@ export default {
       {
         "type": "chat",
         "text": "Hmm, that sign\nsays the \nequipment is \nquite fragile.",
-        "top": "40%",
-        "left": "1%",
+        "top": "58%",
+        "left": "21%",
         "flip": true
       }
     ],
@@ -53,13 +53,14 @@ export default {
       {
         "type": "chat",
         "text": "I guess the river will\nkeep eroding until\nthis old site is washed away.",
-        "top": "35%",
-        "left": "32%",
+        "top": "49%",
+        "left": "31%",
         "flip": false
       }
     ],
-    [
-    ]
+    [],
+    [],
+    []
   ],
   "layerSteps": [
     {
@@ -120,11 +121,11 @@ export default {
       ]
     },
     {
-      "stepType": "Click through",
-      "journalEntry": "In some situations, the National Park Service must choose between protecting the natural landscape and protecting historical sites. If you were the land manager in this situation, would you choose to protect the historic mining equipment or would you protect the river and allow it to erode naturally? Why?"
+      "index": 6,
+      "stepType": "Click through"
     },
     {
-      "index": 6,
+      "index": 7,
       "stepType": "Decision",
       "prompt": "",
       "options": [

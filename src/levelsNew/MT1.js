@@ -31,94 +31,86 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Hi! What are you all\nworking on?",
-        "top": "47%",
-        "left": "41%",
-        "flip": false
+        "text": "Hi! What are you all working on?",
+        "top": "55%",
+        "left": "36%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "We are removing\ninvasive species.",
-        "top": "45%",
-        "left": "61%",
-        "flip": true
+        "text": "We are removing invasive species.",
+        "top": "56%",
+        "left": "84%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "Invasive species?\nWhat are those?",
-        "top": "50%",
-        "left": "4%",
-        "flip": true
+        "text": "Invasive species? What are those?",
+        "top": "60%",
+        "left": "27%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "Invasive species are plants\nthat have been brought here\nfrom another place.",
-        "top": "41%",
-        "left": "50%",
-        "flip": true
+        "text": "Invasive species are plants that have been brought here from another place.",
+        "top": "57%",
+        "left": "85%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "They take away important\nresources from native plants\nand make it harder for the natural\necosystem to develop and thrive.",
-        "top": "39%",
-        "left": "42%",
-        "flip": true
+        "text": "They take away important resources from native plants and make it harder for the natural ecosystem to develop and thrive.",
+        "top": "57%",
+        "left": "85%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "Most of the native species here\nhave been used for things like food\nand medicine by the Native\nAmericans who lived on these\nlands for thousands of years.",
-        "top": "29%",
-        "left": "27%",
-        "flip": false
+        "text": "Most of the native species here have been used for things like food and medicine by the Native Americans who lived on these lands for thousands of years.",
+        "top": "55%",
+        "left": "37%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "Yes! By removing invasive\nspecies, we can help preserve\nthe ecosystem that has existed\nfor so long",
-        "top": "39%",
-        "left": "42%",
-        "flip": true
+        "text": "Yes! By removing invasive species, we can help preserve the ecosystem that has existed for so long",
+        "top": "57%",
+        "left": "85%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "Would you like\nto help us?",
-        "top": "48%",
-        "left": "64%",
-        "flip": true
+        "text": "Would you like to help us?",
+        "top": "57%",
+        "left": "85%"
       }
     ],
     [
       {
         "type": "chat",
         "text": "Sure!",
-        "top": "48%",
-        "left": "40%",
-        "flip": false
+        "top": "55%",
+        "left": "40%"
       },
       {
         "type": "chat",
         "text": "Sure!",
-        "top": "53%",
-        "left": "17%",
-        "flip": true
+        "top": "60%",
+        "left": "28%"
       }
     ]
   ],
   "layerSteps": [
-    null,
+    {
+      "index": 0
+    },
     {
       "index": 1,
       "stepType": "Decision",
@@ -163,7 +155,7 @@ export default {
       "stepType": "Click through"
     },
     {
-      "index": 8,
+      "index": 10,
       "stepType": "Decision",
       "prompt": "",
       "options": [

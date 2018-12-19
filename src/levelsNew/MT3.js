@@ -23,10 +23,9 @@ export default {
     [
       {
         "type": "chat",
-        "text": "My fingers are numb.\nCan we stop to make\na campfire?",
-        "top": "37%",
-        "left": "57%",
-        "flip": false
+        "text": "My fingers are numb. Can we stop to make a campfire?",
+        "top": "49%",
+        "left": "58%"
       },
       {
         "type": "sprite",
@@ -64,10 +63,9 @@ export default {
       },
       {
         "type": "chat",
-        "text": "Why can't we build a fire above\na certain elevation?",
-        "top": "41%",
-        "left": "57%",
-        "flip": false
+        "text": "Why can't we build a fire above a certain elevation?",
+        "top": "50%",
+        "left": "57%"
       }
     ],
     [
@@ -89,10 +87,9 @@ export default {
       },
       {
         "type": "chat",
-        "text": "There are fewer trees\nup here, so there's not\nenough wood around to make\ncampfires sustainable here.",
-        "top": "29%",
-        "left": "10%",
-        "flip": true
+        "text": "There are fewer trees up here, so there's not enough wood around to make campfires sustainable here.",
+        "top": "46%",
+        "left": "45%"
       }
     ],
     [
@@ -114,135 +111,9 @@ export default {
       },
       {
         "type": "chat",
-        "text": "Why don't you put on your\ngloves and we'll keep moving\nto stay warm?",
-        "top": "33%",
-        "left": "10%",
-        "flip": true
-      }
-    ],
-    [
-      {
-        "type": "sprite",
-        "source": "characters/main-character.png",
-        "top": "47%",
-        "left": "40%",
-        "size": "32%",
-        "flip": false
-      },
-      {
-        "type": "sprite",
-        "source": "characters/green-jacket-kid.png",
-        "top": "53%",
-        "left": "52%",
-        "size": "32%",
-        "flip": true
-      },
-      {
-        "type": "chat",
-        "text": "Ok!",
-        "top": "45%",
-        "left": "57%",
-        "flip": false
-      }
-    ],
-    [
-      {
-        "type": "sprite",
-        "source": "characters/main-character.png",
-        "top": "47%",
-        "left": "40%",
-        "size": "32%",
-        "flip": false
-      },
-      {
-        "type": "sprite",
-        "source": "characters/green-jacket-kid.png",
-        "top": "53%",
-        "left": "52%",
-        "size": "32%",
-        "flip": true
-      },
-      {
-        "type": "chat",
-        "text": "Maybe we should check\nthe map to see if we're\ntoo high in elevation to\nbuild a fire.",
-        "top": "35%",
-        "left": "57%",
-        "flip": false
-      }
-    ],
-    [
-      {
-        "type": "sprite",
-        "source": "characters/main-character.png",
-        "top": "47%",
-        "left": "40%",
-        "size": "32%",
-        "flip": false
-      },
-      {
-        "type": "sprite",
-        "source": "characters/green-jacket-kid.png",
-        "top": "53%",
-        "left": "52%",
-        "size": "32%",
-        "flip": true
-      },
-      {
-        "type": "chat",
-        "text": "Why can't we build a\nfire once we're above\na certain elevation?",
-        "top": "33%",
-        "left": "17%",
-        "flip": true
-      }
-    ],
-    [
-      {
-        "type": "sprite",
-        "source": "characters/main-character.png",
-        "top": "47%",
-        "left": "40%",
-        "size": "32%",
-        "flip": false
-      },
-      {
-        "type": "sprite",
-        "source": "characters/green-jacket-kid.png",
-        "top": "53%",
-        "left": "52%",
-        "size": "32%",
-        "flip": true
-      },
-      {
-        "type": "chat",
-        "text": "There are fewer trees\nup here, so there's not\nenough wood around to make\ncampfires sustainable here.",
-        "top": "34%",
-        "left": "57%",
-        "flip": false
-      }
-    ],
-    [
-      {
-        "type": "sprite",
-        "source": "characters/main-character.png",
-        "top": "47%",
-        "left": "40%",
-        "size": "32%",
-        "flip": false
-      },
-      {
-        "type": "sprite",
-        "source": "characters/green-jacket-kid.png",
-        "top": "53%",
-        "left": "52%",
-        "size": "32%",
-        "flip": true
-      },
-      {
-        "type": "chat",
-        "text": "Why don't you put on your\ngloves and we'll keep moving\nto stay warm?",
-        "top": "33%",
-        "left": "8%",
-        "flip": true
+        "text": "Why don't you put on your gloves and we'll keep moving to stay warm?",
+        "top": "46%",
+        "left": "47%"
       }
     ],
     [
@@ -265,9 +136,128 @@ export default {
       {
         "type": "chat",
         "text": "Ok!",
-        "top": "45%",
-        "left": "58%",
+        "top": "50%",
+        "left": "56%"
+      }
+    ],
+    [
+      {
+        "type": "sprite",
+        "source": "characters/main-character.png",
+        "top": "47%",
+        "left": "40%",
+        "size": "32%",
         "flip": false
+      },
+      {
+        "type": "sprite",
+        "source": "characters/green-jacket-kid.png",
+        "top": "53%",
+        "left": "52%",
+        "size": "32%",
+        "flip": true
+      },
+      {
+        "type": "chat",
+        "text": "Maybe we should check the map to see if we're too high in elevation to build a fire.",
+        "top": "51%",
+        "left": "57%"
+      }
+    ],
+    [
+      {
+        "type": "sprite",
+        "source": "characters/main-character.png",
+        "top": "47%",
+        "left": "40%",
+        "size": "32%",
+        "flip": false
+      },
+      {
+        "type": "sprite",
+        "source": "characters/green-jacket-kid.png",
+        "top": "53%",
+        "left": "52%",
+        "size": "32%",
+        "flip": true
+      },
+      {
+        "type": "chat",
+        "text": "Why can't we build a fire once we're above a certain elevation?",
+        "top": "46%",
+        "left": "47%"
+      }
+    ],
+    [
+      {
+        "type": "sprite",
+        "source": "characters/main-character.png",
+        "top": "47%",
+        "left": "40%",
+        "size": "32%",
+        "flip": false
+      },
+      {
+        "type": "sprite",
+        "source": "characters/green-jacket-kid.png",
+        "top": "53%",
+        "left": "52%",
+        "size": "32%",
+        "flip": true
+      },
+      {
+        "type": "chat",
+        "text": "There are fewer trees up here, so there's not enough wood around to make campfires sustainable here.",
+        "top": "51%",
+        "left": "56%"
+      }
+    ],
+    [
+      {
+        "type": "sprite",
+        "source": "characters/main-character.png",
+        "top": "47%",
+        "left": "40%",
+        "size": "32%",
+        "flip": false
+      },
+      {
+        "type": "sprite",
+        "source": "characters/green-jacket-kid.png",
+        "top": "53%",
+        "left": "52%",
+        "size": "32%",
+        "flip": true
+      },
+      {
+        "type": "chat",
+        "text": "Why don't you put on your gloves and we'll keep moving to stay warm?",
+        "top": "50%",
+        "left": "57%"
+      }
+    ],
+    [
+      {
+        "type": "sprite",
+        "source": "characters/main-character.png",
+        "top": "47%",
+        "left": "40%",
+        "size": "32%",
+        "flip": false
+      },
+      {
+        "type": "sprite",
+        "source": "characters/green-jacket-kid.png",
+        "top": "53%",
+        "left": "52%",
+        "size": "32%",
+        "flip": true
+      },
+      {
+        "type": "chat",
+        "text": "Ok!",
+        "top": "46%",
+        "left": "45%"
       }
     ]
   ],

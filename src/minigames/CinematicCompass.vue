@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" :style="getContainerScaling()">
     <div>
       <div class="pano-view" :style="{ backgroundImage: panoUrl, backgroundPositionX: panoPosition }"></div>
       <div class="control-container">
@@ -15,9 +15,12 @@
 </template>
 
 <script>
+  import Scaler from '../common/Scaler';
+
   export default {
     name: 'CinematicCompass',
     props: ['stage', 'action'],
+    mixins: [Scaler],
     data() {
       return {
         degPxRatio: 0,

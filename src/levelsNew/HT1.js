@@ -35,10 +35,9 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Loud music and noises\ncan ruin the outdoor experience\nfor you and for others on the trail.",
-        "top": "39%",
-        "left": "20%",
-        "flip": true
+        "text": "Loud music and noises can ruin the outdoor experience for you and for others on the trail.",
+        "top": "52%",
+        "left": "71%"
       }
     ],
     [
@@ -46,8 +45,7 @@ export default {
         "type": "chat",
         "text": "Oops! Sorry!",
         "top": "54%",
-        "left": "80%",
-        "flip": false
+        "left": "80%"
       }
     ],
     [
@@ -71,10 +69,9 @@ export default {
       },
       {
         "type": "chat",
-        "text": "Hi! Would you mind not playing\nthat music? I'm trying to enjoy\nthe natural sounds of this trail...",
-        "top": "17%",
-        "left": "58%",
-        "flip": false
+        "text": "Hi! Would you mind not playing that music? I'm trying to enjoy the natural sounds of this trail...",
+        "top": "32%",
+        "left": "57%"
       }
     ],
     [
@@ -88,10 +85,9 @@ export default {
       },
       {
         "type": "chat",
-        "text": "Sorry about that!\nWe'll turn it off!",
-        "top": "39%",
-        "left": "75%",
-        "flip": false
+        "text": "Sorry about that! We'll turn it off!",
+        "top": "52%",
+        "left": "71%"
       }
     ],
     [
@@ -105,33 +101,34 @@ export default {
       },
       {
         "type": "chat",
-        "text": "Enjoy the rest\nof your hike!",
-        "top": "48%",
-        "left": "80%",
-        "flip": false
+        "text": "Enjoy the rest of your hike!",
+        "top": "55%",
+        "left": "81%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "Even if we shouldn’t blast music\non the trail, we can still tell\nstories and jokes as we walk!",
-        "top": "38%",
-        "left": "23%",
-        "flip": true
+        "text": "Even if we shouldn’t blast music on the trail, we can still tell stories and jokes as we walk!",
+        "top": "52%",
+        "left": "71%"
       }
     ],
     [
       {
         "type": "chat",
         "text": "Ok! And without music playing, we can appreciate the quiet sounds of the forest.",
-        "top": "18%",
-        "left": "81%",
-        "flip": false
+        "top": "56%",
+        "left": "82%"
       }
     ],
+    [],
+    []
   ],
   "layerSteps": [
-    null,
+    {
+      "index": 0
+    },
     {
       "index": 1,
       "stepType": "Click through"

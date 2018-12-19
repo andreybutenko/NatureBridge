@@ -49,10 +49,9 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Let's stop for a moment\nand have a snack!",
-        "top": "44%",
-        "left": "53%",
-        "flip": false
+        "text": "Let's stop for a moment and have a snack!",
+        "top": "52%",
+        "left": "50%"
       },
       {
         "type": "sprite",
@@ -74,10 +73,9 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Good thing we\npacked plenty\nof food!",
-        "top": "45%",
-        "left": "25%",
-        "flip": true
+        "text": "Good thing we packed plenty of food!",
+        "top": "58%",
+        "left": "42%"
       },
       {
         "type": "sprite",
@@ -158,10 +156,9 @@ export default {
       },
       {
         "type": "chat",
-        "text": "Hey! You can't\nfeed any animals!",
-        "top": "34%",
-        "left": "30%",
-        "flip": true
+        "text": "Hey! You can't feed any animals!",
+        "top": "43%",
+        "left": "54%"
       },
       {
         "type": "sprite",
@@ -191,9 +188,8 @@ export default {
       {
         "type": "chat",
         "text": "Oh, really? Oops...",
-        "top": "27%",
-        "left": "67%",
-        "flip": false
+        "top": "33%",
+        "left": "64%"
       },
       {
         "type": "sprite",
@@ -222,10 +218,9 @@ export default {
       },
       {
         "type": "chat",
-        "text": "Yup, it's harmful to the\nanimals to give them food\nthey don't naturally eat.",
-        "top": "28%",
-        "left": "22%",
-        "flip": true
+        "text": "Yup, it's harmful to the animals to give them food they don't naturally eat.",
+        "top": "42%",
+        "left": "55%"
       },
       {
         "type": "sprite",
@@ -255,9 +250,8 @@ export default {
       {
         "type": "chat",
         "text": "Why so protective?",
-        "top": "37%",
-        "left": "30%",
-        "flip": true
+        "top": "43%",
+        "left": "52%"
       },
       {
         "type": "sprite",
@@ -286,10 +280,9 @@ export default {
       },
       {
         "type": "chat",
-        "text": "It's harmful to the\nanimals to give them\nfood they don't\nnaturally eat.",
-        "top": "17%",
-        "left": "70%",
-        "flip": false
+        "text": "It's harmful to the animals to give them food they don't naturally eat.",
+        "top": "33%",
+        "left": "64%"
       },
       {
         "type": "sprite",
@@ -336,10 +329,9 @@ export default {
       },
       {
         "type": "chat",
-        "text": "Oh no! I can't leave\nmy wrapper on the trail!",
-        "top": "43%",
-        "left": "20%",
-        "flip": true
+        "text": "Oh no! I can't leave my wrapper on the trail!",
+        "top": "53%",
+        "left": "51%"
       }
     ],
     [
@@ -361,10 +353,9 @@ export default {
       },
       {
         "type": "chat",
-        "text": "You can't leave\ntrash on the trail!",
-        "top": "42%",
-        "left": "23%",
-        "flip": true
+        "text": "You can't leave trash on the trail!",
+        "top": "52%",
+        "left": "51%"
       }
     ],
     [
@@ -422,10 +413,9 @@ export default {
       },
       {
         "type": "chat",
-        "text": "I can't leave trash\nand you can't leave your \napple core either!",
-        "top": "45%",
-        "left": "10%",
-        "flip": true
+        "text": "I can't leave trash and you can't leave your apple core either!",
+        "top": "60%",
+        "left": "46%"
       }
     ],
     [
@@ -448,9 +438,8 @@ export default {
       {
         "type": "chat",
         "text": "Won't it decompose?",
-        "top": "39%",
-        "left": "56%",
-        "flip": false
+        "top": "45%",
+        "left": "54%"
       }
     ],
     [
@@ -472,10 +461,9 @@ export default {
       },
       {
         "type": "chat",
-        "text": "That will take a long time\nand you're introducing plant\nmatter that doesn't belong here.\nThat's harmful to the plants and\nanimals!",
-        "top": "40%",
-        "left": "2%",
-        "flip": true
+        "text": "That will take a long time and you're introducing plant matter that doesn't belong here. That's harmful to the plants and animals!",
+        "top": "60%",
+        "left": "45%"
       }
     ],
     [
@@ -497,12 +485,12 @@ export default {
       },
       {
         "type": "chat",
-        "text": "I guess it's not that \ndifferent from the invasive\nspecies we just learned about!",
-        "top": "31%",
-        "left": "55%",
-        "flip": false
+        "text": "I guess it's not that different from the invasive species we just learned about!",
+        "top": "47%",
+        "left": "53%"
       }
-    ]
+    ],
+    []
   ],
   "layerSteps": [
     {

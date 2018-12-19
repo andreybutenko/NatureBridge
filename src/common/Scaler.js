@@ -10,6 +10,17 @@ export default {
       return {
         transform: 'scale(' + scaleFactor + ')'
       }
+    },
+    getContainerScalingVertical() {
+      if(window.innerHeight > 724) {
+        return {};
+      }
+  
+      const scaleFactor = window.innerHeight / 724;
+  
+      return {
+        transform: 'scale(' + scaleFactor + ')'
+      }
     }
   } 
 }

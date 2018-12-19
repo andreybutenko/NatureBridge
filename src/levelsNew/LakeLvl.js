@@ -1,3 +1,4 @@
 export default {
-  "minigame":  "Lake"
+  "minigame":  "Lake",
+  "hideSidebar": true
 }

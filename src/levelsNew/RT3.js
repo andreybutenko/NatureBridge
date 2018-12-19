@@ -24,42 +24,40 @@ export default {
     [
       {
         "type": "chat",
-        "text": "I heard there was a lot of\nflooding this year because\nthe snowpack melted earlier\nthis season.",
-        "top": "9%",
-        "left": "32%",
-        "flip": true
+        "text": "I heard there was a lot of flooding this year because the snowpack melted earlier this season.",
+        "top": "21%",
+        "left": "72%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "So changes in the river\naffect both the wildlife and\ntrail access!",
-        "top": "2%",
-        "left": "77%",
-        "flip": false
+        "text": "So changes in the river affect both the wildlife and trail access!",
+        "top": "17%",
+        "left": "80%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "Yeah, there was too\nmuch flow earlier and it\ndestroyed the bridge...",
-        "top": "10%",
-        "left": "42%",
-        "flip": true
+        "text": "Yeah, there was too much flow earlier and it destroyed the bridge...",
+        "top": "23%",
+        "left": "71%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "Now there's not enough\nflow and it stranded the\nsalmon we saw!",
-        "top": "8%",
-        "left": "42%",
-        "flip": true
+        "text": "Now there's not enough flow and it stranded the salmon we saw!",
+        "top": "17%",
+        "left": "78%"
       }
     ]
   ],
   "layerSteps": [
-    null,
+    {
+      "index": 0
+    },
     {
       "index": 1,
       "stepType": "Decision",

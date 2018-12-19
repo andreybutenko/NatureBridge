@@ -66,8 +66,8 @@ export default {
       {
         "type": "chat",
         "text": "Uh oh! What do we do?",
-        "top": "56%",
-        "left": "58%",
+        "top": "62%",
+        "left": "56%",
         "flip": false
       }
     ],
@@ -90,10 +90,9 @@ export default {
       },
       {
         "type": "chat",
-        "text": "Wait a minute, it's\nimportant to stay on the\ntrail.",
-        "top": "47%",
-        "left": "57%",
-        "flip": false
+        "text": "Wait a minute, it's important to stay on the trail.",
+        "top": "61%",
+        "left": "56%"
       }
     ],
     [
@@ -115,10 +114,9 @@ export default {
       },
       {
         "type": "chat",
-        "text": "If we go off trail, \nwe can trample delicate\nplants and can damage\nthe ecosystem.",
-        "top": "46%",
-        "left": "59%",
-        "flip": false
+        "text": "If we go off trail,  we can trample delicate plants and can damage the ecosystem.",
+        "top": "62%",
+        "left": "56%"
       }
     ],
     [
@@ -140,15 +138,16 @@ export default {
       },
       {
         "type": "chat",
-        "text": "Let's take a picture\nof the landslide to\nreport back to the\nranger!",
-        "top": "46%",
-        "left": "59%",
-        "flip": false
+        "text": "Let's take a picture of the landslide to report back to the ranger!",
+        "top": "62%",
+        "left": "56%"
       }
     ]
   ],
   "layerSteps": [
-    null,
+    {
+      "index": 0
+    },
     {
       "index": 1,
       "stepType": "Decision",
@@ -211,7 +210,6 @@ export default {
           "description": "Take a picture and head back."
         }
       ],
-      "journalEntry": "With increased future temperatures, more precipitation will fall as rain rather than snow and the winter snowpack will start melting earlier in the year. These changes will result in more water running through rivers, which will carry more rocks (sediment) and other debris like wood. Likely, we will see more flooding as well as more river erosion, causing landslides next to existing rivers. Should we work to repair and maintain trails and roads that are damaged due to changes in rivers, should we start building new trails and roads from scratch in new places, or should we no longer have access to these areas?",
       "nextScene": "CompassNavigator"
     }
   ]

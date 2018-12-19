@@ -67,8 +67,8 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      width: 100vw;
-      max-width: 800px;
+      width: 800px;
+      max-width: 100vw;
       padding: 16px;
       text-align: center;
 

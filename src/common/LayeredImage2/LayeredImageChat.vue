@@ -1,7 +1,7 @@
 <template>
   <div
     class="layered-image-chat"
-    :style="{ top: y, left: x }"
+    :style="chatStyle"
     :class="{ clickable: !!onclick, selected: selected, flip: flip }"
     @click.stop="click($event)">{{ text }}<img class="chat-tail" src="/static/ui/chat-tail.png" />
   </div>
@@ -10,12 +10,31 @@
 <script>
   export default {
     name: 'LayeredImageChat',
-    props: ['x', 'y', 'onclick', 'flip', 'text', 'selected'],
+    props: ['x', 'y', 'onclick', 'text', 'selected'],
     methods: {
       click(e) {
         if(!!this.onclick) {
           this.onclick(e);
         }
+      }
+    },
+    computed: {
+      chatStyle() {
+        const fromBottom = `${100 - parseInt(this.y)}%`;
+        if(this.flip) {
+          return {
+            bottom: fromBottom,
+            right: `${100 - parseInt(this.x)}%`
+          }
+        }
+
+        return {
+          bottom: fromBottom,
+          left: this.x
+        }
+      },
+      flip() {
+        return parseInt(this.x) > 50;
       }
     }
   }
@@ -34,6 +53,7 @@
     padding: 8px 16px;
     user-select: none;
     white-space: pre-wrap;
+    max-width: 400px;
 
     @media only screen and (max-width: $orientation-break) {
       font-size: 2.5vw;

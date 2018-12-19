@@ -31,61 +31,54 @@ export default {
       {
         "type": "chat",
         "text": "Welcome to the National Park!",
-        "top": "41%",
-        "left": "53%",
-        "flip": false
+        "top": "50%",
+        "left": "50%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "Through your visit, \nyou'll learn about the Park\nand how we interact with \nthe environment. ",
-        "top": "32%",
-        "left": "53%",
-        "flip": false
+        "text": "Through your visit, you'll learn about the Park and how we interact with the environment. ",
+        "top": "50%",
+        "left": "50%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "If you explore the entire Park,\nyou'll become a Deputy Ranger!\nYou can earn badges by completing \nchallenges along the way.\nKeep an eye out for \nsquirrels, which will add to your collection of badges.",
-        "top": "32%",
-        "left": "51%",
-        "flip": false
+        "text": "If you explore the entire Park, you'll become a Deputy Ranger! You can earn badges by completing challenges along the way. Keep an eye out for squirrels, which will add to your collection of badges.",
+        "top": "50%",
+        "left": "50%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "As you hike, you'll see examples of how \nhuman-caused climate change impacts the Park.",
-        "top": "32%",
-        "left": "51%",
-        "flip": false
+        "text": "As you hike, you'll see examples of how human-caused climate change impacts the Park.",
+        "top": "50%",
+        "left": "50%"
       }
     ],
     [
       {
         "type": "chat",
         "text": "Ok!",
-        "top": "44%",
-        "left": "68%",
-        "flip": true
+        "top": "55%",
+        "left": "85%"
       },
       {
         "type": "chat",
         "text": "Sounds good!",
-        "top": "47%",
-        "left": "85%",
-        "flip": false
+        "top": "51%",
+        "left": "74%"
       }
     ],
     [
       {
         "type": "chat",
         "text": "Here's a map you can use to explore all the trails. It's important to practice navigation before heading out. Can you use your map and compass to find the trail to the mountain pass?",
-        "top": "31%",
-        "left": "52%",
-        "flip": false
+        "top": "50%",
+        "left": "50%"
       }
     ]
   ],

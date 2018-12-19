@@ -30,46 +30,46 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Great job exploring\nall the trails!",
-        "top": "41%",
-        "left": "52%",
-        "flip": false
+        "text": "Great job exploring all the trails!",
+        "top": "49%",
+        "left": "51%"
       }
     ],
     [
       {
         "type": "chat",
-        "text": "Would you like to see the Lake?\nIt's a great place to relax\nafter a long adventure!",
-        "top": "36%",
-        "left": "52%",
-        "flip": false
+        "text": "Would you like to see the Lake? It's a great place to relax after a long adventure!",
+        "top": "49%",
+        "left": "51%"
       }
     ],
     [
       {
         "type": "chat",
         "text": "Great! I'll lead the way.",
-        "top": "45%",
-        "left": "52%",
-        "flip": false
+        "top": "49%",
+        "left": "51%"
       }
     ],
     [
       {
         "type": "chat",
         "text": "Have fun, see you soon!",
-        "top": "42%",
-        "left": "51%",
-        "flip": false
+        "top": "49%",
+        "left": "51%"
       }
     ]
   ],
   "layerSteps": [
-    null,
     {
+      "index": 0
+    },
+    {
+      "index": 1,
       "stepType": "Click through"
     },
     {
+      "index": 2,
       "stepType": "Decision",
       "prompt": "You respond with:",
       "options": [
@@ -84,6 +84,7 @@ export default {
       ]
     },
     {
+      "index": 3,
       "prompt": "",
       "options": [
         {
@@ -93,6 +94,7 @@ export default {
       "nextScene": "Lake"
     },
     {
+      "index": 4,
       "prompt": "",
       "options": [
         {

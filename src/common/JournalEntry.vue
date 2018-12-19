@@ -1,6 +1,6 @@
 <template>
   <div class="journal-container" v-if="shown">
-    <div class="journal-compose">
+    <div class="journal-compose" :style="getContainerScalingVertical()">
       <p class="prompt">{{ prompt }}</p>
       <textarea v-model="response" placeholder="Type a response..."></textarea>
       <div class="btn" @click="() => save()">Done</div>
@@ -11,10 +11,12 @@
 
 <script>
   import { globalStore } from '../main.js';
+  import Scaler from '../common/Scaler';
 
   export default {
     name: 'JournalEntry',
     props: ['registerShow', 'showRangerWiki', 'onComplete'],
+    mixins: [Scaler],
     data() {
       return {
         shown: false,
@@ -43,6 +45,9 @@
 <style lang="scss" scoped>
   .journal-container {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     left: 0;
     top: 0;
     width: 100vw !important;
@@ -51,10 +56,6 @@
     background-color: rgba(0, 0, 0, 0.5);
   }
   .journal-compose {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
     background-color: white;
     background-image: url('../assets/ui/journal-compose-bg.png');
     background-repeat: no-repeat;
