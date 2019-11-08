@@ -176,7 +176,8 @@ export default {
         {
           "description": "Take a picture and continue walking."
         }
-      ]
+      ],
+      "nextScene": "HT3"
     },
     {
       "index": 9,
