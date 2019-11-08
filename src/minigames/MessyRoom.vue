@@ -81,7 +81,7 @@
 
       <div class="modal-container" v-if="gameOver">
         <div class="modal-content" v-if="remaining.length == 0">
-          <h1 class="modal-title">Hurray!</h1>
+          <h1 class="modal-title">Nice work!</h1>
           <p>
             Great packing! Now you have everything you need to have a safe and enjoyable trip to the Park. You earned your <b>Wilderness Preparedness Badge</b>!
           </p>

@@ -1,4 +1,4 @@
-# naturebridge
+# NatureBridge
 
 > NatureBridge game
 
