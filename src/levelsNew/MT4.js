@@ -114,7 +114,7 @@ export default {
       },
       {
         "type": "chat",
-        "text": "If we go off trail,  we can trample delicate plants and can damage the ecosystem.",
+        "text": "If we go off trail, we can trample delicate plants and can damage the ecosystem.",
         "top": "62%",
         "left": "56%"
       }
@@ -177,11 +177,11 @@ export default {
       "options": [
         {
           "layer": "4",
-          "description": "\"Let's find a different route to get around the landslide to the trail on the other side\""
+          "description": "\"Let's find a different route to get around the landslide to the trail on the other side.\""
         },
         {
           "layer": "6",
-          "description": "\"Let's turn around and go back\""
+          "description": "\"Let's turn around and go back.\""
         }
       ]
     },
@@ -196,7 +196,7 @@ export default {
       "options": [
         {
           "layer": "6",
-          "description": "\"Let's turn around\""
+          "description": "\"Let's turn around.\""
         }
       ]
     },
@@ -209,7 +209,12 @@ export default {
           "layer": 7,
           "description": "Take a picture and head back."
         }
-      ],
+      ]
+    },
+    {
+      "index": 7,
+      "stepType": "Click through",
+      "journalEntry": "Changes in the amount of rainfall due to climate change can cause landslides where there haven't been any before. These landslides can impact trails and roads. Should we rebuild trails and roads that get destroyed? Why or why not?",
       "nextScene": "CompassNavigator"
     }
   ]

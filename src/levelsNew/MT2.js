@@ -156,7 +156,7 @@ export default {
       },
       {
         "type": "chat",
-        "text": "Hey! You can't feed any animals!",
+        "text": "Hey! You can't feed animals!",
         "top": "43%",
         "left": "54%"
       },
@@ -218,7 +218,7 @@ export default {
       },
       {
         "type": "chat",
-        "text": "Yup, it's harmful to the animals to give them food they don't naturally eat.",
+        "text": "Yeah, it's harmful to the animals to give them food they don't naturally eat.",
         "top": "42%",
         "left": "55%"
       },
@@ -537,7 +537,7 @@ export default {
       "options": [
         {
           "layer": "7",
-          "description": "Offer it bite of your snack"
+          "description": "Offer it a bite of your snack"
         },
         {
           "layer": "10",
@@ -601,7 +601,7 @@ export default {
     {
       "index": 14,
       "stepType": "Decision",
-      "prompt": "Your friend runs after it",
+      "prompt": "Your friend runs after it.",
       "options": [
         {
           "layer": "15",

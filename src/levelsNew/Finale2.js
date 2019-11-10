@@ -38,7 +38,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Great! We explored all the trails and learned a lot along the way!",
+        "text": "Great! We explored all the trails and learned a lot about the park and climate change along the way!",
         "top": "53%",
         "left": "73%"
       }

@@ -41,7 +41,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "I've heard it's been\ngetting warmer and\ndrier the past\nseveral years...",
+        "text": "I've heard that because of climate change it's been\ngetting warmer and\ndrier the past\nseveral years...",
         "top": "44%",
         "left": "27%",
         "flip": true
@@ -131,7 +131,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "But even if we\ncan't help the salmon\ndirectly, we can\nsupport the Park’s\nrestoration efforts!",
+        "text": "But even if we\ncan't help the salmon\ndirectly, we can\nsupport the park’s\nrestoration efforts!",
         "top": "33%",
         "left": "39%",
         "flip": false

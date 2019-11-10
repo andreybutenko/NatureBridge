@@ -71,7 +71,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "No, we can't take anything home with us. But we can take plenty of pictures!",
+        "text": "No, we can't take anything home with us from a national park. But we can take plenty of pictures!",
         "top": "59%",
         "left": "30%"
       }
@@ -95,7 +95,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "No, we can't take anything home with us. But we can take plenty of pictures!",
+        "text": "No, we can't take anything home with us from a national park. But we can take plenty of pictures!",
         "top": "55%",
         "left": "44%"
       }

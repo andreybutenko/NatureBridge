@@ -52,7 +52,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "I guess the river will\nkeep eroding until\nthis old site is washed away.",
+        "text": "I guess the river will\nkeep eroding until\nthis old site is washed away. Maybe with climate change the river will erode even faster.",
         "top": "49%",
         "left": "31%",
         "flip": false

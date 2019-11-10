@@ -63,7 +63,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "They take away important resources from native plants and make it harder for the natural ecosystem to develop and thrive.",
+        "text": "They take away important resources from native plants and make it harder for the natural ecosystem to develop and thrive, especially when native plants are already stressed by climate change.",
         "top": "57%",
         "left": "85%"
       }
@@ -79,7 +79,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Yes! By removing invasive species, we can help preserve the ecosystem that has existed for so long",
+        "text": "That's right! And by removing invasive species, we can help preserve the ecosystem that has existed for a long time.",
         "top": "57%",
         "left": "85%"
       }

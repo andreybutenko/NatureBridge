@@ -24,7 +24,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "I heard there was a lot of flooding this year because the snowpack melted earlier this season.",
+        "text": "I heard there was a lot of flooding this year because the snowpack melted early this season.",
         "top": "21%",
         "left": "72%"
       }
@@ -40,7 +40,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Yeah, there was too much flow earlier and it destroyed the bridge...",
+        "text": "Yeah, the river was so high in the spring that it destroyed the bridge...",
         "top": "23%",
         "left": "71%"
       }
@@ -48,7 +48,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Now there's not enough flow and it stranded the salmon we saw!",
+        "text": "Now there's not enough water in the river and that salmon we saw was stranded!",
         "top": "17%",
         "left": "78%"
       }

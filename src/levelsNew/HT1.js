@@ -35,7 +35,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Loud music and noises can ruin the outdoor experience for you and for others on the trail.",
+        "text": "Loud music and noises can ruin the outdoor experience for us and for others on the trail.",
         "top": "52%",
         "left": "71%"
       }
@@ -43,7 +43,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Oops! Sorry!",
+        "text": "Oops! Sorry! I'll turn it off.",
         "top": "54%",
         "left": "80%"
       }
@@ -69,7 +69,7 @@ export default {
       },
       {
         "type": "chat",
-        "text": "Hi! Would you mind not playing that music? I'm trying to enjoy the natural sounds of this trail...",
+        "text": "Hi! Could you turn that off? I was enjoying the natural sounds of this trail...",
         "top": "32%",
         "left": "57%"
       }
@@ -109,7 +109,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Even if we shouldn’t blast music on the trail, we can still tell stories and jokes as we walk!",
+        "text": "Even if we shouldn’t play music on the trail, we can still tell stories and jokes as we walk!",
         "top": "52%",
         "left": "71%"
       }
@@ -136,7 +136,7 @@ export default {
     {
       "index": 2,
       "stepType": "Decision",
-      "prompt": "As you set off down the trail, you notice the quiet of the woods",
+      "prompt": "As you start down the trail, you notice the quiet of the woods.",
       "options": [
         {
           "layer": "3",
@@ -147,7 +147,7 @@ export default {
     {
       "index": 3,
       "stepType": "Decision",
-      "prompt": "Then your ears start to adjust and you hear birds... wind rustling in the trees... the sound of your own footsteps...",
+      "prompt": "Once your ears adjust, you hear birds... wind rustling in the trees... the sound of your own footsteps...",
       "options": [
         {
           "layer": "4",
@@ -158,7 +158,7 @@ export default {
     {
       "index": 4,
       "stepType": "Decision",
-      "prompt": "Suddenly a blast of loud music! Your friend has started playing a song out of their phone speakers.",
+      "prompt": "Suddenly, a loud noise! Your friend has started playing music out of their phone speakers.",
       "options": [
         {
           "layer": "5",

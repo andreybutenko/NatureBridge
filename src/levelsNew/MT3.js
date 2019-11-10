@@ -87,7 +87,7 @@ export default {
       },
       {
         "type": "chat",
-        "text": "There are fewer trees up here, so there's not enough wood around to make campfires sustainable here.",
+        "text": "There are fewer trees up here, so there's not enough wood around for everyone to build a campfire.",
         "top": "46%",
         "left": "45%"
       }
@@ -207,7 +207,7 @@ export default {
       },
       {
         "type": "chat",
-        "text": "There are fewer trees up here, so there's not enough wood around to make campfires sustainable here.",
+        "text": "There are fewer trees up here, so there's not enough wood around for everyone to build a campfire.",
         "top": "51%",
         "left": "56%"
       }
@@ -283,7 +283,7 @@ export default {
       "options": [
         {
           "layer": "3",
-          "description": "\"I think we're above the elevation where we can build fires\""
+          "description": "\"I think we're above the elevation where we can build fires.\""
         },
         {
           "layer": "7",

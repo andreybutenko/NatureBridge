@@ -32,7 +32,7 @@ export default {
           "description": "Continue"
         }
       ],
-      "journalEntry": "In the past, mountain pine beetles have played an important role in the forest by attacking old, weak trees and promoting a healthy forest. In recent years, with hot, dry summers and short, mild winters, beetle numbers have increased significantly and negatively impacted forests across western North America. Unhealthy forests cannot take up as much CO2 from the atmosphere, which will increase the impacts of climate change further. The natural, delicate ecosystem has been tipped out of balance by these changes in climate. Do you think these types of impacts are significant motivation for lawmakers to fight for climate change policies inside and outside of National Parks?",
+      "journalEntry": "In the past, mountain pine beetles have played an important role in the forest by attacking old, weak trees, which helps healthy trees to grow even stronger. Because of climate change, more beetles can survive the shorter, warmer winters, and with more beetles, more trees are attacked. Unhealthy forests cannot absorb as much CO2 from the atmosphere, which will increase the impacts of climate change further. The natural, delicate ecosystem has been tipped out of balance by these changes in climate. Do you think these types of impacts are enough motivation for lawmakers to fight for climate change policies inside and outside of national parks? Why or why not?",
       "nextScene": "RT3"
     },
   ]

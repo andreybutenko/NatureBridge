@@ -30,7 +30,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Welcome to the National Park!",
+        "text": "Welcome to the national park!",
         "top": "50%",
         "left": "50%"
       }
@@ -38,7 +38,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Through your visit, you'll learn about the Park and how we interact with the environment. ",
+        "text": "If you explore all the trails, you'll become a Deputy Ranger! Complete challenges and click on squirrels along the way to earn extra badges.",
         "top": "50%",
         "left": "50%"
       }
@@ -46,7 +46,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "If you explore the entire Park, you'll become a Deputy Ranger! You can earn badges by completing challenges along the way. Keep an eye out for squirrels, which will add to your collection of badges.",
+        "text": "As you hike, you'll see examples of how human-caused climate change affects the park. Do you know why the climate is changing?",
         "top": "50%",
         "left": "50%"
       }
@@ -54,7 +54,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "As you hike, you'll see examples of how human-caused climate change impacts the Park.",
+        "text": "In our everyday activities, like driving cars, humans produce greenhouse gases that insulate the planet's atmosphere like a warm blanket. Earth's temperature increases, but other patterns change as well, like how much rain falls in different places.",
         "top": "50%",
         "left": "50%"
       }
@@ -62,13 +62,13 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Ok!",
-        "top": "55%",
+        "text": "We'll look out for climate change impacts.",
+        "top": "80%",
         "left": "85%"
       },
       {
         "type": "chat",
-        "text": "Sounds good!",
+        "text": "Got it!",
         "top": "51%",
         "left": "74%"
       }
@@ -76,7 +76,7 @@ export default {
     [
       {
         "type": "chat",
-        "text": "Here's a map you can use to explore all the trails. It's important to practice navigation before heading out. Can you use your map and compass to find the trail to the mountain pass?",
+        "text": "Here's a map you can use to explore all the trails. Before you get going, practice using your map and compass to find the trail to the mountain pass.",
         "top": "50%",
         "left": "50%"
       }
@@ -122,7 +122,7 @@ export default {
       "highlightMap": true,
       "options": [
         {
-          "description": "Find the trail!"
+          "description": "Practice with map and compass"
         }
       ]
     }

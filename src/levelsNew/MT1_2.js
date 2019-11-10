@@ -41,7 +41,7 @@ export default {
     null,
     {
       "stepType": "Click through",
-      "journalEntry": "Growth of an invasive species combined with changes in overall climate can have an extremely damaging impact on native species. What are some ways that people can prevent and eliminate the spread of invasive species?",
+      "journalEntry": "Growth of invasive species combined with changes in overall climate can have an extremely damaging impact on native species. What are some ways that people can help native plants thrive?",
       "nextScene": "MT2"
     }
   ]
