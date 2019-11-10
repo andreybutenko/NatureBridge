@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="center-content">
-      <h1 class="title">Pack for the Park!</h1>
+      <h1 class="title">Pack your bag!</h1>
       <h2 class="title">{{ timeRemaining }} seconds left...</h2>
       <div style="position: relative" class="game-area">
         <img
@@ -42,17 +42,17 @@
         <div class="modal-content">
           <h1 class="modal-title">Pack Fast!</h1>
           <p>
-            Before going to a park, it is important to be prepared. Make sure to pack the <span class="link" @click="viewingEssentials = true">10 Essentials</span> so you will be read for any situation.
+            Before heading out, you need to be prepared. Pack the <span class="link" @click="viewingEssentials = true">10 Essentials</span> so you will be ready for any situation.
           </p>
           <p>
-            Click on these items to pack them in your bag:
+            You have <b>30 seconds</b> to find everything you need. Click an item to pack it in your bag:
           </p>
           <ul class="two-column">
             <li v-for="item in remaining" :key="item.name">{{ item.display }}</li>
           </ul>
 
           <div class="btn-container">
-            <div class="play-btn" @click="intro = false">Begin!</div>
+            <div class="play-btn" @click="intro = false">Begin</div>
           </div>
         </div>
       </div>
@@ -81,28 +81,29 @@
 
       <div class="modal-container" v-if="gameOver">
         <div class="modal-content" v-if="remaining.length == 0">
-          <h1 class="modal-title">Nice work!</h1>
+          <h1 class="modal-title">Great packing!</h1>
           <p>
-            Great packing! Now you have everything you need to have a safe and enjoyable trip to the Park. You earned your <b>Wilderness Preparedness Badge</b>!
+            Now you have everything you need for a safe and enjoyable trip to the park.</p>
+	  <p>You earned your <b>Wilderness Preparedness Badge</b>!
           </p>
 
           <div class="btn-container">
             <div class="play-btn btn-restart" @click="reset()">Play Again</div>
-            <div class="play-btn" @click="switchScene('WaveGoodbye')">Let's get going!</div>
+            <div class="play-btn" @click="switchScene('WaveGoodbye')">Let's get going</div>
           </div>
         </div>
         <div class="modal-content" v-else>
-          <h1 class="modal-title">Game Over!</h1>
+          <h1 class="modal-title">Time's up!</h1>
           <p>
-            Time's up! Looks like you weren't able to find everything you needed in time.
+            Looks like you ran out of time before you found everything you needed.
           </p>
           <p>
-            Play again and find all the items to earn the <b>Wilderness Preparedness Badge</b>!
+            Play again to earn your <b>Wilderness Preparedness Badge</b>!
           </p>
 
           <div class="btn-container">
-            <div class="play-btn btn-restart" @click="reset()">Play Again</div>
-            <div class="play-btn" @click="switchScene('WaveGoodbye')">Continue on and borrow what you need from a friend on the way</div>
+            <div class="play-btn btn-restart" @click="reset()">Play again</div>
+            <div class="play-btn" @click="switchScene('WaveGoodbye')">Continue and hopefully borrow what you need from a friend</div>
           </div>
         </div>
       </div>
@@ -128,8 +129,8 @@
         viewingEssentials: false,
         items: [
           { name: 'compass', display: 'Compass', left: 750, top: 270 },
-          { name: 'firstaid', display: 'First Aid', left: 726, top: 434 },
-          { name: 'hat', display: 'Hat', left: 406, top: 532 },
+          { name: 'firstaid', display: 'First Aid Kit', left: 726, top: 434 },
+          { name: 'hat', display: 'Warm Hat', left: 406, top: 532 },
           { name: 'flashlight', display: 'Flashlight', left: 150, top: 516 },
           { name: 'jacket', display: 'Jacket', left: 466, top: 508 },
           { name: 'knife', display: 'Knife', left: 688, top: 446 },

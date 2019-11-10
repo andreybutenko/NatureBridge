@@ -4,19 +4,20 @@
     <div class="welcome-modal-container" :style="{ marginLeft: offset }">
       <div class="welcome-modal">
         <div class="title">
-          National Park Adventure
+          Welcome to the National Park Adventure Game!
         </div>
         <div class="content">
-          <p>Welcome to the National Park Adventure game! Journey through the park to explore all the trails and earn your Deputy Ranger status. Are you ready to:</p>
+	  <p>Explore all the trails in the park to earn your <b>Deputy Ranger Badge</b>.</p>
+          <p>Get ready to:</p>
           <ul>
-            <li>Learn about the amazing plants, animals, and land that make up national parks?</li>
-            <li>Explore cultural and historical places?</li>
-            <li>Have fun while safely enjoying your beautiful surroundings?</li>
+            <li>Learn about the amazing plants, animals, and land that make up our national parks</li>
+            <li>Explore impacts of climate change</li>
+            <li>Have fun while safely enjoying your beautiful surroundings!</li>
           </ul>
         </div>
         <div class="action">
           <div class="welcome-btn" @click="next">
-            Begin Game!
+            Begin Game
           </div>
         </div>
       </div>
@@ -28,16 +29,15 @@
           <img src="/static/misc/national-parks.jpg" />
         </div>
         <div class="title">
-          National Park Service
+          Climate Change in National Parks
         </div>
         <div class="content">
-          <p>What is the National Park Service and why does it exist?</p>
-          <p>The National Park Service preserves unimpaired the natural and cultural resources and values of the National Park System for the enjoyment, education, and inspiration of this and future generations. The Park Service cooperates with partners to extend the benefits of natural and cultural resource conservation and outdoor recreation throughout this country and the world.</p>
-          <p>No matter where you are, there is so much to explore nearby. All you need to do is pick a destination and get outside!</p>
+          <p><b>How does climate change affect national parks?</b> Human-caused climate change affects every part of the planet. Changes in temperature and amount of rainfall are challenging for plants and animals to adapt to. These changes can even affect rivers, glaciers, and mountains!</p>
+         <p><b>Why should I care about national parks?</b> National parks exist to protect important lands in this country so everyone can enjoy, learn about, and be inspired by the great outdoors. National parks belong to all of us, so we need to work together to protect them.</p>
         </div>
         <div class="action">
           <div class="welcome-btn" @click="next">
-            Let's head to the Park
+            Head to the park
           </div>
         </div>
       </div>

@@ -6,25 +6,25 @@
           <b>Time:</b> <span class="big">{{timeLeft}}</span>
         </div>
         <div>
-          <b>Trees Thinned:</b> <span class="big">{{score.saved}}</span>
+          <b>Trees Removed:</b> <span class="big">{{score.saved}}</span>
         </div>
         <div>
-          <b>Trees Lost:</b> <span class="big">{{score.killed}}</span>
+          <b>Dead Trees:</b> <span class="big">{{score.killed}}</span>
         </div>
       </div>
       <SceneGenerator :scene="scene" :sub="true" />
     </div>
     <div class="instructions-background" v-if="!started || ended">
       <div class="instructions-modal" v-if="!started">
-        <h1>Forest Health</h1>
-        <p>It's your job to thin the beetle-infested trees in order to improve the health of the forest. </p>
+        <h1>Help Protect the Forest!</h1>
+        <p>Remove the beetle-infested trees in order to improve the health of the forest. </p>
         <div class="ex">
           <img src="/static/misc/pine.png" class="healthy" />
-          <p>Trees will start off green and healthy!</p>
+          <p>Trees will start off green and healthy</p>
         </div>
         <div class="ex">
           <img src="/static/misc/pine.png" class="infested" />
-          <p>They will turn red when they're infected by beetles.</p>
+          <p>They will turn red when they're infested by beetles</p>
         </div>
         <div class="ex">
           <img src="/static/misc/pine.png" class="infested trembling" />
@@ -35,7 +35,7 @@
           <p>Trees will die if you don't take any action.</p>
         </div>
         <p>
-          Click on a tree to thin it. It takes 3 seconds to cut down a tree after you click, so act fast! Ready?
+          Click on a tree to remove it. It takes 3 seconds to cut down a tree after you click, so act fast! Ready?
         </p>
         <div class="btn-container">
           <div class="btn-start" @click="startGame">
@@ -44,11 +44,11 @@
         </div>
       </div>
       <div class="instructions-modal" v-if="ended">
-        <h1>Forest Health</h1>
-        <p>Great job! You successfully thinned <b>{{score.saved}}</b> trees.</p>
-        <p>By thinning beetle-infested trees, you help promote growth of healthy trees.</p>
+        <h1>Great job!</h1>
+        <p>You removed <b>{{score.saved}}</b> unhealthy trees.</p>
+        <p>By removing beetle-infested trees, you help promote growth of healthy trees.</p>
         <p v-if="score.saved < targetScore">You need just {{Math.ceil(targetScore - score.saved)}} more to earn the <b>Forest Health Badge</b>!</p>
-        <p v-else>Congratulations, you earned the <b>Forest Health Badge</b> for your good performance!</p>
+        <p v-else>You earned the <b>Forest Health Badge</b>!</p>
         <div class="btn-container">
           <div class="btn-start btn-restart" @click="reset()">
             Play Again

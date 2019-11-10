@@ -18,7 +18,7 @@
     <div class="instructions-background" v-if="!started || ended || wrong">
       <div class="instructions-modal" v-if="wrong">
         <h1>Careful!</h1>
-        <p>That was a native plant, not an invasive plant!</p>
+        <p>That was a native plant, not an invasive plant.</p>
         <div class="btn-container">
           <div class="btn-start" @click="wrong = false">
             Continue
@@ -26,19 +26,19 @@
         </div>
       </div>
       <div class="instructions-modal" v-if="!started">
-        <h1>Invasive Species</h1>
-        <p>It's your job to remove invasive plants, which harm the ecosystem by preventing native species from thriving.</p>
+        <h1>Weed Invasive Species</h1>
+        <p>Remove invasive plants. Invasive plants harm the ecosystem by preventing native species from thriving. Climate change already makes it difficult for native plants by changing the air temperature and amount of water available -- add invansive species to the mix, and native plants are having a tough time growing!</p>
         <div class="ex">
           <img src="/static/misc/plant2.png" />
-          <p>These are the invasive species we want to pick.</p>
+          <p>Pick this invasive plant</p>
         </div>
         <div class="ex">
           <img src="/static/misc/plant1.png" />
           <img src="/static/misc/plant3.png" />
-          <p>These are the native plants we want to keep.</p>
+          <p>Don't pick the native plants</p>
         </div>
         <p>
-          Click on a plant to pick it. Make sure to only pick the invasive species! Pick as many as possible in {{timeLeft}} seconds.
+          You have <b>40 seconds</b> to weed as many invasive plants as possible. Click on a plant to pick it. Make sure to only pick the invasive species!
         </p>
         <div class="btn-container">
           <div class="btn-start" @click="startGame">
@@ -47,10 +47,10 @@
         </div>
       </div>
       <div class="instructions-modal" v-if="ended">
-        <h1>Invasive Species</h1>
-        <p>Great work! You successfully weeded <b>{{score.correct}}</b> invasive plants.</p>
+        <h1>Great Work!</h1>
+        <p>You weeded <b>{{score.correct}}</b> invasive plants.</p>
         <p v-if="score.correct < config.awardThreshold">You need just {{Math.ceil(config.awardThreshold - score.correct)}} more to earn the <b>Species Protector Badge</b>!</p>
-        <p v-else>Congratulations, you earned the <b>Species Protector Badge</b> for your good performance!</p>
+        <p v-else>You picked enough invasive plants to earn the <b>Species Protector Badge</b>!</p>
         <div class="btn-container">
           <div class="btn-start btn-restart" @click="reset()">
             Play Again

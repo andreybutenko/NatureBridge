@@ -1,13 +1,13 @@
 <template>
   <div class="wave-goodbye">
     <div class="content">
-      <h1>Tell someone where you're going!</h1>
+      <h1>Have fun!</h1>
       <img src="/static/characters/mom-wave.png" />
       <p>
-        Don't forget to let someone know your plan. Tell them where you're going and when you expect to be back!
+        Don't forget to tell someone where you're going and when you expect to be back!
       </p>
       <div class="continue-btn" @click="switchScene('Intro1')">
-        Head to the Park
+        Head to the park
       </div>
     </div>
   </div>

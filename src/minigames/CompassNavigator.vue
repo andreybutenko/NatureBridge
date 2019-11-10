@@ -4,11 +4,11 @@
       :stage="stage"
       :checkmarks="markers"
       :onSuccess="onSuccess"
-      :instructions="!showLakeDialog && 'Click the arrows to navigate to a trail you\'d like to explore.'" />
+      :instructions="!showLakeDialog && 'Use the arrows to navigate to a trail.'" />
     <div class="confirm-dialog-container" v-show="destination != ''">
       <div class="confirm-dialog">
         <p>
-          Would you like to continue to the <b>{{ destinationText }}</b>?
+          Would you like to explore the <b>{{ destinationText }}</b>?
         </p>
         <p class="warning" v-if="hasVisited(destination)">
           <b>Note: </b> You've already gone down this trail!
@@ -26,14 +26,14 @@
     <div class="confirm-dialog-container" v-show="showLakeDialog">
       <div class="confirm-dialog">
         <p>
-          What a day! You still have a little time to put your feet up over at the Ranger Station Lake.
+          What a day! You still have some time to relax over at the Ranger Station Lake.
         </p>
         <div class="action">
           <div class="cancel-btn" @click="showLakeDialog = false;">
-            No, explore some more first
+            Explore trails again
           </div>
           <div class="continue-btn" @click="switchScene('Lake')">
-            Head to the Lake
+            Head to the Ranger Station Lake
           </div>
         </div>
       </div>

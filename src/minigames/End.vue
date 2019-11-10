@@ -2,7 +2,7 @@
   <div class="the-end">
     <div class="content">
       <h1>Congratulations!</h1>
-      <p>You completed your National Park Adventure! You are now a Deputy Ranger!</p>
+      <p>You completed your National Park Adventure. You are now a Deputy Ranger!</p>
       <img class="ranger-badge" src="/static/badges/deputy_ranger.png" />
       <p>You also earned {{earnedBadges}} out of {{totalBadges}} additional badges!</p>
       <div class="badge-container">

@@ -26,7 +26,7 @@
           showMap: false,
           clickHandler: () => {
             if(this.step == 0) {
-              this.showJournalEntry('For climate change adaptation, there is no recipe, no road map, and yet no time to lose; science and society must tackle the climate change issue in a timely way, despite uncertainty. What your most important values for the Park to take in the face of a changing climate? What do you love about the parks that you want to see protected?');
+              this.showJournalEntry('For climate change adaptation, there is no recipe, no road map, and yet no time to lose; science and society must tackle the issue of climate change issue now, despite uncertainty. What do you think are the most important values for park managers to consider in the face of a changing climate? What do you love about the parks that you want to see protected?');
               this.step = 1;
             }
             else if(this.step == 1) {

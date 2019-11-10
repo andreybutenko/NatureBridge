@@ -2,7 +2,7 @@
   <Compass
     :stage="stage"
     :onSuccess="onSuccess"
-    :instructions="'The red pointer on your compass in the upper right corner will always point north. The mountain pass trail on your map is in a southeast direction. Click the right and left arrows to turn your view and head in the correct direction down the trail. '" />
+    :instructions="'Use the right and left arrows to rotate your view and click the GO arrow once you are facing the correct direction. The red needle on your compass in the upper right corner will always point north (up). On your map, the mountain pass trail heads in a southeast direction from where you stand. Which direction will the compass needle point when you face southeast?'" />
 </template>
 
 <script>

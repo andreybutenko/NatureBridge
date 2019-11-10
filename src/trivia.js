@@ -1,12 +1,12 @@
 export default [
   {
-    question: 'What was the first National Park in the US?',
+    question: 'What was the first national park in the US?',
     options: ['Yellowstone', 'Yosemite', 'Olympic', 'Acadia'],
     correct: 0,
     explanation: 'Yellowstone was established in the territories of Montana and Wyoming "as a public park or pleasuring-ground for the benefit and enjoyment of the people."'
   },
   {
-    question: 'In what year was Yellowstone, the first National Park, established?',
+    question: 'In what year was Yellowstone, the first national park, established?',
     options: ['1852', '1872', '1904', '1917'],
     correct: 1,
     explanation: 'The founding of Yellowstone National Park in 1872 began a worldwide movement to establish protected lands in countries all over the world.'
@@ -18,16 +18,16 @@ export default [
     explanation: 'President Woodrow Wilson created the Organic Act on August 25th 1916 to officially create the National Park Service within the Department of the Interior and establish an organization that could oversee all the protected lands across the nation.'
   },
   {
-    question: 'How much land is protected today in US National Parks?',
+    question: 'How much land is protected today in US national parks?',
     options: ['520,000 acres', '12 million acres', '37 million acres', '84 million acres'],
     correct: 3,
     explanation: 'Today the National Park Service protects over 400 areas adding up to over 84 million acres in all 50 states and US territories.'
   },
   {
-    question: 'How are new lands added to the National Park system? ',
+    question: 'How are new lands added to the national park system? ',
     options: ['Acts of Congress', 'Executive order by the President', 'Popular vote of citizens', 'Popular vote, ratified by Governor of the states involved'],
     correct: 0,
-    explanation: 'If new lands are proposed to be added to the National Park system, an Act of Congress can establish the addition. Based on the Antiquities Act of 1906, the President has the authority to create national monuments on lands that are already federally maintained.'
+    explanation: 'If new lands are proposed to be added to the national park system, an Act of Congress can establish the addition. Based on the Antiquities Act of 1906, the President has the authority to create national monuments on lands that are already federally maintained.'
   },
   {
     question: 'How many employees work for the National Park Service?',
